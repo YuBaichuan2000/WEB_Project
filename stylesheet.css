@@ -122,11 +122,11 @@ a:active{
 }
 
 .p-box{
-    background-image: url(background.jpg);
+    background-image: url(background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    background-size: 2500px;
+    background-size: 1452px;
     overflow:scroll;
     background-attachment: fixed;
 }
