@@ -20,6 +20,7 @@ body{
 header{
     display: flex;
     align-items: center;
+    position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
     height: 62px;

@@ -27,9 +27,11 @@ body{
     clear:both;
 }
 .top{
-    display: block;
+    display: flex;
+    align-items: center;
     background-color: #1D5EB7;
     height: 65px;
+    color: white;
 }
 /* .container{
     width: 80%;
@@ -47,11 +49,11 @@ body{
 .box-1 h1{
     font-family: Tahoma;
     font-weight: 800;
-    font-style: italic;
+    font-style: italic, underline;
     text-decoration: overline;
-    text-transform: uppercase;
     letter-spacing: 0.2em;
     word-spacing: 1em;
+    line-height: 0.5em;
 }
 
 .box-2{
@@ -61,11 +63,8 @@ body{
     width: 50%;
 }
 
-.box-2 img{
-    border-width: 3px;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    margin-left: 2.5em;
+.box-2 h1{
+    color: #2C71C3;
 }
 
 .box-2 h3{

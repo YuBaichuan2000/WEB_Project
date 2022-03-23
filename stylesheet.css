@@ -38,6 +38,7 @@ body{
     text-transform: uppercase;
     letter-spacing: 0.2em;
     word-spacing: 1em;
+    line-height: 0.5em;
 }
 
 .box-2{
