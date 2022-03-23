@@ -132,8 +132,19 @@ a:active{
     right:100px;
 }
 
+.useful-links h1{
+    font-size: 28px;
+    color: #2C71C3;
+    border-width: 3px;
+    padding: 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
-
+.useful-links u{
+    color: blue;
+    text-decoration: underline;
+}
 
 
 
