@@ -3,19 +3,19 @@
 
 
 ## Table of contents
-* [Team Members](#team-members) : wait for fill-in
-* [Progress Chart](#progress-chart) : not yet
+* [Team Members](#team-members) : George Yu, Tony Xie, Lily Li, Sean Xiao and Stephen Liao
+* [Progress Chart](#progress-chart) : yet
 ***
 
 ## Team Members
 ### <u>_Week 2_</u>
 | Name | Task | State |
 | :--- | :---: | ---: |
-|Student 1 | DoSomething1 |
-|Student 2 | DoSomething2 |
-|Student 3 | DoSomething3 |
-|Student 4 | DoSomething4 |
-|Student 5 | DoSomething5 |
+|George Yu | Patient UI | Done
+|Tony Xie | Patient UI | Done
+|Lily Li | Clinician UI | Done
+|Sean Xiao | Clinician UI | Done
+|Stephen Liao | Clinician UI | Done
 ***
 
 ## Progress Chart
