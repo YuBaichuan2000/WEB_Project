@@ -26,7 +26,7 @@ body{
 .clr{
     clear:both;
 }
-.header{
+.top{
     display: block;
     background-color: #1D5EB7;
     height: 65px;
