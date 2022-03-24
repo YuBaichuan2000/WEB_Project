@@ -12,6 +12,7 @@ body{
     font-size: 16px;
     font-weight: normal;
     line-height: 1.6em;
+    margin: 0;
 }
 
 .clr{
@@ -49,6 +50,11 @@ body{
     line-height: 0.5em;
 }
 
+.box-1 h5{
+    font-family: Tahoma;
+    font-size: 18px;
+}
+
 .box-2{
     font-size: 23px;
     border-width: 3px;
@@ -63,17 +69,18 @@ body{
     margin-left: 2.5em;
 }
 
-.box-2 p{
+/* .box-2 p{
     position: relative;
     right: 20px;
     font-family: "open sans";
-}
+} */
 
 .box-2 h1{
     font-family: "kohinoor bangla";
     font-size: 36px;
-    color: #2C71C3;
     font-weight: 900;
+
+    color: #2C71C3;
 }
 
 .box-2 h3{

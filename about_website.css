@@ -46,6 +46,8 @@ header{
     opacity: 0.82;
     height: 65px;
     color: white;
+    font-family: 'SignPainter', sans-serif;
+    font-size: 26px;   
 }
 /* .container{
     width: 80%;
@@ -70,6 +72,11 @@ header{
     line-height: 0.5em;
 }
 
+.box-1 h5{
+    font-family: Tahoma;
+    font-size: 18px;
+}
+
 .box-2{
     font-size: 23px;
     border-width: 3px;
@@ -79,9 +86,13 @@ header{
 
 .box-2 h1{
     color: #2C71C3;
+
+    font-family: "kohinoor bangla";
+    font-size: 36px;
+    font-weight: 900;
 }
 
-.box-2 h3{
+/* .box-2 h3{
     font-size: 25px;
     color: #2C71C3;
     border-width: 3px;
@@ -89,7 +100,7 @@ header{
     margin-top: 2em;
     margin-bottom: 0.5em;
     margin-left: 2.5em;
-}
+} */
 
 .box-2 li{
     border-width: 3px;
