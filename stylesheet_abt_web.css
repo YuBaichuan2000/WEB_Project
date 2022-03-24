@@ -12,7 +12,7 @@ body{
     font-weight: normal;
     line-height: 1.6em;
     margin: 0;
-    background-image: url(background.jpeg);
+    /* background-image: url(background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
@@ -20,6 +20,21 @@ body{
     overflow:scroll;
     background-attachment: fixed;
     width: 80%;
+    margin: auto; */
+}
+
+.wbackground{
+    background-image: url(background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    background-size: 1452px;
+    overflow:scroll;
+    background-attachment: fixed;
+}
+
+.main_body{
+    width: 90%;
     margin: auto;
 }
 
@@ -30,6 +45,7 @@ body{
     display: flex;
     align-items: center;
     background-color: #1D5EB7;
+    opacity: 0.82;
     height: 65px;
     color: white;
 }
