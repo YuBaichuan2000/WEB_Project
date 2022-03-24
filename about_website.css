@@ -1,9 +1,3 @@
-/*
-*{
-    margin: 0;
-    padding: 0;
-}*/
-
 body{
     color:black;
     /*background: gray;*/
@@ -12,18 +6,6 @@ body{
     font-weight: normal;
     line-height: 1.6em;
     margin: 0;
-    /* background-image: url(background.jpeg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 1080px;
-    background-size: 1452px;
-    overflow:scroll;
-    background-attachment: fixed;
-    width: 80%;
-    margin: auto; */
-}
-
-.wbackground{
     background-image: url(background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -32,6 +14,16 @@ body{
     overflow:scroll;
     background-attachment: fixed;
     margin: auto;
+}
+
+header{
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #1D5EB7;
+    opacity: 0.82;
+    height: 62px;
 }
 
 .main_body{
