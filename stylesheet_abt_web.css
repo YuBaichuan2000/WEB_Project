@@ -31,10 +31,11 @@ body{
     background-size: 1452px;
     overflow:scroll;
     background-attachment: fixed;
+    margin: auto;
 }
 
 .main_body{
-    width: 90%;
+    width: 80%;
     margin: auto;
 }
 

@@ -13,8 +13,7 @@ body{
     background-size: 1452px;
     overflow:scroll;
     background-attachment: fixed;
-    /* width: 80%;
-    margin: auto; */
+    margin: auto;
 }
 
 header{
