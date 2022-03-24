@@ -17,7 +17,6 @@ body{
 }
 
 header{
-    color: white;
     display: flex;
     align-items: center;
     position: relative;
@@ -37,11 +36,45 @@ ul{
     line-height: 2em;
 }
 
-main{
+/* main{
     display: flex;
-}
+} */
 
 h1{
+    color: white;
+}
+
+h2{
     color: #1D5EB7;
     font-size: 30px;
+}
+
+h3{
+    font-size: 16px;
+}
+
+/* .container{
+    height: 600px;
+} */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+
+.item-left{
+    flex: 50%;
+    margin: 10px;
+}
+
+.item-right{
+    flex: 50%;
+    margin: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        flex-direction: column;
+    }
 }
