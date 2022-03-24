@@ -31,6 +31,11 @@ header{
     margin: auto;
 }
 
+.main{
+    display: flex;
+    gap: 30px;
+}
+
 .clr{
     clear:both;
 }
