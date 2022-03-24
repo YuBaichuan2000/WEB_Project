@@ -83,6 +83,12 @@ body{
     border-left: 0;
 }
 
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
 
 .categories{
     border: 1px solid;
