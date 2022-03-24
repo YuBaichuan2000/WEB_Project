@@ -1,11 +1,9 @@
-/*@media screen and (max-width: 500px){
-    .box-2{
+@media screen and (max-width: 500px){
+    .p-box{
         display: flex;
         flex-direction: column;
-        float: left;
-        width: 100%;
     }
-}*/
+}
 
 body{
     color:black;
@@ -14,14 +12,6 @@ body{
     font-size: 16px;
     font-weight: normal;
     line-height: 1.6em;
-    @media screen and (max-width: 480px){
-        .box-2{
-            display: flex;
-            flex-direction: column;
-            float: left;
-            width: 100%;
-        }
-    }
 }
 
 .clr{
@@ -38,20 +28,22 @@ body{
     opacity: 0.82;
     height: 65px;
     color: white;
+    font-family: 'SignPainter', sans-serif;
+    font-size: 26px;
+                                                
+    
+
 }
 .box-1{
     /*background-color: #333;
     color: #fff;*/
-
     border: 5px;
     padding: 0px;
     margin: 0px;
 }
 
 .box-1 h1{
-    font-family: Tahoma;
-    font-weight: 800;
-    font-style: italic;
+    
     text-decoration: overline;
     text-transform: uppercase;
     letter-spacing: 0.2em;
@@ -63,7 +55,7 @@ body{
     font-size: 23px;
     border-width: 3px;
     float: left;
-    width: 50%;
+    /*width: 50%;*/
 }
 
 .box-2 img{
@@ -73,9 +65,21 @@ body{
     margin-left: 2.5em;
 }
 
-.box-2 h3{
-    font-size: 25px;
+.box-2 p{
+    font-family: "open sans";
+}
+
+.box-2 h1{
+    font-family: "kohinoor bangla";
+    font-size: 36px;
     color: #2C71C3;
+    font-weight: 900;
+}
+
+.box-2 h3{
+    font-size: 30px;
+    color: #2C71C3;
+    font-family: "adobe clean";
     border-width: 3px;
     padding: 0px;
     margin-top: 2em;
@@ -148,6 +152,9 @@ a:active{
     background-size: 1452px;
     overflow:scroll;
     background-attachment: fixed;
+    display: flex;
+    flex-direction:row;
+
 }
 
 /*.p-box h1{
