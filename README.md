@@ -8,7 +8,7 @@
 ***
 
 ## Team Members
-### <u>_Week 2_</u>
+### <u>_Week 4_</u>
 | Name | Task | State |
 | :--- | :---: | ---: |
 |George Yu | Patient UI | Done
@@ -22,4 +22,4 @@
  * [x] Read Specification and Delivarable Requirement carefully
  * [x] Design the UI for patients in three devices
  * [x] Design the UI for clinicians only for laptop
- * [ ] Code only HTML for patient UI and clinician UI
+ * [x] Code only HTML for patient UI and clinician UI
