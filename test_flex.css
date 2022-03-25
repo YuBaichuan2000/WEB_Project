@@ -29,6 +29,10 @@ header img{
     padding-left: 21px;
 }
 
+p{
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+}
 ul{
     list-style-type: none;
     padding-top: 30px;
@@ -42,6 +46,8 @@ ul{
 
 h1{
     color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
 }
 
 h2{

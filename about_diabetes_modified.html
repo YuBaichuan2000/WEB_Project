@@ -5,35 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes@Home</title>
-    <link rel="stylesheet" href="about_diabetes.css">
-    
+    <link rel="stylesheet" href="about_diabetes.css"> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    </style>
 </head>
-<body>
-    <header>
-        <div class="header-box">
-            <img class="ribbon" src="ribbon.png" alt="logo">
-            <h1 class="DH">Diabetes@Home</h1>   
-            <style>
-                h1.DH {
-                    position: relative;
-                    left: 100px;
-                }
-                img.ribbon{
-                    position: relative;
-                    left: 90px;
-                }
-            </style>   
-        </div>
-    </header>
-    <section class="p-box">
-        <div class="container">
-            <div class="box-1">
-                <h5><u><< Back to patient login</u></h5>
-                <h5><u><< Back to clinician login</u></h5>
-            </div>
 
-            <div class="box-2">
-                <h1>About Diabetes</h1>
+<body class="background">
+    <header class="top">
+        <img src="ribbon.png" alt="logo" width="40", height="40">
+        <h1>Diabetes@Home</h1>
+    </header>
+    <nav>
+        <ul>
+            <a href="", target="_blank">
+                <li><< Back to patient login</li>
+            </a>
+            <a href="", target="_blank">
+                <li><< Back to clinitian login</li>
+            </a>
+        </ul>
+    </nav>
+    <main>
+        <ul class="container">
+            <li class="item-left">
+                <h2>About Diabetes</h2>
                 <p>
                     Diabetes mellitus refers to a group of diseases that affect how your body uses blood sugar (glucose). 
                     Glucose is vital to your health because it's an important source of energy for the cells that make up 
@@ -50,17 +47,12 @@
                     precursor of diabetes unless appropriate measures are taken to prevent progression. Gestational diabetes 
                     occurs during pregnancy but may resolve after the baby is delivered.
                 </p>
-            </div>
-
-            <div class="image-box">
+            </li>
+            <li class="item-right">
                 <a href="https://www.youtube.com/watch?v=wZAjVQWbMlE" target="_blank">
-                    <centre><img src="diabetes.png" alt="Video not found" width="650" height="400"></centre>
+                    <centre><img src="diabetes.png" alt="Video not found" width="550" height="300"></centre>
                 </a>
-            </div>  
-            
-            <div class="box-2">
                 <h3>Useful websites about diabetes:</h3>
-        
                 <ul>
                     <li>
                         <a href="https://www.diabetesaustralia.com.au/" target="_blank">Diabetes Australia</a>
@@ -72,10 +64,7 @@
                         <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" target="_blank">Diabetes - WHO</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-            
-    </section>            
+            </li>
+        </ul>
+    </main>
 </body>
-</html>
-
