@@ -10,7 +10,7 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    background-size: 1452px;
+    background-size:cover;
     overflow:scroll;
     background-attachment: fixed;
     margin: auto;
