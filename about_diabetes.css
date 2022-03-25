@@ -81,6 +81,9 @@ a:hover{
     margin-top: 20px;
     margin-bottom: 0px;
 }
+.item-right img{
+    margin-top: 90px;
+}
 
 
 .item-right li{

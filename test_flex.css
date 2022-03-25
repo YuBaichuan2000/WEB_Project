@@ -3,7 +3,7 @@ body{
     /*background: gray;*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    font-weight: normal;
+    /*font-weight: normal;*/
     line-height: 1.6em;
     margin: 0;
     background-image: url(background.jpeg);
@@ -32,6 +32,7 @@ header img{
 p{
     font-size: 22px;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
 }
 ul{
     list-style-type: none;
@@ -40,9 +41,6 @@ ul{
     line-height: 2em;
 }
 
-/* main{
-    display: flex;
-} */
 
 h1{
     color: white;
@@ -52,7 +50,7 @@ h1{
 
 h2{
     color: #1D5EB7;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 h3{
@@ -72,14 +70,21 @@ h3{
 .item-left{
     flex: 50%;
     margin: 10px;
+    margin-top: 0px;
 }
 
 .item-right{
     flex: 50%;
     margin: 10px;
+    margin-top: 0px;
 }
 
-@media screen and (max-width: 768px){
+.highlighted{
+    font-weight: 1000;
+    font-style: italic;
+}
+
+@media screen and (max-width: 1200px){
     .container{
         flex-direction: column;
     }
