@@ -1,0 +1,140 @@
+body{
+    color:black;
+    /*background: gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6em;
+    margin: 0;
+    background-image: url(images/background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    /* height: 5000px; */
+    background-size:cover;
+    overflow:scroll;
+    background-attachment: fixed;
+    margin: auto;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #1D5EB7;
+    opacity: 0.82;
+    height: 62px;
+}
+
+ul{
+    list-style-type: none;
+    padding-top: 30px;
+    font-size: 18px;
+    line-height: 2em;
+}
+
+
+/* dashboard */
+
+header a{
+    /* 无下划线 */
+    text-decoration: none;
+    /* 白色字体 */
+    color: white;
+}
+
+header a:hover{
+    /* 鼠标在字上的颜色 */
+    color: white;
+}
+
+
+.nav-block{
+    flex: 50%;
+    /* position: fixed; */
+    list-style-type: none;
+    display: inline;
+    /* border: 1px solid grey; */
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding-left: 0px;
+    /* margin-left: 35px;
+    margin-right: 35px; */
+}
+
+.nav-block p{
+    font-size: 14px;
+}
+
+.nav-block li{
+    float: left;
+    flex-wrap: wrap;
+    box-shadow: 4px 4px 10px #C8CDCF;
+    /* max-width: 100px; */
+    /* margin-left: 0; */
+    width: 135px;
+    height: 98px;
+    justify-content: space-evenly;
+    align-content: space-around;
+    border-radius: 8px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.nav-block li img{
+    /* 图片居中 */
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.nav-block p{
+    margin: 5px 0px 2px 0px;
+}
+
+.nav-block a{
+    text-decoration: none;
+    /* text-align: center; */
+    display: block;
+    padding: 30px;
+    color: black;
+    /* padding: 10px 20px 200px 10px; */
+    text-align:center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.clinician-message{
+    list-style: none;
+    float: left;
+    flex-wrap: wrap;
+    flex: 50%;
+    margin-top: 50px;
+}
+
+.clinician-message p{
+    align-content: center;
+    width: 290px;
+    height: 25px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 11px;
+    border-radius: 9px 9px 0px 0px;
+    margin: 0px;
+}
+
+
+.clinician-message h5{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    width: 290px;
+    height: 150px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 18px;
+    border-radius: 0px 0px 9px 9px;
+    margin: 0px;
+}
+
+/* dashboard */
