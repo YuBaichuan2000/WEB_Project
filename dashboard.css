@@ -27,6 +27,7 @@ header{
 }
 
 ul{
+    display: block;
     list-style-type: none;
     padding-top: 30px;
     font-size: 18px;
@@ -35,6 +36,7 @@ ul{
 
 
 /* dashboard */
+
 
 header a{
     /* 无下划线 */
@@ -50,17 +52,15 @@ header a:hover{
 
 
 .nav-block{
-    flex: 50%;
+    float: left;
+    /* flex: 50%; */
     /* position: fixed; */
     list-style-type: none;
-    display: inline;
-    /* border: 1px solid grey; */
+    display: block;
     flex-direction: row;
     text-align: center;
     justify-content: center;
     padding-left: 0px;
-    /* margin-left: 35px;
-    margin-right: 35px; */
 }
 
 .nav-block p{
@@ -68,11 +68,8 @@ header a:hover{
 }
 
 .nav-block li{
-    float: left;
     flex-wrap: wrap;
     box-shadow: 4px 4px 10px #C8CDCF;
-    /* max-width: 100px; */
-    /* margin-left: 0; */
     width: 135px;
     height: 98px;
     justify-content: space-evenly;
@@ -98,7 +95,6 @@ header a:hover{
     display: block;
     padding: 30px;
     color: black;
-    /* padding: 10px 20px 200px 10px; */
     text-align:center;
     padding: 0px;
     margin: 0px;
@@ -106,11 +102,15 @@ header a:hover{
 
 
 .clinician-message{
+    display: block;
     list-style: none;
     float: left;
     flex-wrap: wrap;
-    flex: 50%;
     margin-top: 50px;
+}
+
+.clinician-message li{
+    display: block;
 }
 
 .clinician-message p{
