@@ -15,6 +15,10 @@ body{
     overflow:scroll;
     background-attachment: fixed;
     margin: auto;
+    /* 为了居中 */
+    text-align: center;
+    min-width: 375px;
+    max-width: 100%;
 }
 
 header{
@@ -27,7 +31,6 @@ header{
 }
 
 ul{
-    display: block;
     list-style-type: none;
     padding-top: 30px;
     font-size: 18px;
@@ -37,6 +40,14 @@ ul{
 
 /* dashboard */
 
+
+main main{
+    text-align: center;
+}
+
+.main{
+    display: inline;
+}
 
 header a{
     /* 无下划线 */
@@ -50,15 +61,17 @@ header a:hover{
     color: white;
 }
 
+.top-info li{
+    float: inline-start;
+}
 
 .nav-block{
-    float: left;
-    /* flex: 50%; */
-    /* position: fixed; */
+    display: inline-block;
+    vertical-align: top;
+    /* 居中显示 */
+    /* float: left; */
     list-style-type: none;
-    display: block;
     flex-direction: row;
-    text-align: center;
     justify-content: center;
     padding-left: 0px;
 }
@@ -68,6 +81,7 @@ header a:hover{
 }
 
 .nav-block li{
+    /* display: inline-block; */
     flex-wrap: wrap;
     box-shadow: 4px 4px 10px #C8CDCF;
     width: 135px;
@@ -77,6 +91,7 @@ header a:hover{
     border-radius: 8px;
     margin-left: 40px;
     margin-bottom: 20px;
+    /* margin: auto; */
 }
 
 .nav-block li img{
@@ -91,7 +106,7 @@ header a:hover{
 
 .nav-block a{
     text-decoration: none;
-    /* text-align: center; */
+    text-align: center;
     display: block;
     padding: 30px;
     color: black;
@@ -102,15 +117,18 @@ header a:hover{
 
 
 .clinician-message{
-    display: block;
+    display: inline-block;
     list-style: none;
-    float: left;
+    /* float: left; */
     flex-wrap: wrap;
     margin-top: 50px;
+    left: 50%;
+    right: 50%
 }
 
 .clinician-message li{
     display: block;
+    text-align: left;
 }
 
 .clinician-message p{
@@ -137,4 +155,21 @@ header a:hover{
     margin: 0px;
 }
 
+
 /* dashboard */
+
+
+/* @media screen and (max-width: 375px){ */
+    @media screen and (max-width: 1200px){
+        .container{
+            flex-direction: column;
+        }
+        p{
+            font-size: 18px;
+            line-height: 2.5em;
+        }
+        iframe{
+            width: 650px;
+            height: 400px;
+        }
+    }
