@@ -1,0 +1,232 @@
+body{
+    color:black;
+    /*background: gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6em;
+    background-image: url(images/background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    /* height: 5000px; */
+    background-size: cover;
+    overflow: scroll;
+    background-attachment: fixed;
+    margin: auto;
+    /* 为了居中 */
+    text-align: center;
+}
+
+
+header{
+    /* margin: 0px; */
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    background-color: white;
+    /* opacity: 0.82; */
+    height: 62px;
+}
+
+header a{
+    /* 无下划线 */
+    text-decoration: none;
+    color: #578AD6;
+}
+
+header h1{
+    font-size: 40px;
+}
+
+header p{
+    font-size: 15px;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header a:hover{
+    /* 鼠标在字上的颜色 */
+    color: #578AD6;
+}
+
+
+.top h1{
+    font-size: 65px;
+    margin-left: 5px;
+    margin-top: 40px;
+    color: #578AD6;
+    font-family: 'Hurricane', cursive;
+}
+
+.logout-nav-left{
+
+    vertical-align: middle;
+    list-style-type: none;
+    padding-left: 0%;
+}
+
+.logout-nav-right{
+    margin-left: 50%;
+    margin-right: 1%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    float: right;
+    vertical-align: middle;
+    list-style-type: none;
+}
+
+
+.logout-nav-right li{
+    padding-right: 5%;
+    position: relative;
+    box-shadow: 4px 4px 10px #C8CDCF;
+    border-color: #707070;
+    border-style: solid;
+    border-radius: 28px;
+    border-width: 1px;
+    width: 80px;
+    height: 27px;
+    float: right;
+}
+
+.logout-nav-right p{
+    vertical-align: middle;
+}
+
+.logout-nav-right a{
+    color: black;
+}
+
+.nav-bar{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    background-color: #DEEEFB;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    height: 98px;
+}
+
+.nav-bar-1{
+
+    position: relative;
+    text-align: center;
+    padding: 0%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 98px;
+}
+
+
+.nav-bar-side a{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+    text-decoration: none;
+    /* margin-top: 0%; */
+    color: white;
+}
+
+
+.nav-bar-side a:hover{
+    /* 鼠标在字上的颜色 */
+    color: white;
+}
+
+
+.nav-bar-side{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    display: block;
+    font-size: 15px;
+    height: 60px;
+    width: 300px;
+    margin: auto;
+    background-color: #578AD6;
+    border-radius: 28px;
+    list-style-type: none;
+}
+
+.nav-bar-side h1{
+    margin-top: 15px;
+}
+
+.nav-bar-mid{
+    vertical-align: middle;
+    /* display: block; */
+    list-style-type: none;
+}
+
+.nav-bar-mid h1{
+    vertical-align: middle;
+    margin-top: 35px;
+    font-size: 60px;
+}
+
+.info-bar{
+    width: 85%;
+    position: relative;
+    text-align: center;
+    padding: 0%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.info-bar li{
+    margin: auto;
+}
+
+.info-bar p{
+    font-size: 30px;
+}
+
+.info-bar h2{
+    font-size: 1px;
+}
+
+HR{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+.patient-info{
+    margin: auto;
+    box-shadow: 0px 3px 6px #C8CDCF, 0px 3px 6px #C8CDCF inset;
+    width: 90%;
+    text-align: center;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 28px;
+    justify-content: space-between;
+}
+
+.patient-info tr{
+    border-radius: 28px;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 30px;
+    border-color: #707070;
+    height: 60px;
+}
+
+
+
+
+
+
+
+

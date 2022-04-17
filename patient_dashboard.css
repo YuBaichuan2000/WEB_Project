@@ -11,8 +11,8 @@ body{
     background-repeat: no-repeat;
     height: 1080px;
     /* height: 5000px; */
-    background-size:cover;
-    overflow:scroll;
+    background-size: cover;
+    overflow: scroll;
     background-attachment: fixed;
     margin: auto;
     /* 为了居中 */
@@ -37,6 +37,13 @@ ul{
     line-height: 2em;
 }
 
+.top h1{
+    margin-left: 5px;
+    margin-top: 40px;
+    color: #578AD6;
+    font-size: 40px;
+    font-family: 'Hurricane', cursive;
+}
 
 /* dashboard */
 
@@ -61,8 +68,13 @@ header a:hover{
     color: white;
 }
 
+.top-info{
+}
+
 .top-info li{
+    margin-left: 0px;
     float: inline-start;
+    padding-left: 0px;
 }
 
 .nav-block{
@@ -91,7 +103,6 @@ header a:hover{
     border-radius: 8px;
     margin-left: 40px;
     margin-bottom: 20px;
-    /* margin: auto; */
 }
 
 .nav-block li img{
@@ -117,21 +128,23 @@ header a:hover{
 
 
 .clinician-message{
-    display: inline-block;
     list-style: none;
     /* float: left; */
-    flex-wrap: wrap;
-    margin-top: 50px;
-    left: 50%;
-    right: 50%
+    /* flex-wrap: wrap; */
+    /* margin-top: 50px; */
+    margin: auto;
+    /* left: 50%;
+    right: 50% */
 }
 
 .clinician-message li{
+    margin: auto;
     display: block;
     text-align: left;
 }
 
 .clinician-message p{
+    margin: auto;
     align-content: center;
     width: 290px;
     height: 25px;
@@ -140,7 +153,7 @@ header a:hover{
     color: white;
     font-size: 11px;
     border-radius: 9px 9px 0px 0px;
-    margin: 0px;
+    /* margin: 0px; */
 }
 
 
@@ -152,7 +165,8 @@ header a:hover{
     padding-top: 10px;
     font-size: 18px;
     border-radius: 0px 0px 9px 9px;
-    margin: 0px;
+    /* margin: 0px; */
+    margin: auto;
 }
 
 
