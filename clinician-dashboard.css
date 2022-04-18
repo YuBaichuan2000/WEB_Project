@@ -39,11 +39,11 @@ header h1{
 }
 
 header p{
-    font-size: 15px;
-    margin: auto;
-    text-align: center;
-    vertical-align: middle;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-left: 5px;
 }
+
 
 header a:hover{
     /* 鼠标在字上的颜色 */
@@ -54,6 +54,7 @@ header a:hover{
     margin-top: 56px;
     margin-bottom: 50px;
 }
+
 .top h1{
     font-size: 65px;
     margin-left: 5px;
@@ -63,7 +64,6 @@ header a:hover{
 }
 
 .logout-nav-left{
-
     vertical-align: middle;
     list-style-type: none;
     padding-left: 0%;
@@ -98,9 +98,8 @@ header a:hover{
 }
 
 .logout-nav-right a{
-    /* margin-top: 30px; */
     color: black;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .nav-bar{
