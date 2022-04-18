@@ -23,7 +23,7 @@ header{
     position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
-    height: 62px;
+    height: 75px;
 }
 
 
@@ -33,9 +33,10 @@ header img{
 
 ul{
     list-style-type: none;
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 18px;
     line-height: 2em;
+    margin-bottom: -10px;
 }
 
 p{
