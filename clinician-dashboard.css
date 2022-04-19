@@ -51,8 +51,8 @@ header a:hover{
 }
 
 .top{
-    margin-top: 56px;
-    margin-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .top h1{
