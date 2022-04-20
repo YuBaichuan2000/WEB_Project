@@ -107,6 +107,7 @@ button a{
     text-shadow: 0 0 0.4px #EAEAEA;
     font-family: 'DIN Condensed';
     float: left;
+
 }
 
 button a img{
@@ -122,6 +123,21 @@ p{
     font-family: 'Apple Chancery';
     margin: 42px;
     width: 293px;
+}
+.page_navigation a{
+    text-decoration: none;
+    color: black;
+}
+.page_navigation p{
+    font-size: 20px; 
+    display: inline; 
+    border: 2px solid; 
+    border-color:#ddd; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 7px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer h6{
