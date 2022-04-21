@@ -57,42 +57,42 @@ header a:hover {
     color: white;
 }
 
-.enter-data form{
-    float: left;
-}
-.enter-data form label{
-    color: #2C71C3;
-    font-size: 16px;
-}
-
-.enter-data form input{
-    width: 265px;
-    height: 32px;
-    background-color: white;
-    border: 1.8px solid black;
-    border-radius: 9px 9px 9px 9px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
 .enter-data{
     width: 300px;
-    height: 100px;
-    margin: 42px;
+    height: 200px;
+    margin: auto;
     padding: 1px;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .enter-data a{
     color: black;
+}
+
+.enter-data form{
     float: left;
 }
 
+.enter-data form label{
+    color: #2C71C3;
+    font-size: 20px;
+}
+
+.enter-data form input{
+    width: 300px;
+    height: 40px;
+    background-color: white;
+    border: 1.8px solid black;
+    border-radius: 9px 9px 9px 9px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
 button{
-    width: 82px;
-    height: 37px;
-    margin-top: 35px;
-    margin-left: 260px;
+    width: 100px;
+    height: 45px;
+    margin-top: 80px;
+    margin-left: 800px;
     background-color: #4279C2;
     border-radius: 11px 11px 11px 11px;
     border: white;
@@ -100,7 +100,7 @@ button{
 
 button a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     text-shadow: 0 0 0.4px #EAEAEA;
     font-family: 'DIN Condensed';
@@ -108,18 +108,22 @@ button a{
 }
 
 button a img{
-    width: 13px;
-    height: 14px;
+    width: 15px;
+    height: 15px;
     margin-top: 9px;
     margin-right: 4px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
-p{
-    font-size: 10px;
+.sentence{
+    margin-top: 300px;
+}
+
+.sentence p{
+    font-size: 20px;
     font-family: 'Apple Chancery';
-    margin: 42px;
-    width: 293px;
+    margin: auto;
+    max-width: 81%;
 }
 
 footer h6{
@@ -127,3 +131,4 @@ footer h6{
     margin-bottom: 20px;
     font-size: 10px;
 }
+
