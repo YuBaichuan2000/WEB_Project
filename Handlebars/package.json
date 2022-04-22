@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.2.11"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
