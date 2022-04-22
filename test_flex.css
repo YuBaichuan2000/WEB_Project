@@ -1,0 +1,129 @@
+body{
+    color:black;
+    /*background: gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    /*font-weight: normal;*/
+    line-height: 1.6em;
+    margin: 0;
+    background-image: url(background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    background-size: 1452px;
+    overflow:scroll;
+    background-attachment: fixed;
+    margin: auto;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #1D5EB7;
+    opacity: 0.82;
+    height: 62px;
+}
+
+header img{
+    padding-left: 21px;
+}
+
+p{
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+ul{
+    list-style-type: none;
+    padding-top: 30px;
+    font-size: 18px;
+    line-height: 2em;
+}
+
+
+h1{
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
+}
+
+h2{
+    color: #1D5EB7;
+    font-size: 35px;
+}
+
+h3{
+    font-size: 16px;
+}
+
+
+.container{
+    width: 80%;
+} 
+
+.item-left{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.item-right{
+    float: right;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.highlighted{
+    font-weight: 1000;
+    font-style: italic;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-left: 0px;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-left: 0px;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    margin-left: 0px;
+}
+.footer-box{
+    border-width: 3px;
+    margin-top: 100px;
+    margin-left: 50px; 
+    font-size: 20px;
+    text-align: center; 
+}
+@media screen and (max-width: 1200px){
+    /* .container{
+        flex-direction: column;
+    }
+    p{
+        font-size: 18px;
+        line-height: 2.5em;
+    }
+    iframe{
+        width: 650px;
+        height: 400px;
+    } */
+    .item-left{
+        width: 100%;
+        float: none;
+    }
+    .item-right{
+        width: 100%;
+        float: none;
+    }
+}
