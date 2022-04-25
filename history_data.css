@@ -17,6 +17,10 @@ body {
     margin: auto;
 }
 
+nav li{
+    font-size: 22px;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -59,6 +63,16 @@ header a:hover {
     color: white;
 }
 
+.title{
+    margin-top: -40px;
+    margin-bottom: 100px;
+}
+
+.title h2{
+    font-size: 44px; 
+    margin-bottom: 30px; 
+    color: #397EDA;
+}
 
 .datatab{
     max-width: 70%;
