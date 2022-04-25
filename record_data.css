@@ -17,6 +17,10 @@ body {
     margin: auto;
 }
 
+nav li{
+    font-size: 22px;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -45,9 +49,6 @@ h1{
     font-size: 45px;
 }
 
-/* record_data */
-
-
 header a {
     /* 无下划线 */
     text-decoration: none;
@@ -58,6 +59,16 @@ header a {
 header a:hover {
     /* 鼠标在字上的颜色 */
     color: white;
+}
+
+.top-info{
+    margin-top: -40px;
+}
+
+.top-info h2{
+    font-size: 44px; 
+    margin-bottom: 120px; 
+    color: #397EDA;
 }
 
 .enter-data{
@@ -83,6 +94,8 @@ header a:hover {
 }
 
 .enter-data form input{
+    padding-right:20px; 
+    text-align:left;
     width: 500px;
     height: 45px;
     background-color: white;
@@ -90,6 +103,10 @@ header a:hover {
     border-radius: 9px 9px 9px 9px;
     margin-top: 30px;
     margin-bottom: 40px;
+}
+
+.enter-data form span{
+    color: #868686;
 }
 
 .button{
