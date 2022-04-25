@@ -1,0 +1,189 @@
+body{
+    color:black;
+    /*background: gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6em;
+    margin: 0;
+    background-image: url(images/background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    /* height: 5000px; */
+    background-size: cover;
+    overflow: scroll;
+    background-attachment: fixed;
+    margin: auto;
+    /* 为了居中 */
+    text-align: center;
+    min-width: 375px;
+    max-width: 100%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #1D5EB7;
+    opacity: 0.82;
+    height: 62px;
+}
+
+ul{
+    list-style-type: none;
+    padding-top: 30px;
+    font-size: 18px;
+    line-height: 2em;
+}
+
+.top h1{
+    margin-left: 5px;
+    margin-top: 40px;
+    color: #578AD6;
+    font-size: 40px;
+    font-family: 'Hurricane', cursive;
+}
+
+/* dashboard */
+
+
+main main{
+    text-align: center;
+}
+
+.main{
+    display: inline;
+}
+
+header a{
+    /* 无下划线 */
+    text-decoration: none;
+    /* 白色字体 */
+    color: white;
+}
+
+header a:hover{
+    /* 鼠标在字上的颜色 */
+    color: white;
+}
+
+.top-info{
+}
+
+.top-info li{
+    margin-left: 0px;
+    float: inline-start;
+    padding-left: 0px;
+}
+
+.nav-block{
+    display: inline-block;
+    vertical-align: top;
+    /* 居中显示 */
+    /* float: left; */
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 0px;
+}
+
+.nav-block p{
+    font-size: 14px;
+}
+
+.nav-block li{
+    /* display: inline-block; */
+    flex-wrap: wrap;
+    box-shadow: 4px 4px 10px #C8CDCF;
+    width: 135px;
+    height: 98px;
+    justify-content: space-evenly;
+    align-content: space-around;
+    border-radius: 8px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.nav-block li img{
+    /* 图片居中 */
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.nav-block p{
+    margin: 5px 0px 2px 0px;
+}
+
+.nav-block a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 30px;
+    color: black;
+    text-align:center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.clinician-message{
+    list-style: none;
+    /* float: left; */
+    /* flex-wrap: wrap; */
+    /* margin-top: 50px; */
+    margin: auto;
+    /* left: 50%;
+    right: 50% */
+}
+
+.clinician-message li{
+    margin: auto;
+    display: block;
+    text-align: left;
+}
+
+.clinician-message p{
+    margin: auto;
+    align-content: center;
+    width: 290px;
+    height: 25px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 11px;
+    border-radius: 9px 9px 0px 0px;
+    /* margin: 0px; */
+}
+
+
+.clinician-message h5{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    width: 290px;
+    height: 150px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 18px;
+    border-radius: 0px 0px 9px 9px;
+    /* margin: 0px; */
+    margin: auto;
+}
+
+
+/* dashboard */
+
+
+/* @media screen and (max-width: 375px){ */
+    @media screen and (max-width: 1200px){
+        .container{
+            flex-direction: column;
+        }
+        p{
+            font-size: 18px;
+            line-height: 2.5em;
+        }
+        iframe{
+            width: 650px;
+            height: 400px;
+        }
+    }

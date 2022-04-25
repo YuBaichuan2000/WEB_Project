@@ -19,30 +19,30 @@ app.use(bodyParser.urlencoded({extended:true}))
 // app.use(express.static(path.join(__dirname,'static')));
 app.get('/', (req, res) => {
     //res.sendFile(_dirname+'/static/'+'login.html')
-    res.render('login')
+    res.render('login',{style:"patient_login.css"})
 })
 app.get('/forgot', (req, res) => {
     //res.sendFile(_dirname+'/static/'+'login.html')
     res.render('forgot')
 })
 app.get('/dashboard', (req, res) => {
-    res.render('dashboard', {userName:'George'})
+    res.render('dashboard', {style:'patient_dashboard.css',Username:'George'})
 })
 app.get('/hamburger', (req, res) => {
-    res.render('hamburger', {userName:'George'})
+    res.render('hamburger', {Username:'George'})
 })
 app.get('/diabetes', (req, res) => {
-    res.render('diabetes')
+    res.render('diabetes',{style:'stylesheet.css'})
 })
 app.get('/website', (req, res) => {
-    res.render('website')
+    res.render('website',{style:'stylesheet.css'})
 })
 app.get('/record_data', (req, res) => {
-    res.render('record_data')
+    res.render('record_data',{style:'record_data.css'})
 })
 app.get('/history_data', (req, res) => {
     // add mongodb
-    res.render('history_data', {patient:{
+    res.render('history_data', {style:'history_data.css', patient:{
         'name': 'Ye',
         'data': [{'Date':'11','Glucose':'11','Weight':'11','Doses':'1','Step':'1'}]
     }})
