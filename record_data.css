@@ -191,9 +191,10 @@ footer h6{
     }
     .enter-data form span{
         display: block;
+        width: 70px;
         position: relative;
-        left: 80%;
-        bottom: 80%;
+        left: 400px;
+        bottom: 81%;
         margin-left: 0px;
     }
     .enter-data a{ 
@@ -220,9 +221,10 @@ footer h6{
         position:relative;
         margin-top: 190px;
         left: 5%;
+        width: 480px;
     }
     .sentence p{
-        font-size: 17px;
+        font-size: 12px;
         text-align:left;
     }
 }
