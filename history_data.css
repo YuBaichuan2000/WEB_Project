@@ -161,10 +161,84 @@ p{
     margin-left: auto;
     margin-right: auto;
 }
+.data_graph li h4{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: black;
+}
 
 footer h6{
     margin-top: 100px;
     margin: 42px;
     margin-bottom: 20px;
     font-size: 10px;
+}
+
+@media only screen and (max-width: 375px) and (orientation: portrait){
+
+    .top h1 a{
+        font-size: 32px;
+    }
+    header {
+        width: 410px;
+    }
+    nav li{
+        font-size: 16px;
+    }
+    nav ul{
+        margin: 0px;
+    }
+    .nav_bar { 
+        position: absolute;
+        left: 10%;
+    }
+    .title{
+        position: relative;
+        left: 10%;
+        margin: 0px;
+        padding-left: 0px;
+    }
+    .title h2{
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .datatab{
+        position: relative;
+        font-size: 13px;
+        left:5%;
+    }
+
+    .page_navigation{
+        position: relative;
+        left: 5%;
+    }
+    .button{
+        position: relative;
+        left: 15%;
+    }
+    .data_graph{
+        padding-left: 40px;
+    }
+    .data_graph li h4{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    .title{
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .button{
+        height:0px;
+    }
+    .button button{
+        position: relative;
+        margin-top: 0px;
+        bottom: 40px;
+    }
+    .page_navigation{
+        position: relative;
+        bottom: 40px;
+    }
+
 }
