@@ -1,0 +1,7 @@
+<h1>Displaying patient data</h1>
+<ul>
+{{!-- loops over the data set --}}
+{{#each data}}
+    <li>{{this.patient.first_name}} {{this.patient.last_name}} || blood glucose level: {{this.bgl.val}} || weight: {{this.wght.val}} || doses: {{this.doses.val}} || steps: {{this.steps.val}}</li>
+{{/each}}
+</ul>
