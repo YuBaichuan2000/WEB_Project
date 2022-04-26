@@ -1,10 +1,10 @@
 <header class="top">
-    <img src="images/ribbon.png" alt="logo" width="40" height="40">
-    <h1><a href="dashboard">Diabetes@Home</a></h1>
+    <img src="../images/ribbon.png" alt="logo" width="40" height="40">
+    <h1><a href="/patient">Diabetes@Home</a></h1>
 </header>
 <nav>
     <ul>
-        <li style="font-size: 16px;"><a href="dashboard">Home</a> > View your data</li>
+        <li style="font-size: 16px;"><a href="/patient">Home</a> > View your data</li>
     </ul>
 </nav>
 <main>
@@ -17,7 +17,7 @@
 
     {{#with patient}}
 
-    <h1>Data for {{patient.name}}</h1>
+    <h1>Data for {{first_name}}  {{last_name}}</h1>
     
     <table class="datatab">
         <thead>
@@ -31,11 +31,11 @@
         </thead>
         {{#each data}}
         <tr>
-            <td class="date">{{Date}}</td>
-            <td class="blood">{{Glucose}}</td>
-            <td class="weight">{{Weight}}</td>
-            <td class="dose">{{Doses}}</td>
-            <td class="step">{{Step}}</td>
+            <td class="date">{{this.time}}</td>
+            <td class="blood">{{this.bgl.val}}</td>
+            <td class="weight">{{this.wght.val}}</td>
+            <td class="dose">{{this.doses.val}}</td>
+            <td class="step">{{this.steps.val}}</td>
         </tr>
         {{/each}} 
     </table>
@@ -51,7 +51,7 @@
         <p><a href="">5</a></a></p>
         <p><a href="">></a></a></p>
     </div>
-    <button><a href="record_data"><img src="images/submit_icon.png">Record new data</a></button>
+    <button><a href="record_data"><img src="../images/submit_icon.png">Record new data</a></button>
     <br><br>
     
     

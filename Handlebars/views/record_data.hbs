@@ -1,10 +1,10 @@
 <header class="top">
-    <img src="images/ribbon.png" alt="logo" width="40" height="40">
-    <h1><a href="dashboard">Diabetes@Home</a></h1>
+    <img src="../images/ribbon.png" alt="logo" width="40" height="40">
+    <h1><a href="/patient">Diabetes@Home</a></h1>
 </header>
 <nav>
     <ul>
-            <li style="font-size: 16px;"><a href="dashboard">Home</a> > Record data</li>
+            <li style="font-size: 16px;"><a href="/patient">Home</a> > Record data</li>
     </ul>
 </nav>
 <main>
@@ -16,44 +16,45 @@
         
     </ul>
 
-    <!--输入每项数据-->
-    <div class="enter-data">
-        <form>
-            <label>Enter your blood glucose level:</label>
-            <input style="padding-right:20px; text-align:left;"></input><span style="margin-left:-60px; color: #868686;">nmol/L</span>
-        </form>
-        <a href="patient_dashboard.html">+ Add a comment</a>
-    </div>
-    
-    <div class="enter-data">
-        <form>
-            <label>Enter your weight:</label>
-            <br>
-            <input style="padding-right:20px; text-align:left;"></input><span style="margin-left:-32px; color: #868686;">kg</span>
-        </form>
-        <a href="patient_dashboard.html">+ Add a comment</a>
-    </div>
+    <form action="/patient/record_data" method="POST">
+        <!--输入每项数据-->
+        <div class="enter-data">
+            <div>
+                <label>Enter your blood glucose level:</label>
+                <input name="bgl"></input><span>nmol/L</span>
+            </div>
+            <a href="/patient">+ Add a comment</a>
+        </div>
+        
+        <div class="enter-data">
+            <div>
+                <label>Enter your weight:</label>
+                <input name="wght"></input><span>kg</span>
+            </div>
+            <a href="/patient">+ Add a comment</a>
+        </div>
 
-    <div class="enter-data">
-        <form>
-            <label>Enter your insulin doses:</label>
-            <br>
-            <input style="padding-right:20px; text-align:left;"></input><span style="margin-left:-58px; color: #868686;">doses</span>
-        </form>
-        <a href="patient_dashboard.html">+ Add a comment</a>
-    </div>
+        <div class="enter-data">
+            <div>
+                <label>Enter your insulin doses:</label>
+                <input name="doses"></input><span>doses</span>
+            </div>
+            <a href="/patient">+ Add a comment</a>
+        </div>
 
-    <div class="enter-data">
-        <form>
-            <label>Enter your step counts:</label>
-            <br>
-            <input style="padding-right:20px; text-align:left;"></input><span style="margin-left:-58px; color: #868686;">steps</span>
-        </form>
-        <a href="patient_dashboard.html">+ Add a comment</a>
-    </div>
+        <div class="enter-data">
+            <div>
+                <label>Enter your step counts:</label>
+                <input name="steps"></input><span>steps</span>
+            </div>
+            <a href="/patient">+ Add a comment</a>
+        </div>
 
-    <button><a href="history_data.html"><img src="images/submit_icon.png">Submit</a></button>
-    <br>
+        {{!-- <button><a href="history_data.html"><img src="images/submit_icon.png">Submit</a></button> --}}
+        {{!-- <button><input type="submit" value="Submit" class="submit-button"/></button> --}}
+        <button type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
+    </form>
+
 
     <div class="sentence">
         <p>Diabetes is the leading cause of bravery, determination, resilience, 

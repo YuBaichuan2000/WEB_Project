@@ -6,7 +6,7 @@ body {
     font-weight: normal;
     line-height: 1.6em;
     margin: 0;
-    background-image: url(images/background.jpeg);
+    background-image: url(../images/background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
@@ -17,17 +17,22 @@ body {
     margin: auto;
 }
 
+nav li{
+    font-size: 22px;
+}
+
 header {
     display: flex;
     align-items: center;
     position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
-    height: 75px;
+    height: 80px;
 }
 
 ul {
     display: block;
+    padding-left: 100px;
     list-style-type: none;
     padding-top: 30px;
     font-size: 18px;
@@ -35,7 +40,9 @@ ul {
 }
 .top img{
     margin-left: 30px;
+    margin-right: 10px;
 }
+
 h1{
     color: white;
     font-family: 'Hurricane', cursive;
@@ -57,35 +64,57 @@ header a:hover {
     color: white;
 }
 
+.top-info{
+    margin-top: -40px;
+}
+
+.top-info h2{
+    font-size: 44px; 
+    margin-bottom: 120px; 
+    color: #397EDA;
+}
+
+form {
+    margin: auto;
+}
+
 .enter-data{
-    width: 300px;
+    width: 500px;
     height: 200px;
     margin: auto;
     padding: 1px;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .enter-data a{
     color: black;
-}
-
-.enter-data form{
-    float: left;
-}
-
-.enter-data form label{
-    color: #2C71C3;
     font-size: 20px;
 }
 
-.enter-data form input{
-    width: 300px;
-    height: 40px;
+.enter-data div{
+    float: left;
+}
+
+.enter-data label{
+    color: #2C71C3;
+    font-size: 26px;
+}
+
+.enter-data input{
+    padding-right:20px; 
+    text-align:left;
+    width: 500px;
+    height: 45px;
     background-color: white;
     border: 1.8px solid black;
     border-radius: 9px 9px 9px 9px;
     margin-top: 30px;
     margin-bottom: 40px;
+}
+
+.enter-data div span{
+    color: #868686;
+    margin-left: -58px;
 }
 
 button{
