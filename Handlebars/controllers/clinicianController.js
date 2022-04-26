@@ -23,8 +23,9 @@ const getAllPatientData = async (req, res, next) => {
         sorted = entries.sort(function(a, b) {
             return b.time - a.time
         })
+        // console.log(JSON.stringify(sorted, null, 4))
 
-        return res.render('clinician', { data: sorted })
+        return res.render('clinician-dashboard', { layout: 'clinician.hbs', data: sorted, style:'clinician-dashboard.css'})
     } catch (err) {
         return next(err)
     }
@@ -51,9 +52,13 @@ const getAllComments = async (req, res, next) => {
         sorted = result.sort(function(a, b) {
             return b.time - a.time
         })
+
+        for (var i = 0; i < sorted.length; ++i) {
+            sorted[i].time = Intl.DateTimeFormat("en-AU").format(sorted[i].time)
+        }
         // console.log(JSON.stringify(sorted, null, 4))
 
-        return res.render('comments', { data: sorted })
+        return res.render('clinician-comments', { layout: 'clinician.hbs', data: sorted, style:'clinician-comments.css'})
     } catch (err) {
         return next(err)
     }
