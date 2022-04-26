@@ -8,7 +8,7 @@ const patientController = require('../controllers/patientController')
 
 // add a route to handle the GET request for all patients' data
 patientRouter.get('/', (req, res) => {
-    res.render('dashboard', {style:'patient_dashboard.css',Username:'Pat'})
+    res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', Username:'Pat'})
 })
 
 patientRouter.get('/hamburger', (req, res) => {

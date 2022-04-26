@@ -22,7 +22,7 @@ const getAllData = async (req, res, next) => {
 
         patient.data = sorted
 
-        return res.render('history_data', {style: 'history_data.css', patient: patient})
+        return res.render('history_data', {layout: 'patient.hbs', style: 'history_data.css', patient: patient})
     } catch (err) {
         return next(err)
     }
@@ -30,7 +30,7 @@ const getAllData = async (req, res, next) => {
 
 const showForm = async (req, res, next) => {
     try {
-        return res.render('record_data', {style:'record_data.css'})
+        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css'})
     } catch (err) {
         return next(err)
     }

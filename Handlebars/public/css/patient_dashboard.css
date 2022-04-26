@@ -6,7 +6,7 @@ body{
     font-weight: normal;
     line-height: 1.6em;
     margin: 0;
-    background-image: url(images/background.jpeg);
+    background-image: url(../images/background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
@@ -21,13 +21,13 @@ body{
     max-width: 100%;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
-    height: 62px;
+    height: 75px;
 }
 
 ul{
