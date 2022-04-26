@@ -1,6 +1,5 @@
 body{
     color:black;
-    /*background: gray;*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -10,7 +9,6 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    /* height: 5000px; */
     background-size: cover;
     overflow: scroll;
     background-attachment: fixed;
@@ -21,13 +19,13 @@ body{
     max-width: 100%;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
     position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
-    height: 62px;
+    height: 80px;
 }
 
 ul{
@@ -171,6 +169,78 @@ header a:hover{
     margin: auto;
 }
 
+/* hamburger bar */
+.topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: #1D5EB7;
+}
+  
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+  
+.topnav a:hover {
+    background-color: rgba(219, 232, 255, 0.972);
+    color: black;
+}
+
+.topnav a.active{
+    margin-right: 160px;
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
+}
+
+.topnav a.active:hover{
+    color: black;
+}
+.topnav .icon {
+    display: none;
+}
+  
+@media screen and (max-width: 375px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+}
+  
+@media screen and (max-width: 375px) {
+    .topnav.responsive {
+        position: relative;
+        width: 44%;
+        float: right;
+        top: 121px;
+        right: -225px;
+        z-index: 1;
+    }
+    .topnav.responsive .icon {
+      position: absolute;
+      z-index: 2;
+      margin-right: 17px;
+      right: 0;
+      top: 0;
+    }
+    .topnav.topnav.responsive a.active{
+        position: relative;
+        z-index: -1;
+        display: none;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
 
 /* dashboard */
 

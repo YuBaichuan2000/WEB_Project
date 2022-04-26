@@ -55,7 +55,6 @@ header a:hover{
     padding-bottom: 20px;
 }
 
-
 .top h1{
     font-size: 65px;
     margin-left: 5px;
@@ -103,99 +102,21 @@ header a:hover{
     font-size: 30px;
 }
 
-.nav-bar{
-    box-shadow: 4px 4px 10px #C8CDCF;
-    background-color: #DEEEFB;
-    align-items: center;
-    position: relative;
-    vertical-align: middle;
-    height: 98px;
+ul{
+    margin-top: 0px;
 }
 
-.nav-bar-1{
-
-    position: relative;
-    text-align: center;
-    padding: 0%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 98px;
-}
-
-
-.nav-bar-side a{
-    text-align: center;
-    vertical-align: middle;
-    font-family: 'Open Sans';
-    font-size: 25px;
-    text-decoration: none;
-    /* margin-top: 0%; */
-    color: white;
-}
-
-
-.nav-bar-side a:hover{
-    /* 鼠标在字上的颜色 */
-    color: white;
-}
-
-
-.nav-bar-side{
-    box-shadow: 4px 4px 10px #C8CDCF;
-    display: block;
-    font-size: 15px;
-    height: 60px;
-    width: 300px;
-    margin: auto;
-    background-color: #578AD6;
-    border-radius: 28px;
-    list-style-type: none;
-}
-
-.nav-bar-side h1{
-    margin-top: 15px;
-}
-
-.nav-bar-mid{
+.comment-title{
     vertical-align: middle;
     /* display: block; */
     list-style-type: none;
 }
 
-.nav-bar-mid h1{
+.comment-title h1{
     vertical-align: middle;
     margin-top: 35px;
-    font-size: 60px;
-    font-weight: 340;
-}
-
-.info-bar{
-    width: 85%;
-    position: relative;
-    text-align: center;
-    padding: 0%;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
-}
-
-.info-bar li{
-    margin: auto;
-}
-
-.info-bar p{
-    font-family: 'Open Sans';
-    font-size: 30px;
-}
-
-.info-bar h2{
-    font-size: 1px;
+    font-size: 40px;
+    font-weight: 100;
 }
 
 HR{
@@ -203,37 +124,39 @@ HR{
     margin-bottom: 20px;
 }
 
-
-.patient-info{
-    margin: auto;
-    box-shadow: 0px 3px 6px #C8CDCF, 0px 3px 6px #C8CDCF inset;
-    border-width: 1px;
-    border-color: black;
-    width: 90%;
+.comment-info{
+    margin-left: 240px;
+    margin-right: 80px;
+    /* margin: auto; */
+    width: 75%;
     text-align: center;
-    border-radius: 28px;
     justify-content: space-between;
     margin-bottom: 20px;
-    height: 64px;
-    border-spacing: 0;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0px 20px;
 }
 
-.patient-info tr{
-    box-shadow: 0px 3px 6px #C8CDCF, 0px 3px 6px #C8CDCF inset;
-    border-width: 1px;
-    border-color: black;
-    border-radius: 28px;
+.comment-info tr{
+    text-align: center;
     justify-content: space-between;
-    margin: auto;
-    font-size: 30px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    height: 150px;
 }
 
+.comment-info td{
+    box-shadow: 0px 3px 6px #C8CDCF;
+    border-radius: 20px;
+    border: 1px solid #707070;
+    justify-content: space-evenly;
+}
 
-
-
-
-
-
-
+.comment-info tr img{
+    width: 50px;
+    height: 48ox;
+    display: inline;
+    float: right;
+    margin-right: 150px;
+    margin-top: 70px;
+}
 
