@@ -41,6 +41,25 @@
     <HR align=center width=90% color=#DEEEFB size=5px>
     
     <table class="patient-info">
+        {{#if safe}}
+        <tr style="background-color: white;">
+        {{else}}
+        <tr style="background-color: #FDC5C5;">
+        {{/if}}
+            <td style="border-radius: 28px 0px 0px 29px;">name</td>
+            <td>blood</td>
+            <td>Weight</td>
+            <td>dose</td>
+            <td style="border-radius: 0px 28px 28px 0px;">steps</td>
+        </tr>
+    </table>
+
+    <!-- {{#if safe}}
+    <table class="patient-info" style="background-color: white;">
+    {{else}}
+    <table class="patient-info" style="background-color: #FDC5C5;">
+    {{/if}} -->
+    <table class="patient-info">
         <tr>
             <td>name</td>
             <td>blood</td>
@@ -49,5 +68,6 @@
             <td>steps</td>
         </tr>
     </table>
+
 </body>
 </html>
