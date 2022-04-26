@@ -40,7 +40,7 @@ ul {
 }
 .top img{
     margin-left: 30px;
-    /* padding-left: 70px; */
+    margin-right: 10px;
 }
 
 .top-info{
@@ -53,9 +53,27 @@ ul {
     color: #397EDA;
 }
 
+header a {
+    /* 无下划线 */
+    text-decoration: none;
+    /* 白色字体 */
+    color: white;
+} 
+
+header a:hover {
+    /* 鼠标在字上的颜色 */
+    color: white;
+}
+
+h1{
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
+}
+
 .enter-data{
     width: 500px;
-    height: 200px;
+    height: 890px;
     margin: auto;
     padding: 1px;
     margin-top: 40px;
@@ -137,7 +155,7 @@ ul {
     font-size: 22px;
     font-family: 'Apple Chancery';
     margin: auto;
-    max-width: 85%;
+    max-width: 80%;
 }
 
 footer h6{
@@ -174,14 +192,14 @@ footer h6{
         position: relative;
         left: 10%;
         margin-top: 0px;
-        height: 190px;
+        height: 700px;
     }
     .enter-data form span{
         display: block;
         width: 70px;
         position: relative;
         left: 400px;
-        bottom: 81%;
+        bottom: 27%;
         margin-left: 0px;
     }
     .enter-data a{ 
@@ -195,6 +213,7 @@ footer h6{
         width: 375px;
         height: 37px;
         margin-top: 10px;
+        margin-bottom: -10px;
     }
     .enter-data form{
         height: 90px;
@@ -206,7 +225,7 @@ footer h6{
     }
     .sentence{
         position:relative;
-        margin-top: 190px;
+        margin-top: 225px;
         left: 5%;
         width: 480px;
     }
@@ -217,6 +236,12 @@ footer h6{
     #overlay1 {
         height: 30%;
     }
+    #overlay2 #text{
+        line-height: 1.6;
+        font-size: 24px;
+        left: 52%;
+        top: 35%;
+    }
 }
 
 /* hamburger bar */
@@ -226,71 +251,7 @@ footer h6{
     background-color: #1D5EB7;
 }
   
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    margin-right: 40px;
-    text-decoration: none;
-    font-size: 20px;
-}
-  
-.topnav a:hover {
-    background-color: rgba(219, 232, 255, 0.972);
-    color: black;
-}
 
-.topnav a.active{
-    margin-right: 160px;
-    color: white;
-    font-family: 'Hurricane', cursive;
-    font-size: 45px;
-}
-
-.topnav a.active:hover{
-    color: black;
-}
-.topnav .icon {
-    display: none;
-}
-  
-@media screen and (max-width: 375px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon {
-      float: right;
-      display: block;
-    }
-}
-  
-@media screen and (max-width: 375px) {
-    .topnav.responsive {
-        position: relative;
-        width: 44%;
-        float: right;
-        top: 121px;
-        right: -225px;
-        z-index: 1;
-    }
-    .topnav.responsive .icon {
-      position: absolute;
-      z-index: 2;
-      margin-right: 17px;
-      right: 0;
-      top: 0;
-    }
-    .topnav.topnav.responsive a.active{
-        position: relative;
-        z-index: -1;
-        display: none;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-}
 
 /* add a comment */
 #overlay1 {
@@ -336,4 +297,42 @@ footer h6{
     color: white;
     text-shadow: 0 0 0.4px #EAEAEA;
     font-family: 'DIN Condensed';
+}
+
+#overlay2 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+  
+#text{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#overlay2 a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
 }

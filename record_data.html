@@ -17,17 +17,7 @@
 <body>
     <header class="top">
         <img src="images/ribbon.png" alt="logo" width="40" height="40">
-
-        <div class="topnav" id="myTopnav">
-            <a href="patient_dashboard.html" class="active">Diabetes@Home</a>
-            <a href="about_diabetes.html">About diabetes</a>
-            <a href="about_website.html">About this website</a>
-            <a href="patient_login.html">Log out</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-            </a>
-          </div>
-
+        <h1><a href="patient_dashboard.html">Diabetes@Home</a></h1>
     </header>
     <nav>
         <ul>
@@ -42,49 +32,52 @@
             </li>  
         </ul>
 
-        <!--输入每项数据-->
         <div id="overlay1">
             <form>
                 <label>Add a comment:</label>
                 <br>
                 <textarea name="comment" id="comment"></textarea>
             </form>
-            <button onclick="off()">Done</button>
+            <button onclick="off1()">Done</button>
+        </div>
+
+        <div id="overlay2" onclick="off2()">
+            <div id="text">
+                Your record has been successfully submitted!                
+            </div>
+            <a href="history_data.html">View history data ></a>
         </div>
           
         <div class="enter-data">
             <form>
                 <label>Enter your blood glucose level:</label>
                 <input></input><span style="margin-left:-60px;">nmol/L</span>
-            </form>
-            <a onclick="on()">+ Add a comment</a>
-        </div>
-        
-        <div class="enter-data">
-            <form>
+                <a onclick="on1()">+ Add a comment</a>
+                <br>
+                <br>
+                <br>
                 <label>Enter your weight:</label>
                 <input></input><span style="margin-left:-32px;">kg</span>
-            </form>
-            <a onclick="on()">+ Add a comment</a>
-        </div>
-
-        <div class="enter-data">
-            <form>
+                <a onclick="on1()">+ Add a comment</a>
+                <br>
+                <br>
+                <br>
                 <label>Enter your insulin doses:</label>
                 <input></input><span style="margin-left:-58px;">doses</span>
-            </form>
-            <a onclick="on()">+ Add a comment</a>
-        </div>
-
-        <div class="enter-data">
-            <form>
+                <a onclick="on1()">+ Add a comment</a>
+                <br>
+                <br>
+                <br>
                 <label>Enter your step counts:</label>
                 <input></input><span style="margin-left:-58px;">steps</span>
+                <br>
+                <a onclick="on1()">+ Add a comment</a>
             </form>
-            <a onclick="on()">+ Add a comment</a>
+            
         </div>
+        
         <div class="button">
-            <button><a href="history_data.html"><img src="images/submit_icon.png">Submit</a></button>
+            <button onclick="on2()"><a><img src="images/submit_icon.png">Submit</a></button>
         </div>
         
 
@@ -118,12 +111,20 @@
           }
         }
 
-        function on() {
+        function on1() {
             document.getElementById("overlay1").style.display = "block";
         }
 
-        function off() {
+        function off1() {
             document.getElementById("overlay1").style.display = "none";
+        }
+
+        function on2() {
+            document.getElementById("overlay2").style.display = "block";
+        }
+
+        function off2() {
+            document.getElementById("overlay2").style.display = "none";
         }
     </script>
 </body>
