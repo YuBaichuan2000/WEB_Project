@@ -34,43 +34,13 @@ app.get('/forgot', (req, res) => {
     //res.sendFile(_dirname+'/static/'+'login.html')
     res.render('forgot')
 })
-// app.get('/dashboard', (req, res) => {
-//     res.render('dashboard', {style:'patient_dashboard.css',Username:'Pat'})
-// })
-// app.get('/hamburger', (req, res) => {
-//     res.render('hamburger', {Username:'Pat'})
-// })
+
 app.get('/diabetes', (req, res) => {
     res.render('diabetes',{style:'stylesheet.css'})
 })
 app.get('/website', (req, res) => {
     res.render('website',{style:'stylesheet.css'})
 })
-// app.get('/record_data', (req, res) => {
-//     res.render('record_data',{style:'record_data.css'})
-// })
-// app.get('/history_data', (req, res) => {
-//     // add mongodb
-//     res.render('history_data', {style:'history_data.css', patient:{
-//         'name': 'Ye',
-//         'data': [{'Date':'11','Glucose':'11','Weight':'11','Doses':'1','Step':'1'}]
-//     }})
-// })
-
-// app.get('/history_data/:id', (req, res) => {
-//     //res.sendFile(_dirname+'/static/'+'login.html')
-//     // add mongodb
-//     res.render('history_data', {patient:{
-//         'name': 'Ye',
-//         'data': result
-//     }}, {pageid:req.params.id})
-// })
-// app.get('/leaderboard', (req, res) => {
-//     res.render('leaderboard')
-// })
-// app.get('/messages', (req, res) => {
-//     res.render('messages')
-// })
 
 
 // Tells the app to listen on port 3000 and logs that information to the

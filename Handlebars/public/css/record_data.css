@@ -161,3 +161,70 @@ footer h6{
     font-size: 10px;
 }
 
+@media only screen and (max-width: 375px) and (orientation: portrait){
+
+    header {
+        width: 570px;
+    }
+    nav li{
+        font-size: 16px;
+    }
+    .nav_bar { 
+        position: absolute;
+        left: 10%;
+    }
+    .top-info{
+        position: relative;
+        left: 10%;
+        margin: 0px;
+        padding-left: 0px;
+    }
+    .top-info h2{
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+    .enter-data{
+        position: relative;
+        left: 10%;
+        margin-top: 0px;
+        height: 190px;
+    }
+    .enter-data span{
+        display: block;
+        width: 70px;
+        position: relative;
+        left: 400px;
+        bottom: 81%;
+        margin-left: 0px;
+    }
+    .enter-data a{ 
+        font-size: 15px;
+    }
+    .enter-data label{
+        font-size: 15px;
+    }
+    .enter-data input{
+        position: relative;
+        width: 375px;
+        height: 37px;
+        margin-top: 10px;
+    }
+    .enter-data div{
+        height: 90px;
+    }
+    button{
+        position: absolute;
+        margin-top: 30px;
+        left: 340px;
+    }
+    .sentence{
+        position:relative;
+        margin-top: 190px;
+        left: 5%;
+        width: 480px;
+    }
+    .sentence p{
+        font-size: 12px;
+        text-align:left;
+    }
+}
