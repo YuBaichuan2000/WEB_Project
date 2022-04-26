@@ -1,6 +1,5 @@
 body {
     color: black;
-    /*background: gray;*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -10,14 +9,53 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    /* height: 5000px; */
     background-size: cover;
     overflow: scroll;
     background-attachment: fixed;
     margin: auto;
 }
+.container{
+    width: 100%;
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.ribbon{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.hamb_logo{
+    width: 60px;
+    cursor: pointer;
+    display:none;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    top: -75px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+nav ul li a:hover{
+    color: black;
+}
 
-nav li{
+div li{
     font-size: 22px;
 }
 
@@ -33,7 +71,7 @@ header {
 ul {
     display: block;
     list-style-type: none;
-    padding-top: 30px;
+    padding-top: 0px;
     padding-left: 100px;
     font-size: 18px;
     line-height: 2em;
@@ -48,18 +86,12 @@ h1{
     font-size: 45px;
 }
 
-/* history data */
-
-
 header a {
-    /* 无下划线 */
     text-decoration: none;
-    /* 白色字体 */
     color: white;
 } 
 
 header a:hover {
-    /* 鼠标在字上的颜色 */
     color: white;
 }
 
@@ -175,12 +207,53 @@ footer h6{
 }
 
 @media only screen and (max-width: 375px) and (orientation: portrait){
+    .container{
+        width: 100%;
+        padding-right: 0%;
+    }
+    .navbar{
+        height:0px;
+    }
+    nav ul{
+        width: 275px;
+        background:#4279C2;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0px;
+    }
+    nav ul li a {
+        font-size: 14px;
+        color: white;
+    }
+    .hamb_logo{
+        position: relative;
+        top:-35px;
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+
+
+
+
+
 
     .top h1 a{
         font-size: 32px;
     }
     header {
-        width: 410px;
+        width: 375px;
     }
     nav li{
         font-size: 16px;
@@ -191,6 +264,10 @@ footer h6{
     .nav_bar { 
         position: absolute;
         left: 10%;
+        font-size: 16px;
+    }
+    .nav_bar a{ 
+        font-size:16px;
     }
     .title{
         position: relative;
@@ -198,24 +275,30 @@ footer h6{
         left: 10%;
         margin: 0px;
         padding-left: 0px;
+        width: 250px;
+    }
+    .title li{
+        width: 250px;
     }
     .title h2{
         font-size: 28px;
         margin-bottom: 40px;
+        width:300px;
     }
     .datatab{
         position: relative;
         font-size: 13px;
-        left:5%;
+        left:0%;
     }
 
     .page_navigation{
         position: relative;
-        left: 5%;
+        left: 0%;
     }
     .button{
-        position: relative;
-        left: 15%;
+        position: absolute;
+        left: 220px;
+        margin: 0px;
     }
     .data_graph{
         padding-left: 40px;
