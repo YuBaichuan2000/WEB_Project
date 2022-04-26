@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient_Dashboard</title>
-    <link rel="stylesheet" href="patient_dashboard.css"> 
+    <link rel="stylesheet" href="sean1.css"> 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
     </style>
 </head>
 <body>
-    <header class="top">
+    <header class="patient-dashboardTop">
         <img src="images/ribbon.png" alt="logo" width="40" height="40" style="margin-left: 30px;">
 
         <div class="topnav" id="myTopnav">
@@ -63,5 +63,25 @@
             <h6>Copyright 2022 | Privacy</h6>
         </footer> -->
     </main>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+            x.className += " responsive";
+            } else {
+            x.className = "topnav";
+            }
+        }
+
+        function on() {
+            document.getElementById("overlay1").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlay1").style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
