@@ -194,6 +194,7 @@ footer h6{
     }
     .title{
         position: relative;
+        z-index: -1;
         left: 10%;
         margin: 0px;
         padding-left: 0px;

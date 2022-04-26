@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record data</title>
     <link rel="stylesheet" href="record_data.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -16,7 +17,17 @@
 <body>
     <header class="top">
         <img src="images/ribbon.png" alt="logo" width="40" height="40">
-        <h1><a href="patient_dashboard.html">Diabetes@Home</a></h1>
+
+        <div class="topnav" id="myTopnav">
+            <a href="patient_dashboard.html" class="active">Diabetes@Home</a>
+            <a href="about_diabetes.html">About diabetes</a>
+            <a href="about_website.html">About this website</a>
+            <a href="patient_login.html">Log out</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+
     </header>
     <nav>
         <ul>
@@ -32,12 +43,21 @@
         </ul>
 
         <!--输入每项数据-->
+        <div id="overlay1">
+            <form>
+                <label>Add a comment:</label>
+                <br>
+                <textarea name="comment" id="comment"></textarea>
+            </form>
+            <button onclick="off()">Done</button>
+        </div>
+          
         <div class="enter-data">
             <form>
                 <label>Enter your blood glucose level:</label>
                 <input></input><span style="margin-left:-60px;">nmol/L</span>
             </form>
-            <a href="patient_dashboard.html">+ Add a comment</a>
+            <a onclick="on()">+ Add a comment</a>
         </div>
         
         <div class="enter-data">
@@ -45,7 +65,7 @@
                 <label>Enter your weight:</label>
                 <input></input><span style="margin-left:-32px;">kg</span>
             </form>
-            <a href="patient_dashboard.html">+ Add a comment</a>
+            <a onclick="on()">+ Add a comment</a>
         </div>
 
         <div class="enter-data">
@@ -53,7 +73,7 @@
                 <label>Enter your insulin doses:</label>
                 <input></input><span style="margin-left:-58px;">doses</span>
             </form>
-            <a href="patient_dashboard.html">+ Add a comment</a>
+            <a onclick="on()">+ Add a comment</a>
         </div>
 
         <div class="enter-data">
@@ -61,7 +81,7 @@
                 <label>Enter your step counts:</label>
                 <input></input><span style="margin-left:-58px;">steps</span>
             </form>
-            <a href="patient_dashboard.html">+ Add a comment</a>
+            <a onclick="on()">+ Add a comment</a>
         </div>
         <div class="button">
             <button><a href="history_data.html"><img src="images/submit_icon.png">Submit</a></button>
@@ -86,6 +106,26 @@
             <br>
         </footer>
     </main>
+
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+
+        function on() {
+            document.getElementById("overlay1").style.display = "block";
+        }
+
+        function off() {
+            document.getElementById("overlay1").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
