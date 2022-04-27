@@ -5,27 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient_Dashboard</title>
-    <link rel="stylesheet" href="sean1.css"> 
+    <link rel="stylesheet" href="patient_dashboard.css"> 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
     </style>
 </head>
 <body>
-    <header class="patient-dashboardTop">
-        <img src="images/ribbon.png" alt="logo" width="40" height="40" style="margin-left: 30px;">
-
-        <div class="topnav" id="myTopnav">
-            <a href="patient_dashboard.html" class="active">Diabetes@Home</a>
-            <a href="about_diabetes.html">About diabetes</a>
-            <a href="about_website.html">About this website</a>
-            <a href="patient_login.html">Log out</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-            </a>
+    <div class="container">
+        <header class="top">
+            <img src="images/ribbon.png" alt="logo">
+            <h1><a href="patient_dashboard.html">Diabetes@Home</a></h1>
+        </header>
+        <div class = "navbar">
+            <!-- <img src="images/ribbon.png" class="ribbon" alt="logo"> -->
+            <nav>
+                <ul id="menuList">
+                    <li><a href="about_diabetes.html">About Diabetes</a></li>
+                    <li><a href="about_website.html">About This Website</a></li>
+                    <li><a href="patient_login.html">Logout</a></li>
+                </ul>
+            </nav>
+            <img src="images/hamb_icon.jpg" class="hamb_logo" onclick="togglemenu()">
         </div>
 
-    </header>
+        
+    </div>
     <main>
             <ul class="top-info" style="margin-top: 0px; padding-left: 0px;">
                 <li style=><h2>Welcome Back!</h2></li>
@@ -63,6 +68,20 @@
             <h6>Copyright 2022 | Privacy</h6>
         </footer> -->
     </main>
+    <script>
+        var menuList = document.getElementById("menuList");
+
+        menuList.style.maxHeight = "0px";
+
+        function togglemenu(){
+            if(menuList.style.maxHeight == "0px"){
+                menuList.style.maxHeight ="150px"
+            }
+            else{
+                menuList.style.maxHeight ="0px"
+            }
+        }
+    </script>
 
     <script>
         function myFunction() {
