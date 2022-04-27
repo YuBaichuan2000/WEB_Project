@@ -1,86 +1,83 @@
-<nav>
+<div class="container">
+    <header class="top">
+        <img src="images/ribbon.png" alt="logo" width="40" height="40">
+        <h1><a href="dashboard">Diabetes@Home</a></h1>
+    </header>
+    <div class = "navbar">
+        <nav>
+            <ul id="menuList">
+                <li><a href="diabetes">About Diabetes</a></li>
+                <li><a href="website">About This Website</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </nav>
+        <img src="images/hamb_icon.jpg" class="hamb_logo" onclick="togglemenu()">
+    </div>
+
+    
+</div>
+
+
+<div>
     <ul>
-            <li style="font-size: 16px;"><a href="/patient">Home</a> > Record data</li>
+            <li class="nav_bar"><a href="dashboard">Home</a> > Record data</li>
     </ul>
-</nav>
+</div>
 <main>
-    <!--标题--> 
-    <ul class="top-info" style="margin-top: -40px;">  
+    <ul class="top-info">  
         <li>
-            <h2 style="font-size: 36px; margin-bottom: 200px; color: #397EDA;">Record Your Data</h2>
-        </li>
-        
+            <h2>Record Your Data</h2>
+        </li>  
     </ul>
+
+    <div id="overlay1">
+        <form>
+            <label>Add a comment:</label>
+            <br>
+            <textarea name="comment" id="comment"></textarea>
+        </form>
+        <button onclick="off1()">Done</button>
+    </div>
 
     <div id="overlay2" onclick="off2()">
         <div id="text">
             Your record has been successfully submitted!                
         </div>
-        <a href="/patient/history_data">View history data ></a>
+        <a href="history_data.html">View history data ></a>
     </div>
-
+        
     <div class="enter-data">
-        <form action="/patient/record_data" method="POST">
+        <form>
             <label>Enter your blood glucose level:</label>
-            <input name="bgl"></input><span style="margin-left:-60px;">nmol/L</span>
-            <a onclick="on1('bgl')">+ Add a comment</a>
+            <input></input><span style="margin-left:-60px;">nmol/L</span>
+            <a onclick="on1()">+ Add a comment</a>
             <br>
             <br>
             <br>
             <label>Enter your weight:</label>
-            <input name="wght"></input><span style="margin-left:-32px;">kg</span>
-            <a onclick="on1('wght')">+ Add a comment</a>
+            <input></input><span style="margin-left:-32px;">kg</span>
+            <a onclick="on1()">+ Add a comment</a>
             <br>
             <br>
             <br>
             <label>Enter your insulin doses:</label>
-            <input name="doses"></input><span style="margin-left:-58px;">doses</span>
-            <a onclick="on1('doses')">+ Add a comment</a>
+            <input></input><span style="margin-left:-58px;">doses</span>
+            <a onclick="on1()">+ Add a comment</a>
             <br>
             <br>
             <br>
             <label>Enter your step counts:</label>
-            <input name="steps"></input><span style="margin-left:-58px;">steps</span>
+            <input></input><span style="margin-left:-58px;">steps</span>
             <br>
-            <a onclick="on1('steps')">+ Add a comment</a>
-            <div class="button">
-                <button onclick="on2()" type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
-            </div>
-
-            <div id="overlaybgl" class="overlay1">
-                <label>Add a comment:</label>
-                <br>
-                <textarea name="bglcmt" id="comment"></textarea>
-                <div onclick="off1('bgl')" class="button">Done</div>
-            </div>
-
-            <div id="overlaywght" class="overlay1">
-                <label>Add a comment:</label>
-                <br>
-                <textarea name="wghtcmt" id="comment"></textarea>
-                <div onclick="off1('wght')" class="button">Done</div>
-            </div>
-
-            <div id="overlaydoses" class="overlay1">
-                <label>Add a comment:</label>
-                <br>
-                <textarea name="dosescmt" id="comment"></textarea>
-                <div onclick="off1('doses')" class="button">Done</div>
-            </div>
-
-            <div id="overlaysteps" class="overlay1">
-                <label>Add a comment:</label>
-                <br>
-                <textarea name="stepscmt" id="comment"></textarea>
-                <div onclick="off1('steps')" class="button">Done</div>
-            </div>
-            
+            <a onclick="on1()">+ Add a comment</a>
         </form>
         
     </div>
-
     
-
+    <div class="button1">
+        <button onclick="on2()"><a><img src="images/submit_icon.png">Submit</a></button>
+    </div>
+    
 
     <div class="sentence">
         <p>Diabetes is the leading cause of bravery, determination, resilience, 
@@ -100,6 +97,21 @@
         <br>
     </footer>
 </main>
+<script>
+    var menuList = document.getElementById("menuList");
+
+    menuList.style.maxHeight = "0px";
+
+    function togglemenu(){
+        if(menuList.style.maxHeight == "0px"){
+            menuList.style.maxHeight ="150px"
+        }
+        else{
+            menuList.style.maxHeight ="0px"
+        }
+    }
+</script>
+
 
 <script>
     function myFunction() {
@@ -111,14 +123,12 @@
         }
     }
 
-    function on1(name) {
-        // document.getElementById("comment").setAttribute("name", `${name}cmt`)
-        // console.log(JSON.stringify(req.body, null, 4))
-        document.getElementById(`overlay${name}`).style.display = "block";
+    function on1() {
+        document.getElementById("overlay1").style.display = "block";
     }
 
-    function off1(name) {
-        document.getElementById(`overlay${name}`).style.display = "none";
+    function off1() {
+        document.getElementById("overlay1").style.display = "none";
     }
 
     function on2() {
