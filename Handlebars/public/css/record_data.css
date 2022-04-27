@@ -43,14 +43,15 @@ ul {
     margin-right: 10px;
 }
 
-h1{
-    color: white;
-    font-family: 'Hurricane', cursive;
-    font-size: 45px;
+.top-info{
+    margin-top: -40px;
 }
 
-/* record_data */
-
+.top-info h2{
+    font-size: 44px; 
+    margin-bottom: 120px; 
+    color: #397EDA;
+}
 
 header a {
     /* 无下划线 */
@@ -64,23 +65,15 @@ header a:hover {
     color: white;
 }
 
-.top-info{
-    margin-top: -40px;
-}
-
-.top-info h2{
-    font-size: 44px; 
-    margin-bottom: 120px; 
-    color: #397EDA;
-}
-
-form {
-    margin: auto;
+h1{
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
 }
 
 .enter-data{
     width: 500px;
-    height: 200px;
+    height: 890px;
     margin: auto;
     padding: 1px;
     margin-top: 40px;
@@ -91,16 +84,20 @@ form {
     font-size: 20px;
 }
 
-.enter-data div{
+.enter-data a:hover{
+    text-decoration: underline;
+}
+
+.enter-data form{
     float: left;
 }
 
-.enter-data label{
+.enter-data form label{
     color: #2C71C3;
     font-size: 26px;
 }
 
-.enter-data input{
+.enter-data form input{
     padding-right:20px; 
     text-align:left;
     width: 500px;
@@ -112,22 +109,28 @@ form {
     margin-bottom: 40px;
 }
 
-.enter-data div span{
+.enter-data form span{
     color: #868686;
-    margin-left: -58px;
 }
 
-button{
+.button{
+    width: 540px;
+    margin: auto;
+    padding: 1px;
+}
+
+.button button{
+    float: right;
+    position: relative;
     width: 100px;
     height: 45px;
     margin-top: 80px;
-    margin-left: 800px;
     background-color: #4279C2;
     border-radius: 11px 11px 11px 11px;
     border: white;
 }
 
-button a{
+.button button a{
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -136,7 +139,7 @@ button a{
     float: left;
 }
 
-button a img{
+.button button a img{
     width: 15px;
     height: 15px;
     margin-top: 9px;
@@ -149,16 +152,17 @@ button a img{
 }
 
 .sentence p{
-    font-size: 20px;
+    font-size: 22px;
     font-family: 'Apple Chancery';
     margin: auto;
-    max-width: 81%;
+    max-width: 80%;
 }
 
 footer h6{
+    margin-top: 200px;
     margin: 42px;
     margin-bottom: 20px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 @media only screen and (max-width: 375px) and (orientation: portrait){
@@ -176,6 +180,7 @@ footer h6{
     .top-info{
         position: relative;
         left: 10%;
+        z-index: -1;
         margin: 0px;
         padding-left: 0px;
     }
@@ -187,39 +192,40 @@ footer h6{
         position: relative;
         left: 10%;
         margin-top: 0px;
-        height: 190px;
+        height: 700px;
     }
-    .enter-data span{
+    .enter-data form span{
         display: block;
         width: 70px;
         position: relative;
         left: 400px;
-        bottom: 81%;
+        bottom: 27%;
         margin-left: 0px;
     }
     .enter-data a{ 
         font-size: 15px;
     }
-    .enter-data label{
+    .enter-data form label{
         font-size: 15px;
     }
-    .enter-data input{
+    .enter-data form input{
         position: relative;
         width: 375px;
         height: 37px;
         margin-top: 10px;
+        margin-bottom: -10px;
     }
-    .enter-data div{
+    .enter-data form{
         height: 90px;
     }
-    button{
+    .button button{
         position: absolute;
         margin-top: 30px;
         left: 340px;
     }
     .sentence{
         position:relative;
-        margin-top: 190px;
+        margin-top: 225px;
         left: 5%;
         width: 480px;
     }
@@ -227,4 +233,106 @@ footer h6{
         font-size: 12px;
         text-align:left;
     }
+    .overlay1 {
+        height: 30%;
+    }
+    #overlay2 #text{
+        line-height: 1.6;
+        font-size: 24px;
+        left: 52%;
+        top: 35%;
+    }
+}
+
+/* hamburger bar */
+.topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: #1D5EB7;
+}
+  
+
+
+/* add a comment */
+.overlay1 {
+    padding: 60px;
+    margin: auto;
+    position: fixed;
+    display: none;
+    width: 50%;
+    height: 45%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F8F8F8;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.overlay1 label{
+    font-size: 20px;
+    font-family: 'Century Gothic Pro';
+}
+
+.overlay1 textarea{
+    width: 90%;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.overlay1 div{
+    float: right;
+    position: relative;
+    width: 100px;
+    height: 45px;
+    background-color: #4279C2;
+    border-radius: 11px 11px 11px 11px;
+    border: white;
+    margin-top: 40px;
+    padding-top: 10px;
+    margin-right: 25px;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 0.4px #EAEAEA;
+    font-family: 'DIN Condensed';
+}
+
+#overlay2 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+  
+#text{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#overlay2 a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
 }

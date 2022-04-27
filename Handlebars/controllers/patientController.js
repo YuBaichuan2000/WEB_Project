@@ -38,6 +38,7 @@ const showForm = async (req, res, next) => {
 
 const insertData = async (req, res, next) => {
     try {
+        console.log(req.body)
         curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
 
         var newentry = {}
@@ -45,7 +46,7 @@ const insertData = async (req, res, next) => {
             if (req.body[i] != "") {
                 newentry[i] = {
                     val: req.body[i],
-                    // cmt: req.body[`${i}cmt`],
+                    cmt: req.body[`${i}cmt`],
                     time: curtime
                 }
             }
@@ -56,7 +57,7 @@ const insertData = async (req, res, next) => {
         
         const newEntry = new Entry(newentry)
         await newEntry.save()
-        return res.redirect('/patient/history_data')
+        return
     } catch (err) {
         return next(err)
     }
