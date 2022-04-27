@@ -284,7 +284,44 @@ header a:hover{
 
 /* Patient-dashboard.css */
 
-.patient-dashboardTop{
+.patient-dashboard-top h1 a{
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
+    text-decoration: none;
+}
+
+.patient-dashboard-top img{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.container{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.ribbon{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+    margin-left: 40px;
+}
+
+.hamb_logo{
+    width: 60px;
+    cursor: pointer;
+    display:none;
+}
+
+.patient-dashboard-top {
     display: flex;
     align-items: center;
     position: relative;
@@ -293,13 +330,32 @@ header a:hover{
     height: 80px;
 }
 
-.patient-dashboardTop h1{
-    margin-left: 5px;
-    margin-top: 40px;
-    color: #578AD6;
-    font-size: 40px;
-    font-family: 'Hurricane', cursive;
+nav {
+    flex: 1;
+    text-align: right;
 }
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    top: -70px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+nav ul li a:hover{
+    color: black;
+}
+
+
+/* dashboard */
+
 
 .top-info h2{
     font-size: 36px;
@@ -334,12 +390,12 @@ header a:hover{
 .nav-block li{
     flex-wrap: wrap;
     box-shadow: 4px 4px 10px #C8CDCF;
-    width: 125px;
+    width: 120px;
     height: 93px;
     justify-content: space-evenly;
     align-content: space-around;
     border-radius: 8px;
-    margin-left: 40px;
+    margin-left: 10px; 
     margin-bottom: 20px;
 }
 
@@ -350,6 +406,7 @@ header a:hover{
 
 .nav-block p{
     margin: 5px 0px 2px 0px;
+    font-size: 10px;
 }
 
 .nav-block a{
@@ -366,11 +423,12 @@ header a:hover{
 
 .clinician-message{
     list-style: none;
-    /* margin: auto; */
-    margin-top: 0px;
+    margin: auto;
+    padding-left: 0px;
 }
 
 .clinician-message li{
+    margin: auto;
     display: block;
     text-align: left;
 }
@@ -400,6 +458,7 @@ header a:hover{
 }
 
 /* hamburger bar */
+
 .topnav {
     position: relative;
     overflow: hidden;
@@ -472,7 +531,7 @@ header a:hover{
     }
 }
 
-/* dashboard */
+/* patientDashboard-responsive */
 
 @media screen and (min-width: 1400px){
     .top-info h2{
@@ -486,14 +545,15 @@ header a:hover{
     }
     
     .clinician-message{
-        display: block;
+        display: inline;
         list-style: none;
         float: right;
         flex-wrap: wrap;
-        margin-top: 20px;
+        margin-top: 0px;
         padding: 0px;
         margin-right: 15%;
     }
+
     .nav-block li{
         width: 235px;
         height: 198px;
@@ -503,39 +563,105 @@ header a:hover{
         text-align: center;
         vertical-align: middle;
     }
+
     .nav-block li img{
         padding-top: 50px;
         width: 75px;
         height: 75px;
     }
+
     .nav-block li a{
         font-size: 25px;
         padding-bottom: 5px;
         }
+
     .clinician-message p{
         margin: auto;
         align-content: center;
         width: 550px;
         height: 50px;
-        padding-top: 20px;
+        padding-top: 10px;
         padding-left: 20px;
-        padding-bottom: 0px;
+        padding-bottom: 5px;
         color: white;
         font-size: 30px;
         border-radius: 9px 9px 0px 0px;
     }
+
     .clinician-message h5{
         box-shadow: 4px 4px 10px #C8CDCF;
         width: 550px;
-        height: 300px;
+        height: 340px;
         padding-left: 20px;
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: 30px;
         border-radius: 0px 0px 9px 9px;
         margin: auto;
     }
 }
+@media only screen and (max-width: 375px) and (orientation: portrait){
+    .top h1 a{
+        font-size: 30px;
+    }
 
+    .container{
+        width: 100%;
+        padding-right: 0%;
+    }
 
+    .navbar{
+        height:0px;
+    }
 
+    nav ul{
+        width: 335px;
+        background:#4279C2;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 2;
+    }
 
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        color: white;
+    }
+
+    .hamb_logo{
+        position: relative;
+        top:-35px;
+        display: block;
+    }
+
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    nav ul li a {
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (min-width: 1024px){
+    .clinician-message{
+        display: inline;
+        list-style: none;
+        float: right;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        padding: 0px;
+        margin-right: 15%;
+    }
+}
