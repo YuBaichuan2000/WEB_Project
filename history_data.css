@@ -135,7 +135,7 @@ thead td{
     border: none;
 }
 
-.button{
+.button2{
     max-width: 70%;
     height: 200px;
     margin: auto;
@@ -236,18 +236,13 @@ footer h6{
     .hamb_logo{
         position: relative;
         top:-35px;
+        right: 18px;
         display: block;
     }
     #menuList{
         overflow: hidden;
         transition: 0.5s;
     }
-
-
-
-
-
-
 
     .top h1 a{
         font-size: 32px;
@@ -269,9 +264,13 @@ footer h6{
     .nav_bar a{ 
         font-size:16px;
     }
+
+    ul{
+        padding-top: 8px;
+    }
+    
     .title{
         position: relative;
-        z-index: -1;
         left: 10%;
         margin: 0px;
         padding-left: 0px;
@@ -281,13 +280,14 @@ footer h6{
         width: 250px;
     }
     .title h2{
-        font-size: 28px;
+        margin-top: -18px;
+        font-size: 34px;
         margin-bottom: 40px;
         width:300px;
     }
     .datatab{
         position: relative;
-        font-size: 13px;
+        font-size: 12px;
         left:0%;
     }
 
@@ -295,9 +295,9 @@ footer h6{
         position: relative;
         left: 0%;
     }
-    .button{
+    .button2{
         position: absolute;
-        left: 220px;
+        left: 210px;
         margin: 0px;
     }
     .data_graph{
@@ -312,10 +312,10 @@ footer h6{
         position: relative;
         margin-bottom: 50px;
     }
-    .button{
+    .button2{
         height:0px;
     }
-    .button button{
+    .button2 button{
         position: relative;
         margin-top: 0px;
         bottom: 40px;
@@ -324,5 +324,7 @@ footer h6{
         position: relative;
         bottom: 40px;
     }
-
+    nav ul li a {
+        font-size: 20px;
+    }
 }

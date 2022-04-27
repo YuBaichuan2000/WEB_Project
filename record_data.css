@@ -17,13 +17,6 @@ body {
     margin: auto;
 }
 
-.top h1 a{
-    color: white;
-    font-family: 'Hurricane', cursive;
-    font-size: 45px;
-    text-decoration: none;
-}
-
 .top img{
     margin-left: 30px;
     margin-right: 10px;
@@ -43,7 +36,6 @@ body {
     width: 50px;
     cursor: pointer;
     margin: 30px 0;
-    margin-left: 40px;
 }
 .hamb_logo{
     width: 60px;
@@ -173,13 +165,13 @@ h1{
     color: #868686;
 }
 
-.button{
+.button1{
     width: 540px;
     margin: auto;
     padding: 1px;
 }
 
-.button button{
+.button1 button{
     float: right;
     position: relative;
     width: 100px;
@@ -190,7 +182,7 @@ h1{
     border: white;
 }
 
-.button button a{
+.button1 button a{
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -199,7 +191,7 @@ h1{
     float: left;
 }
 
-.button button a img{
+.button1 button a img{
     width: 15px;
     height: 15px;
     margin-top: 9px;
@@ -324,6 +316,7 @@ footer h6{
     }
     .navbar{
         height:0px;
+
     }
     nav ul{
         width: 441px;
@@ -347,6 +340,7 @@ footer h6{
     .hamb_logo{
         position: relative;
         top:-35px;
+        right: 18px;
         display: block;
     }
     #menuList{
@@ -354,10 +348,8 @@ footer h6{
         transition: 0.5s;
     }
 
-
-
     header {
-        width: 100%;
+        width: 375;
     }
     nav li{
         font-size: 16px;
@@ -366,10 +358,13 @@ footer h6{
         position: absolute;
         left: 10%;
     }
+
+    ul{
+        padding-top: 8px;
+    }
     .top-info{
         position: relative;
         left: 10%;
-        z-index: -1;
         margin: 0px;
         padding-left: 0px;
     }
@@ -407,7 +402,7 @@ footer h6{
     .enter-data form{
         height: 90px;
     }
-    .button button{
+    .button1 button{
         position: absolute;
         margin-top: 30px;
         left: 340px;
@@ -428,8 +423,8 @@ footer h6{
     #overlay2 #text{
         line-height: 1.6;
         font-size: 24px;
-        left: 52%;
-        top: 35%;
+        left: 51%;
+        top: 36%;
     }
 }
 @media only screen and (max-width: 1024px) and (orientation: landscape){
