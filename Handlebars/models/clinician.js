@@ -1,12 +1,10 @@
-const { MongoKerberosError } = require('mongodb')
-const mongoode = require('mongoose')
+const mongoose = require('mongoose')
 
-const schema = new MongoKerberosError.Schema({
+const schema = new mongoose.Schema({
     first_name: {type: String, required: true},
     last_name: {type: String, required: true},
     email: {type: String, required: true},
-    password: {type: String, required: true},
-    pattients: {type: Array}
+    password: {type: String, required: true}
 })
 
 const Clinician = mongoose.model('Clinician', schema)

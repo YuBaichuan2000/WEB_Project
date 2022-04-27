@@ -1,0 +1,17 @@
+<ul class="comment-title">
+    <li class="comment-title"><h1>Patients' Comments</h1></li>
+</ul>
+
+<HR class="comment-line" align=center width=80% color=#1C4A9F size=5px>
+
+<table class="comment-info">
+    {{#each data}}
+    <tr>
+        <td style="width: 200px;">{{this.first_name}} {{this.last_name}}</td>
+        <td>{{this.cmt}}</td>
+        <td style="width: 200px;">{{this.time}}</td>
+        <!-- <img src="images/reply_icon.png" alt="logo"> -->
+    </tr>
+    {{/each}}
+
+</table>

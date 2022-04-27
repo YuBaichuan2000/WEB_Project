@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History data</title>
+    <link rel="stylesheet" href="history_data.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <img src="images/ribbon.png" alt="logo" width="40" height="40">
+        <h1><a href="patient_dashboard.html">Diabetes@Home</a></h1>
+    </header>
+    <nav>
+        <ul>
+                <li style="font-size: 16px;"><a href="patient_dashboard.html">Home</a> > View your data</li>
+        </ul>
+    </nav>
+    <main>
+        <!--标题--> 
+        <ul class="title" style="margin-top: -40px; margin-bottom: 80px;">  
+            <li>
+                <h2 style="font-size: 36px; margin-bottom: 10px; color: #397EDA;">View Your Data</h2>
+            </li>
+            
+        </ul>
+
+       <!--  {{#with patient}} -->
+
+        <!-- {{!-- <h1>Data for {{name}}</h1> --}} -->
+        
+        <table class="datatab">
+            <thead>
+                <tr>
+                    <td>Date</td>
+                    <td>Blood Glucose</td>
+                    <td>Weight</td>
+                    <td>Doses Taken</td>
+                    <td>Step Count</td>
+                </tr>
+            </thead>
+            <!-- {{#each data}} -->
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{Date}}</td>
+                <td class="blood">{{Glucose}}</td>
+                <td class="weight">{{Weight}}</td>
+                <td class="dose">{{Doses}}</td>
+                <td class="step">{{Step}}</td>
+            </tr>
+            <!-- {{/each}} -->
+        </table>
+        <br><br><br><br>
+        
+        <!-- {{/with}} -->
+        <div class="page_navigation" style="text-align: center;">
+            <p><a href=""><</a></a></p>
+            <p><a href="">1</a></a></p>
+            <p><a href="">2</a></a></p>
+            <p><a href="">3</a></a></p>
+            <p><a href="">4</a></a></p>
+            <p><a href="">5</a></a></p>
+            <p><a href="">></a></a></p>
+        </div>
+
+
+        <button><a href="record_data.html"><img src="images/submit_icon.png">Record new data</a></button>
+        <br><br>
+        
+        
+
+
+        <ul class="title" style="margin-top: -40px; margin-bottom: 30px;">  
+            <li>
+                <h2 style="font-size: 36px; margin-bottom: 10px; color: #397EDA;">Your data chart</h2>
+            </li>
+        </ul>
+
+        <ul class="data_graph">
+            <li>
+                <h4 style="font-size: 25px; margin-bottom: 10px; color: black;">blood glucose level</h4>
+            </li>
+            <li>
+                <h4 style="font-size: 25px; margin-bottom: 10px; color: black;">Weight</h4>
+            </li>
+            <li>
+                <h4 style="font-size: 25px; margin-bottom: 10px; color: black;">Doses Taken</h4>
+            </li>
+            <li>
+                <h4 style="font-size: 25px; margin-bottom: 10px; color: black;">Step Count</h4>
+            </li>
+        </ul>
+
+
+
+        <!--<footer>
+            <h6>Copyright 2022 | Privacy</h6>
+            <br>
+        </footer> -->
+    </main>
+</body>
+
+</html>

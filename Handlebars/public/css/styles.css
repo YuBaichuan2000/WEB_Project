@@ -1,0 +1,50 @@
+.leaderboard{
+	max-width: 70%;
+	margin: auto;
+}
+table{
+	width:100%;
+	border-collapse: separate;
+	border-spacing: 0 15px;	
+}
+td{
+	padding: 0.5rem;
+}
+tr{
+	background-color: #0089FF;
+}
+.score{
+	text-align: right;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.rank{
+	font-size: 30px;
+	color: #1666D4;
+	text-align: left;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.name{
+	font-weight: bold;
+}
+li{
+	text-align: center;
+	list-style: none;
+}
+li h3{
+	font-weight: 100;
+}
+.box-1{
+	margin-top: 5rem;
+	margin-left: 15rem;
+	font-size: 30px;
+}
+.intro{
+	margin-left: 15rem;
+}
+nav li{
+	display: inline;
+	float: left;
+	margin-right: 0.5rem;
+}
