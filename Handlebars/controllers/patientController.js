@@ -46,8 +46,10 @@ const insertData = async (req, res, next) => {
             if (req.body[i] != "") {
                 newentry[i] = {
                     val: req.body[i],
-                    cmt: req.body[`${i}cmt`],
                     time: curtime
+                }
+                if (req.body[`${i}cmt`] != "") {
+                    newentry[i].cmt = req.body[`${i}cmt`]
                 }
             }
         }

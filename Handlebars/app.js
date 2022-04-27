@@ -28,8 +28,19 @@ app.use('/patient', patientRouter)
 // app.use(express.static(path.join(__dirname,'static')));
 app.get('/', (req, res) => {
     //res.sendFile(_dirname+'/static/'+'login.html')
-    res.render('login',{style:"patient_login.css"})
+    res.render('login', {style:"patient_login.css"})
 })
+
+app.get('/webp', (req, res) => {
+    //res.sendFile(_dirname+'/static/'+'login.html')
+    res.render('desktoplogin', {patient: true, style:"desktoplogin.css"})
+})
+
+app.get('/webc', (req, res) => {
+    //res.sendFile(_dirname+'/static/'+'login.html')
+    res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
+})
+
 app.get('/forgot', (req, res) => {
     //res.sendFile(_dirname+'/static/'+'login.html')
     res.render('forgot')
