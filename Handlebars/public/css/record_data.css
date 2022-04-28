@@ -16,6 +16,18 @@ body {
     background-attachment: fixed;
     margin: auto;
 }
+.nmol{
+    margin-left:-60px;
+}
+.kg{
+    margin-left:-32px;
+}
+.doses{
+    margin-left:-58px;
+}
+.steps{
+    margin-left:-58px;
+}
 .top img{
     margin-left: 30px;
     margin-right: 10px;
@@ -161,7 +173,6 @@ h1{
 
 .enter-data form span{
     color: #868686;
-    margin: left -50px;
 }
 
 .button1{
