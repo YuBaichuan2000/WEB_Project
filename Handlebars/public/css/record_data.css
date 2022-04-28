@@ -356,9 +356,12 @@ footer h6{
     }
     #overlay2 #text{
         line-height: 1.6;
-        font-size: 24px;
-        left: 52%;
+        font-size: 20px;
         top: 35%;
+    }
+    #overlay2 a{
+        font-size: 20px;
+        line-height: 1.6;
     }
 }
 
