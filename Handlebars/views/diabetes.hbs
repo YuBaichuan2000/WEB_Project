@@ -1,12 +1,14 @@
 <section class="background">
     <header class="top">
-        <img src="images/ribbon.png" alt="logo" width="40", height="40">
+        <img src="/images/ribbon.png" alt="logo" width="40", height="40">
         <h1>Diabetes@Home</h1>
     </header>
     <nav>
         <ul>
+            {{#if loggedout}}
                 <li><a href="/"><< Back to patient login</a></li>
-                <li><a href="clinicianHomepage.html"><< Back to clinician login</a></li>
+                <li><a href="/webc" class="clinician"><< Back to clinician login</a></li>
+            {{/if}}
         </ul>
     </nav>
     <main>
