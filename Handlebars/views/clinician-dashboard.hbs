@@ -1,47 +1,36 @@
 <section class="nav-bar">
     <ul class="nav-bar-1">
-        <li class="nav-bar-side" style="margin-left: 5%; margin-right: 400px;"><h1><a href="patient_login.html">Sign up new patients</a></h1></li>
-        <li class="nav-bar-mid" style="font-family: 'Apple Braille';"><h1>Dashboard</h1></li>
-        <li class="nav-bar-side" style="margin-right: 5%; width: 200px;"><h1><a href="/clinician/comments">Comments</a></h1></li>
+        <li class="nav-bar-left"><h1><a href="patient_login.html">Sign up new patients</a></h1></li>
+        <li class="nav-bar-mid"><h1>Dashboard</h1></li>
+        <li class="nav-bar-right"><h1><a href="/clinician/comments">Comments</a></h1></li>
     </ul>
 </section>
 
 <ul class="info-bar">
-    <li style="margin-left: 85px"><p>Name</p></li>
-    <li style="margin-left: 85px"><p style="display: inline;">Blood Glucose</p><h2 style="display: inline;">nmol/L<h2></li>
-    <li style="margin-left: 90px;"><p style="display: inline;">Weight</p><h2 style="display: inline;">Kg</h2></li>
-    <li style="margin-left: 120px;"><p>Dose Taken</p></li>
-    <li style="margin-right: 80px;"><p>Steps</p></li>
+    <li class="info-bar-name"><p>Name</p></li>
+    <li class="info-bar-bgl"><p>Blood Glucose</p><h2>nmol/L<h2></li>
+    <li class="info-bar-wght"><p>Weight</p><h2>Kg</h2></li>
+    <li class="info-bar-doses"><p>Dose Taken</p></li>
+    <li class="info-bar-steps"><p>Steps</p></li>
 </ul>
-<HR class="dashboard-line" align=center width=90% color=#DEEEFB size=5px>
+
+<HR class="dashboard-line">
 
 {{#each data}}
 <table class="patient-info">
     {{#if this.highlight}}
-    <tr style="background-color: #FDC5C5;">
+    <tr class="patient-info-highlight">
+    {{!-- <tr onClick="location.href='google.com'" class="patient-info-highlight"> --}}
     {{else}}
-    <tr style="background-color: white;">
+    <tr class="patient-info-normal">
+    {{!-- <tr onClick="location.href='google.com'" class="patient-info-normal"> --}}
     {{/if}}
-        <td style="border-radius: 28px 0px 0px 29px;">{{this._patient.first_name}} {{this._patient.last_name}}</td>
+        <td class="patient-info-left">{{this._patient.first_name}} {{this._patient.last_name}}</td>
         <td>{{this.bgl.val}}</td>
         <td>{{this.wght.val}}</td>
         <td>{{this.doses.val}}</td>
-        <td style="border-radius: 0px 28px 28px 0px;">{{this.steps.val}}</td>
+        <td class="patient-info-right">{{this.steps.val}}</td>
     </tr>
 </table>
 {{/each}}
 
-<!-- {{#if safe}}
-<table class="patient-info" style="background-color: white;">
-{{else}}
-<table class="patient-info" style="background-color: #FDC5C5;">
-{{/if}} -->
-{{!-- <table class="patient-info">
-    <tr>
-        <td>name</td>
-        <td>blood</td>
-        <td>Weight</td>
-        <td>dose</td>
-        <td>steps</td>
-    </tr>
-</table> --}}

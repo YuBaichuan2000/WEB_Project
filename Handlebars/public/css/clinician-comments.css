@@ -122,6 +122,10 @@ header a:hover{
 .comment-line{
     margin-top: 0px;
     margin-bottom: 20px;
+    width: 80%;
+    background-color: #1C4A9F;
+    height: 5px;
+    border: 0;
 }
 
 .comment-info{
@@ -137,11 +141,13 @@ header a:hover{
 }
 
 .comment-info tr{
+    background-color: white;
     text-align: center;
     justify-content: space-between;
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 20px;
     height: 150px;
+    line-height: 50px;
 }
 
 .comment-info td{
@@ -149,6 +155,7 @@ header a:hover{
     border-radius: 20px;
     border: 1px solid #707070;
     justify-content: space-evenly;
+    padding: 20px;
 }
 
 .comment-info tr img{
@@ -158,5 +165,13 @@ header a:hover{
     float: right;
     margin-right: 150px;
     margin-top: 70px;
+}
+
+.comment-nav-left{
+    width: 200px;
+}
+
+.comment-nav-right{
+    width: 200px;
 }
 
