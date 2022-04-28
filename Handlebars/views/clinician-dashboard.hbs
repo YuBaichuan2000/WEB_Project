@@ -19,9 +19,11 @@
 {{#each data}}
 <table class="patient-info">
     {{#if this.highlight}}
-    <tr onClick="location.href='google.com'" class="patient-info-highlight">
+    <tr class="patient-info-highlight">
+    {{!-- <tr onClick="location.href='google.com'" class="patient-info-highlight"> --}}
     {{else}}
-    <tr onClick="location.href='google.com'" class="patient-info-normal">
+    <tr class="patient-info-normal">
+    {{!-- <tr onClick="location.href='google.com'" class="patient-info-normal"> --}}
     {{/if}}
         <td class="patient-info-left">{{this._patient.first_name}} {{this._patient.last_name}}</td>
         <td>{{this.bgl.val}}</td>
