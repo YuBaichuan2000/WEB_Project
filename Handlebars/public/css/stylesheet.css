@@ -137,4 +137,7 @@ footer{
         width: 650px;
         height: 400px;
     }
+    .clinician {
+        display: none;
+    }
 }

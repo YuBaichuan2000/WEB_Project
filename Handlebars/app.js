@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars')
 const path = require('path')
 const bodyParser = require('body-parser')
 const res = require('express/lib/response')
+
 // Set your app up as an express app
 const app = express()
 app.engine(
@@ -47,10 +48,10 @@ app.get('/forgot', (req, res) => {
 })
 
 app.get('/diabetes', (req, res) => {
-    res.render('diabetes',{style:'stylesheet.css'})
+    res.render('diabetes',{style:'stylesheet.css', loggedout: true})
 })
 app.get('/website', (req, res) => {
-    res.render('website',{style:'stylesheet.css'})
+    res.render('website',{style:'stylesheet.css', loggedout: true})
 })
 
 
