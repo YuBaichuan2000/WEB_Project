@@ -2,14 +2,14 @@
     <li class="comment-title"><h1>Patients' Comments</h1></li>
 </ul>
 
-<HR class="comment-line" align=center width=80% color=#1C4A9F size=5px>
+<HR class="comment-line">
 
 <table class="comment-info">
     {{#each data}}
     <tr>
-        <td style="width: 200px;">{{this.first_name}} {{this.last_name}}</td>
+        <td class="comment-nav-left">{{this.first_name}} {{this.last_name}}</td>
         <td>{{this.cmt}}</td>
-        <td style="width: 200px;">{{this.time}}</td>
+        <td class="comment-nav-right">{{this.time}}</td>
         <!-- <img src="images/reply_icon.png" alt="logo"> -->
     </tr>
     {{/each}}

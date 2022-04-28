@@ -94,10 +94,23 @@ nav ul li a:hover{
 .top-info h2{
     font-size: 36px;
     margin-bottom: 10px;
+    font-family: 'Kohinoor Bangla';
+    color: #2C71C3;
+}
+
+.gold-badge{
+    width: 25px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.top-info{
+    margin-top: 0px;
+    padding-left: 0px;
 }
 
 .top-info p{
-    font-size: px;
+    font-size: 20px;
     margin-top: 20px;
 }
 
@@ -110,12 +123,29 @@ nav ul li a:hover{
 .nav-block{
     display: inline-block;
     vertical-align: top;
-    margin: auto;
     list-style-type: none;
     flex-direction: row;
     justify-content: center;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-left: 0%;
-    padding-right: 20px;
+}
+
+.nav-block-record{
+    background-color: #DCEAEC;
+}
+
+.nav-block-history{
+    background-color: #E9E6D2;
+}
+
+.nav-block-message{
+    background-color: #E7DDD5;
+}
+
+.nav-block-leaderboard{
+    background-color: #E0DEED;
 }
 
 .nav-block p{
@@ -136,7 +166,9 @@ nav ul li a:hover{
 
 .nav-block li img{
     vertical-align: middle;
-    padding-top: 5px;
+    padding-top: 15px;
+    width: 40px;
+    height: 40px;
 }
 
 .nav-block p{
@@ -169,12 +201,14 @@ nav ul li a:hover{
 }
 
 .clinician-message p{
+    background-color: #1D5EB7;
     margin: auto;
     align-content: center;
     width: 250px;
     height: 25px;
     padding-left: 20px;
     padding-bottom: 5px;
+    padding-top: 5px;
     color: white;
     font-size: 11px;
     border-radius: 9px 9px 0px 0px;
@@ -182,6 +216,7 @@ nav ul li a:hover{
 
 
 .clinician-message h5{
+    background-color: white;
     box-shadow: 4px 4px 10px #C8CDCF;
     width: 250px;
     height: 150px;
@@ -370,7 +405,7 @@ nav ul li a:hover{
         font-size: 30px;
         margin-top: 40px;
     }
-    
+
     .clinician-message{
         display: inline;
         list-style: none;
@@ -382,7 +417,7 @@ nav ul li a:hover{
     }
 
     .nav-block li{
-        width: 235px;
+        width: 270px;
         height: 198px;
         border-radius: 8px;
         margin-left: 40px;

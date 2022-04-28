@@ -1,6 +1,5 @@
 body{
     color:black;
-    /*background: gray;*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -9,27 +8,21 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    /* height: 5000px; */
     background-size: cover;
     overflow: scroll;
     background-attachment: fixed;
     margin: auto;
-    /* 为了居中 */
     text-align: center;
 }
 
 
 header{
-    /* margin: 0px; */
     display: flex;
     align-items: center;
-    /* position: relative; */
-    /* opacity: 0.82; */
     height: 62px;
 }
 
 header a{
-    /* 无下划线 */
     text-decoration: none;
     color: #578AD6;
 }
@@ -46,7 +39,6 @@ header p{
 
 
 header a:hover{
-    /* 鼠标在字上的颜色 */
     color: #578AD6;
 }
 
@@ -124,24 +116,22 @@ header a:hover{
 }
 
 
-.nav-bar-side a{
+.nav-bar-left a{
     text-align: center;
     vertical-align: middle;
     font-family: 'Open Sans';
     font-size: 25px;
     text-decoration: none;
-    /* margin-top: 0%; */
     color: white;
 }
 
 
-.nav-bar-side a:hover{
-    /* 鼠标在字上的颜色 */
+.nav-bar-left a:hover{
     color: white;
 }
 
 
-.nav-bar-side{
+.nav-bar-left{
     box-shadow: 4px 4px 10px #C8CDCF;
     display: block;
     font-size: 15px;
@@ -151,19 +141,56 @@ header a:hover{
     background-color: #578AD6;
     border-radius: 28px;
     list-style-type: none;
+    margin-left: 5%; 
+    margin-right: 400px;
 }
 
-.nav-bar-side h1{
+.nav-bar-left h1{
     margin-top: 15px;
 }
 
+
+.nav-bar-right a{
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+.nav-bar-right{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    display: block;
+    font-size: 15px;
+    height: 60px;
+    margin: auto;
+    background-color: #578AD6;
+    border-radius: 28px;
+    list-style-type: none;
+    margin-right: 5%;
+    width: 200px;
+}
+
+.nav-bar-right h1{
+    margin-top: 15px;
+}
+
+.nav-bar-right a:hover{
+    color: white;
+}
+
+
+
 .nav-bar-mid{
     vertical-align: middle;
-    /* display: block; */
     list-style-type: none;
 }
 
 .nav-bar-mid h1{
+    font-family: 'Apple Braille';
     vertical-align: middle;
     margin-top: 35px;
     font-size: 60px;
@@ -190,15 +217,50 @@ header a:hover{
 .info-bar p{
     font-family: 'Open Sans';
     font-size: 30px;
+    /* display: inline; */
 }
 
 .info-bar h2{
-    font-size: 1px;
+    font-size: 10px;
+    display: inline;
 }
 
-HR{
+.info-bar-name{
+    margin-left: 85px;
+}
+
+.info-bar-bgl{
+    margin-left: 85px;
+}
+
+.info-bar-bgl p{
+    display: inline;
+}
+
+.info-bar-wght{
+    margin-left: 50px;
+}
+
+.info-bar-wght p{
+    display: inline;
+}
+
+.info-bar-doses{
+    margin-left: 120px;
+}
+
+.info-bar-stpes{
+    margin-right: 80px;
+}
+
+
+.dashboard-line{
     margin-top: 0px;
     margin-bottom: 20px;
+    width: 90%;
+    background-color: #DEEEFB;
+    height: 10px;
+    border: 0;
 }
 
 
@@ -215,10 +277,30 @@ HR{
     border-spacing: 0;
 }
 
+.patient-info-highlight{
+    background-color: #FDC5C5;
+}
+
+.patient-info-normal{
+    background-color: white;
+}
+
 .patient-info tr{
-    justify-content: space-between;
     margin: auto;
     font-size: 30px;
+}
+
+.patient-info td{
+    border: 0;
+    width: 350px;
+}
+
+.patient-info-left{
+    border-radius: 28px 0px 0px 29px;
+}
+
+.patient-info-right{
+    border-radius: 0px 28px 28px 0px;
 }
 
 
