@@ -278,6 +278,7 @@ footer h6{
         z-index: -1;
         margin: 0px;
         padding-left: 0px;
+        width: 90%;
     }
     .top-info h2{
         font-size: 34px;
@@ -285,16 +286,15 @@ footer h6{
     }
     .enter-data{
         position: relative;
-        left: 10%;
         margin-top: 0px;
         height: 700px;
-        width: 100%;
+        width: 293px;
     }
     .enter-data form span{
         display: block;
         width: 70px;
         position: relative;
-        left: 240px;
+        left: 290px;
         bottom: 27%;
         margin-left: 0px;
         margin-right: 0px;
@@ -321,11 +321,15 @@ footer h6{
         margin-top: 30px;
         left: 200px;
     }
+
+    .button1{
+        width: 300px;
+    }
     .sentence{
         position:relative;
         margin-top: 225px;
         left: 2%;
-        width: 375px;
+        width: 98%;
     }
     .sentence p{
         font-size: 12px;
@@ -333,6 +337,11 @@ footer h6{
     }
     .overlay1 {
         height: 30%;
+    }
+    .overlay1 div{
+        width: 50%;
+        height: 50%;
+        font-size: 20px;
     }
     #overlay2 #text{
         line-height: 1.6;
@@ -380,15 +389,16 @@ footer h6{
 }
 
 .overlay1 div{
+    text-align: center;
     float: right;
     position: relative;
     width: 100px;
-    height: 45px;
+    height: 34px;
     background-color: #4279C2;
     border-radius: 11px 11px 11px 11px;
     border: white;
     margin-top: 40px;
-    padding-top: 10px;
+    padding-top: 17px;
     margin-right: 25px;
     text-decoration: none;
     font-size: 24px;
