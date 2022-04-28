@@ -16,8 +16,58 @@ body {
     background-attachment: fixed;
     margin: auto;
 }
+.top img{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+.container{
+    width: 100%;
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.ribbon{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.hamb_logo{
+    width: 60px;
+    cursor: pointer;
+    display:none;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    top: -75px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+nav ul li a:hover{
+    color: black;
+}
+.navbar nav{
+    height:0px;
+}
+.navbar ul{
+    padding-top: 0px;
+}
 
-nav li{
+div li{
     font-size: 22px;
 }
 
@@ -167,8 +217,52 @@ footer h6{
 
 @media only screen and (max-width: 375px) and (orientation: portrait){
 
+    div li{
+        font-size: 16px;
+    }
+    .top h1 a{
+        font-size: 32px;
+    }
+    .container{
+        width: 100%;
+        padding-right: 0%;
+    }
+    .navbar{
+        height:0px;
+
+    }
+    nav ul{
+        width: 275px;
+        background:#4279C2;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0px;
+    }
+    nav ul li a {
+        font-size: 14px;
+        color: white;
+    }
+    .hamb_logo{
+        position: relative;
+        top:-35px;
+        right: 18px;
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    
     header {
-        width: 570px;
+        width: 100%;
     }
     nav li{
         font-size: 16px;
@@ -193,14 +287,16 @@ footer h6{
         left: 10%;
         margin-top: 0px;
         height: 700px;
+        width: 100%;
     }
     .enter-data form span{
         display: block;
         width: 70px;
         position: relative;
-        left: 400px;
+        left: 240px;
         bottom: 27%;
         margin-left: 0px;
+        margin-right: 0px;
     }
     .enter-data a{ 
         font-size: 15px;
@@ -210,24 +306,25 @@ footer h6{
     }
     .enter-data form input{
         position: relative;
-        width: 375px;
+        width: 270px;
         height: 37px;
         margin-top: 10px;
         margin-bottom: -10px;
     }
     .enter-data form{
         height: 90px;
+        width: 300px;
     }
-    .button button{
+    .button1 button{
         position: absolute;
         margin-top: 30px;
-        left: 340px;
+        left: 200px;
     }
     .sentence{
         position:relative;
         margin-top: 225px;
-        left: 5%;
-        width: 480px;
+        left: 2%;
+        width: 375px;
     }
     .sentence p{
         font-size: 12px;
