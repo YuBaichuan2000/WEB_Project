@@ -38,7 +38,7 @@ const showForm = async (req, res, next) => {
 
 const insertData = async (req, res, next) => {
     try {
-        console.log(req.body)
+        // console.log(req.body)
         curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
 
         var newentry = {}

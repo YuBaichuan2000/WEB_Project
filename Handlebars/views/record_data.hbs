@@ -1,15 +1,14 @@
-<nav>
+<div>
     <ul>
-            <li style="font-size: 16px;"><a href="/patient">Home</a> > Record data</li>
+            <li class="nav_bar"><a href="dashboard">Home</a> > Record data</li>
     </ul>
-</nav>
+</div>
+
 <main>
-    <!--标题--> 
-    <ul class="top-info" style="margin-top: -40px;">  
+    <ul class="top-info">  
         <li>
-            <h2 style="font-size: 36px; margin-bottom: 200px; color: #397EDA;">Record Your Data</h2>
-        </li>
-        
+            <h2>Record Your Data</h2>
+        </li>  
     </ul>
 
     <div id="overlay2" onclick="off2()">
@@ -23,18 +22,21 @@
         <form action="/patient/record_data" method="POST">
             <label>Enter your blood glucose level:</label>
             <input name="bgl"></input><span style="margin-left:-60px;">nmol/L</span>
+            <br>
             <a onclick="on1('bgl')">+ Add a comment</a>
             <br>
             <br>
             <br>
             <label>Enter your weight:</label>
             <input name="wght"></input><span style="margin-left:-32px;">kg</span>
+            <br>
             <a onclick="on1('wght')">+ Add a comment</a>
             <br>
             <br>
             <br>
             <label>Enter your insulin doses:</label>
             <input name="doses"></input><span style="margin-left:-58px;">doses</span>
+            <br>
             <a onclick="on1('doses')">+ Add a comment</a>
             <br>
             <br>
@@ -43,7 +45,7 @@
             <input name="steps"></input><span style="margin-left:-58px;">steps</span>
             <br>
             <a onclick="on1('steps')">+ Add a comment</a>
-            <div class="button">
+            <div class="button1">
                 <button onclick="on2()" type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
             </div>
 
@@ -51,28 +53,28 @@
                 <label>Add a comment:</label>
                 <br>
                 <textarea name="bglcmt" id="comment"></textarea>
-                <div onclick="off1('bgl')" class="button">Done</div>
+                <div onclick="off1('bgl')" class="button1">Done</div>
             </div>
 
             <div id="overlaywght" class="overlay1">
                 <label>Add a comment:</label>
                 <br>
                 <textarea name="wghtcmt" id="comment"></textarea>
-                <div onclick="off1('wght')" class="button">Done</div>
+                <div onclick="off1('wght')" class="button1">Done</div>
             </div>
 
             <div id="overlaydoses" class="overlay1">
                 <label>Add a comment:</label>
                 <br>
                 <textarea name="dosescmt" id="comment"></textarea>
-                <div onclick="off1('doses')" class="button">Done</div>
+                <div onclick="off1('doses')" class="button1">Done</div>
             </div>
 
             <div id="overlaysteps" class="overlay1">
                 <label>Add a comment:</label>
                 <br>
                 <textarea name="stepscmt" id="comment"></textarea>
-                <div onclick="off1('steps')" class="button">Done</div>
+                <div onclick="off1('steps')" class="button1">Done</div>
             </div>
             
         </form>

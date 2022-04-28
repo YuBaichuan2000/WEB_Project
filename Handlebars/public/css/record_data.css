@@ -113,13 +113,13 @@ h1{
     color: #868686;
 }
 
-.button{
+.button1{
     width: 540px;
     margin: auto;
     padding: 1px;
 }
 
-.button button{
+.button1 button{
     float: right;
     position: relative;
     width: 100px;
@@ -130,7 +130,7 @@ h1{
     border: white;
 }
 
-.button button a{
+.button1 button a{
     text-decoration: none;
     font-size: 20px;
     color: white;
@@ -139,7 +139,7 @@ h1{
     float: left;
 }
 
-.button button a img{
+.button1 button a img{
     width: 15px;
     height: 15px;
     margin-top: 9px;

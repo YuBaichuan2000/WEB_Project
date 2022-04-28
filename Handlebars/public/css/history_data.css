@@ -1,6 +1,5 @@
 body {
     color: black;
-    /*background: gray;*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
@@ -10,11 +9,54 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     height: 1080px;
-    /* height: 5000px; */
     background-size: cover;
     overflow: scroll;
     background-attachment: fixed;
     margin: auto;
+}
+.container{
+    width: 100%;
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.ribbon{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.hamb_logo{
+    width: 60px;
+    cursor: pointer;
+    display:none;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    top: -75px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+nav ul li a:hover{
+    color: black;
+}
+
+div li{
+    font-size: 22px;
 }
 
 header {
@@ -23,18 +65,20 @@ header {
     position: relative;
     background-color: #1D5EB7;
     opacity: 0.82;
-    height: 75px;
+    height: 80px;
 }
 
 ul {
     display: block;
     list-style-type: none;
-    padding-top: 30px;
+    padding-top: 0px;
+    padding-left: 100px;
     font-size: 18px;
     line-height: 2em;
 }
 .top img{
     margin-left: 30px;
+    margin-right: 10px;
 }
 h1{
     color: white;
@@ -42,21 +86,25 @@ h1{
     font-size: 45px;
 }
 
-/* history data */
-
-
 header a {
-    /* 无下划线 */
     text-decoration: none;
-    /* 白色字体 */
     color: white;
 } 
 
 header a:hover {
-    /* 鼠标在字上的颜色 */
     color: white;
 }
 
+.title{
+    margin-top: -40px;
+    margin-bottom: 100px;
+}
+
+.title h2{
+    font-size: 44px; 
+    margin-bottom: 30px; 
+    color: #397EDA;
+}
 
 .datatab{
     max-width: 70%;
@@ -87,14 +135,20 @@ thead td{
     border: none;
 }
 
-
+.button2{
+    max-width: 70%;
+    height: 200px;
+    margin: auto;
+    padding: 1px;
+    position: relative;
+}
 
 button{
+    float: right;
     width: 139px;
     height: 48px;
     margin-top: 65px;
     margin-bottom: 100px;
-    margin-left: 1080px;
     background-color: #4279C2;
     border-radius: 11px 11px 11px 11px;
     border: white;
@@ -139,9 +193,138 @@ p{
     margin-left: auto;
     margin-right: auto;
 }
+.data_graph li h4{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: black;
+}
 
 footer h6{
+    margin-top: 100px;
     margin: 42px;
     margin-bottom: 20px;
     font-size: 10px;
+}
+
+@media only screen and (max-width: 375px) and (orientation: portrait){
+    .container{
+        width: 100%;
+        padding-right: 0%;
+    }
+    .navbar{
+        height:0px;
+    }
+    nav ul{
+        width: 275px;
+        background:#4279C2;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0px;
+    }
+    nav ul li a {
+        font-size: 14px;
+        color: white;
+    }
+    .hamb_logo{
+        position: relative;
+        top:-35px;
+        right: 18px;
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .top h1 a{
+        font-size: 32px;
+    }
+    header {
+        width: 375px;
+    }
+    nav li{
+        font-size: 16px;
+    }
+    nav ul{
+        margin: 0px;
+    }
+    .nav_bar { 
+        position: absolute;
+        left: 10%;
+        font-size: 16px;
+    }
+    .nav_bar a{ 
+        font-size:16px;
+    }
+
+    ul{
+        padding-top: 8px;
+    }
+    
+    .title{
+        position: relative;
+        left: 10%;
+        margin: 0px;
+        padding-left: 0px;
+        width: 250px;
+    }
+    .title li{
+        width: 250px;
+    }
+    .title h2{
+        margin-top: -18px;
+        font-size: 34px;
+        margin-bottom: 40px;
+        width:300px;
+    }
+    .datatab{
+        position: relative;
+        font-size: 12px;
+        left:0%;
+    }
+
+    .page_navigation{
+        position: relative;
+        left: 0%;
+    }
+    .button2{
+        position: absolute;
+        left: 210px;
+        margin: 0px;
+    }
+    .data_graph{
+        padding-left: 40px;
+    }
+    .data_graph li h4{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    .title{
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .button2{
+        height:0px;
+    }
+    .button2 button{
+        position: relative;
+        margin-top: 0px;
+        bottom: 40px;
+    }
+    .page_navigation{
+        position: relative;
+        bottom: 40px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
 }
