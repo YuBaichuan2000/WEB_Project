@@ -48,10 +48,10 @@ app.get('/forgot', (req, res) => {
 })
 
 app.get('/diabetes', (req, res) => {
-    res.render('diabetes',{style:'stylesheet.css', loggedout: true})
+    res.render('diabetes', {style:'stylesheet.css', loggedout: true})
 })
 app.get('/website', (req, res) => {
-    res.render('website',{style:'stylesheet.css', loggedout: true})
+    res.render('website', {style:'stylesheet.css', loggedout: true})
 })
 
 
