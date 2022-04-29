@@ -116,14 +116,11 @@ ul {
 }
 
 header a {
-    /* 无下划线 */
     text-decoration: none;
-    /* 白色字体 */
     color: white;
 } 
 
 header a:hover {
-    /* 鼠标在字上的颜色 */
     color: white;
 }
 
