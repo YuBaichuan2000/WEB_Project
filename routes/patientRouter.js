@@ -33,5 +33,9 @@ patientRouter.get('/website', (req, res) => {
     res.render('website',{style:'stylesheet.css', loggedout: false})
 })
 
+patientRouter.get('/test', (req, res) => {
+    res.render('', {layout: 'patient.hbs', style:''})
+})
+
 // export the router
 module.exports = patientRouter
