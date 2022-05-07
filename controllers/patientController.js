@@ -8,7 +8,7 @@ const getAllData = async (req, res, next) => {
     try {
         const patient = await Patient.findOne({first_name: "Pat"}).lean()
         // console.log(JSON.stringify(patient, null, 4))
-        const entries = await Entry.find({_patient : patient._id}).populate({path: '_patient', model: Patient}).lean()
+        const entries = await Entry.find({_patient : patient._id}).populate('_patient').lean()
         // console.log(JSON.stringify(entries, null, 4))
 
         // sort by time

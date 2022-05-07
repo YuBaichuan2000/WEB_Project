@@ -21,6 +21,10 @@
         <p class="role_selector clinician selected"><a href="/webc" target="">Clinician</a></p><br><br><br><br>
     {{/if}}
     
+    {{#each flash}}
+        <p class="alert">{{this}}</p>
+    {{/each}}
+
     <form class="login_form" {{#if patient}} action="/patient" {{else}} action="/clinician" {{/if}}>
         <div class="username_password">
             <label for="Username">Username*</label><br>

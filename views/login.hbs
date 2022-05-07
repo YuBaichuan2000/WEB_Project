@@ -3,6 +3,9 @@
     <img src="/images/patient_login_icon.png">
 </header>
 <br>
+{{#each flash}}
+    <p class="alert">{{this}}</p>
+{{/each}}
 <form action="/patient">
     <div class="input_box">
         <input type="text" placeholder="Enter Email address" required>

@@ -1,16 +1,30 @@
 const express = require('express')
-
+const passport = require('passport')
 // create our Router object
 const patientRouter = express.Router()
 
 // import people controller functions
 const patientController = require('../controllers/patientController')
 
+// Authentication middleware
+const isAuthenticated = (req, res, next) => {
+// If user is not authenticated via passport, redirect to login page
+    if (!req.isAuthenticated()) {
+        return res.redirect('/')
+    }
+    // Otherwise, proceed to next middleware function
+    return next()
+}
+
+
 // patient dashboard
-patientRouter.get('/', (req, res) => {
+patientRouter.get('/', isAuthenticated, (req, res, next) => {
     res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', Username:'Pat'})
 })
-
+// Login page (with failure message displayed upon login failure)
+patientRouter.get('/login', (req, res) => {
+    res.render('login', { flash: req.flash('error'), title: 'Login' })
+})
 // get all patient's histry data
 patientRouter.get('/history_data', patientController.getAllData)
 
@@ -37,5 +51,17 @@ patientRouter.get('/test', (req, res) => {
     res.render('', {layout: 'patient.hbs', style:''})
 })
 
-// export the router
+// Handle login
+patientRouter.post('/login',
+    passport.authenticate('patiient-strategy', {
+        successRedirect: '/', failureRedirect: '/login', failureFlash: true
+    })
+)
+// Handle logout
+patientRouter.post('/logout', (req, res) => {
+    req.logout()
+    res.redirect('/')
+})
+
+// export the patientRouter
 module.exports = patientRouter
