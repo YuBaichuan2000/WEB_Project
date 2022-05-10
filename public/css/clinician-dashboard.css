@@ -306,9 +306,49 @@ header a:hover{
 }
 
 .patient-info td{
+    position: relative;
+    /* color: {{#ifHigher}} red {{else}} green {{/ifHigher}}; */
     border: 0;
     width: 350px;
 }
+
+/* ifHigher: function (status, options){
+    if(status == "higher"){
+        return option.fn(this);
+    }
+    return options.inverse(this);
+}
+
+ifLower: function (status, options){
+    if(status == "lower"){
+        return option.fn(this);
+    }
+    return options.inverse(this);
+} */
+
+/* .to_top{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #D00000;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.to_bottom{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 20px solid #6CB83B;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+} */
 
 .patient-info-left{
     border-radius: 28px 0px 0px 29px;
