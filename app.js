@@ -28,14 +28,9 @@ app.use(
     session({
         // The secret used to sign session cookies (ADD ENV VAR)
         secret: process.env.SESSION_SECRET || 'keyboard cat',
-        name: 'demo', // The cookie name (CHANGE THIS)
         saveUninitialized: false,
         resave: false,
-        cookie: {
-            sameSite: 'strict',
-            httpOnly: true,
-            secure: app.get('env') === 'production'
-        },
+        cookie: {maxAge: 300000},
     })
 )
 // Initialise Passport.js
@@ -46,43 +41,24 @@ app.use(passport.authenticate('session'))
 const clinicianRouter = require('./routes/clinicianRouter')
 const patientRouter = require('./routes/patientRouter')
 
-app.use('/clinician', clinicianRouter)
-app.use('/patient', patientRouter)
-
-
-// Load authentication router
-// const authRouter = require('./routes/auth')
-// app.use(authRouter)
-
-// const MongoStore = require('connect-mongo')
-// const mongooseClient = require('./models')
-// session({
-//     // The secret used to sign session cookies (ADD ENV VAR)
-//     secret: process.env.SESSION_SECRET || 'keyboard cat',
-//     name: 'demo', // The cookie name (CHANGE THIS)
-//     saveUninitialized: false,
-//     resave: false,
-//     cookie: {
-//         sameSite: 'strict',
-//         httpOnly: true,
-//         secure: app.get('env') === 'production'
-//     },
-//     store: MongoStore.create({ clientPromise: mongooseClient }),
-// })
+// patient features
+app.use("/patient", patientRouter);
+// clinician features
+app.use("/clinician", clinicianRouter);
 
 // main login page
 app.get('/', (req, res) => {
     res.render('login', {style:"patient_login.css"})
 })
 
-// login page for web size
-app.get('/webp', (req, res) => {
-    res.render('desktoplogin', {patient: true, style:"desktoplogin.css"})
-})
+// // login page for web size
+// app.get('/webp', (req, res) => {
+//     res.render('desktoplogin', {patient: true, style:"desktoplogin.css"})
+// })
 
-app.get('/webc', (req, res) => {
-    res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
-})
+// app.get('/webc', (req, res) => {
+//     res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
+// })
 
 app.get('/forgot', (req, res) => {
     res.render('forgot')

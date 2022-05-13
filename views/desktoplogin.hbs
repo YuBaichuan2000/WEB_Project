@@ -14,24 +14,24 @@
     </div>
 
     {{#if patient}}
-        <p class="role_selector patient selected"><a href="/webp" target="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient</a></p>
-        <p class="role_selector clinician"><a href="/webc" target="">Clinician</a></p><br><br><br><br>
+        <p class="role_selector patient selected"><a href="/patient/webp" target="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient</a></p>
+        <p class="role_selector clinician"><a href="/clinician/webc" target="">Clinician</a></p><br><br><br><br>
     {{else}}
-        <p class="role_selector patient"><a href="/webp" target="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient</a></p>
-        <p class="role_selector clinician selected"><a href="/webc" target="">Clinician</a></p><br><br><br><br>
+        <p class="role_selector patient"><a href="/patient/webp" target="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Patient</a></p>
+        <p class="role_selector clinician selected"><a href="/clinician/webc" target="">Clinician</a></p><br><br><br><br>
     {{/if}}
     
     {{#each flash}}
         <p class="alert">{{this}}</p>
     {{/each}}
 
-    <form class="login_form" {{#if patient}} action="/patient" {{else}} action="/clinician" {{/if}}>
+    <form class="login_form" {{#if patient}} action="/patient/login" {{else}} action="/clinician/login" {{/if}} method="POST">
         <div class="username_password">
             <label for="Username">Username*</label><br>
-            <input type="text" id="Username" name="Username"><br>
+            <input type="text" id="Username" name="email"><br>
             <br>
             <label for="Password">Password*</label><br>
-            <input type="password" id="Password" name="Password"><br>
+            <input type="password" id="Password" name="password"><br>
         </div>
         <ul class="forgot_password">
             <li><a href="/forgot", target="_blank">Forget Password?</a></li>

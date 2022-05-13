@@ -1,18 +1,31 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
+const bcrypt = require("bcrypt");
 // Get users
 const Patient = require('./models/patient')
 const Clinician = require('./models/clinician')
-// Serialize information to be stored in session/cookie
+
+
+//Serialize information to be stored in session/cookie
 passport.serializeUser((user, done) => {
     // Use id to serialize user
-    done(undefined, user._id)
+    done(null, {_id: user._id, role:user.role})
 })
-// When a request comes in, deserialize/expand the serialized information
-// back to what it was (expand from id to full user)
+//When a request comes in, deserialize/expand the serialized information
+//back to what it was (expand from id to full user)
+// passport.deserializeUser((login, done) => {
+//     // Run database query here to retrieve user information
+//     // For now, just return the hardcoded user
+//     if (login.role === "patient"){
+//         Patient.findById(login._id, (err, user) => {
+//             return done(err, user)
+//         })
+//     }  
+//     else{
+//         return done("This user does not have a role", null)
+//     }
+// })
 passport.deserializeUser((userId, done) => {
-    // Run database query here to retrieve user information
-    // For now, just return the hardcoded user
     Patient.findById(userId, { password: 0 }, (err, user) => {
         if (err) {
             return done(err, undefined)
@@ -20,78 +33,61 @@ passport.deserializeUser((userId, done) => {
         return done(undefined, user)
     })
 })
-// Define local authentication strategy for Passport
-// http://www.passportjs.org/docs/downloads/html/#strategies
-passport.use('patient-strategy',
-    new LocalStrategy((email, password, done) => {
-        Patient.findOne({ email }, {}, {}, (err, user) => {
-            if (err) {
-                return done(undefined, false, {
-                    message: 'Unknown error has occurred'
-                })
-            }
-            if (!user) {
-                return done(undefined, false, {
-                    message: 'Incorrect email or password',
-                })
-            }
-            // Check password
-            user.verifyPassword(password, (err, valid) => {
-                if (err) {
-                    return done(undefined, false, {
-                        message: 'Unknown error has occurred'
-                    })
-                }
-                if (!valid) {
-                    return done(undefined, false, {
-                        message: 'Incorrect email or password',
-                    })
-                }
-                 // If user exists and password matches the hash in the database
-                return done(undefined, user)
-            })
-        })
-    })       
-)
-
-passport.use('clinician-strategy',
-    new LocalStrategy((email, password, done) => {
-        Clinician.findOne({ email }, {}, {}, (err, user) => {
-            if (err) {
-                return done(undefined, false, {
-                    message: 'Unknown error has occurred'
-                })
-            }
-            if (!user) {
-                return done(undefined, false, {
-                    message: 'Incorrect email or password',
-                })
-            }
-            // Check password
-            user.verifyPassword(password, (err, valid) => {
-                if (err) {
-                    return done(undefined, false, {
-                        message: 'Unknown error has occurred'
-                    })
-                }
-                if (!valid) {
-                    return done(undefined, false, {
-                        message: 'Incorrect email or password',
-                    })
-                }
-                 // If user exists and password matches the hash in the database
-                return done(undefined, user)
-            })
-        })
-    })       
-)
-
-// Patient.find({}, (err, users) => {
-//     if (users.length > 0) return;
-//     Patient.create({ email: 'user', password: 'hashed!', secret: 'INFO30005' }, (err) => {
-//         if (err) { console.log(err); return; }
-//         console.log('Dummy user inserted')
-//     })
-// })
     
+//Define local authentication strategy for Passport
+passport.use('patient-strategy',
+    new LocalStrategy(
+        {
+            usernameField:"email",
+            passwordField:"password",
+            passReqToCallback: true
+        },
+        (req, email, password, done) => {
+            process.nextTick(() => {
+                Patient.findOne({'email':email.toLowerCase()}, async(err,patient) => {
+                    if (err) {
+                        return done(err);
+                    }
+                    else if(!patient){
+                        return done(null, false, req.flash('loginMessage','No user found'));
+                    }
+                    else if (!(password == patient.password)){
+                        return done(null, false, req.flash('loginMessage','Wrong password'));
+                    }
+                    else{
+                        return done(null, patient, req.flash('loginMessage', 'Login successful'));
+                    }
+            });
+        })
+    })
+)
+    
+
+//Define local authentication strategy for Passport
+passport.use('clinician-strategy',
+    new LocalStrategy(
+        {
+            usernameField:"email",
+            passwordField:"password",
+            passReqToCallback: true
+        },
+        (req, email, password, done) => {
+            process.nextTick(() => {
+                Clinician.findOne({'email':email.toLowerCase()}, async(err,clinician) => {
+                    if (err) {
+                        return done(err);
+                    }
+                    else if(!clinician){
+                        return done(null, false, req.flash('loginMessage','No user found'));
+                    }
+                    else if (!(password == clinician.password)){
+                        return done(null, false, req.flash('loginMessage','Wrong password'));
+                    }
+                    else{
+                        return done(null, clinician, req.flash('loginMessage', 'Login successful'));
+                    }
+            });
+        })
+    })
+)
 module.exports = passport
