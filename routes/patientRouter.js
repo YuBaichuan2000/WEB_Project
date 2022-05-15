@@ -15,25 +15,25 @@ patientRouter.post('/login',
 )
 
 // login page for web size
-patientRouter.get('/webp', (req, res) => {
+patientRouter.get('/webp', utility.unLoggedIn, (req, res) => {
     res.render('desktoplogin', {patient: true, style:"desktoplogin.css"})
 })
 // patient dashboard
-patientRouter.get('/dashboard',(req, res, next) => {
+patientRouter.get('/dashboard', utility.isLoggedIn, (req, res, next) => {
     res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', Username:'Pat'})
 })
 
 // get all patient's histry data
-patientRouter.get('/history_data', patientController.getAllData)
+patientRouter.get('/history_data', utility.isLoggedIn, patientController.getAllData)
 
 // display and post new data
-patientRouter.get('/record_data', patientController.showForm)
+patientRouter.get('/record_data', utility.isLoggedIn, patientController.showForm)
 patientRouter.post('/record_data', patientController.insertData)
 
 patientRouter.get('/leaderboard', (req, res) => {
     res.render('leaderboard')
 })
-patientRouter.get('/messages', (req, res) => {
+patientRouter.get('/messages', utility.isLoggedIn, (req, res) => {
     res.render('messages')
 })
 
