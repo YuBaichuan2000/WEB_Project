@@ -8,13 +8,19 @@ const Patient = require('../models/patient')
 // Compares the provided password with the stored password
 // Allows us to call user.verifyPassword on any returned objects
 Patient.methods.verifyPassword = function (password, callback) {
-    bcrypt.compare(password, this.password, (err, valid) => {
+    // bcrypt.compare(password, this.password, (err, valid) => {
+    //     callback(err, valid)
+    // })
+    compare(password, this.password, (err, valid) => {
         callback(err, valid)
     })
 }
 
 Clinician.methods.verifyPassword = function (password, callback) {
-    bcrypt.compare(password, this.password, (err, valid) => {
+    // bcrypt.compare(password, this.password, (err, valid) => {
+    //     callback(err, valid)
+    // })
+    compare(password, this.password, (err, valid) => {
         callback(err, valid)
     })
 }
