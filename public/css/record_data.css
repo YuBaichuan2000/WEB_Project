@@ -168,6 +168,18 @@ h1{
     margin-bottom: 40px;
 }
 
+.enter-data form div .entered{
+    padding-right:20px; 
+    text-align:left;
+    width: 500px;
+    height: 45px;
+    background-color: white;
+    border: 1.8px solid black;
+    border-radius: 9px 9px 9px 9px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
 .enter-data form span{
     color: #868686;
 }
