@@ -68,7 +68,27 @@ const getAllComments = async (req, res, next) => {
     }
 }
 
+// add new patient to database
+const insertPatient = async (req, res, next) => {
+    try {
+        // console.log(req.body)
+
+        const clinician = await Clinician.findOne({first_name: "Chris"}).lean()
+
+        var patient = req.body
+        patient.clinician = clinician._id
+
+        const newPatient = new Patient(patient)
+        await newPatient.save()
+
+        return res.redirect("/clinician/dashboard")
+    } catch (err) {
+        return next(err)
+    }
+}
+
 module.exports = { 
     getAllPatientData,
-    getAllComments
+    getAllComments,
+    insertPatient
 } 

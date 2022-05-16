@@ -1,0 +1,48 @@
+<body>
+    <div class="title">
+        Sign up new patient
+    </div>
+
+    <div id="overlay" onclick="off()">
+        <div id="text">
+            New patient has been successfully submitted!                
+        </div>
+        <a href="/clinician/dashboard">Back to dashboard ></a>
+    </div>
+
+    <div class="enter-data" id="form">
+        <form method="POST">
+            <label>Given name:</label>
+            <input name="first_name" required>
+            <br>
+            <label>Family name:</label>
+            <input name="last_name" required>
+            <br>
+            <label>Screen name:</label>
+            <input name="screen_name" required>
+            <br>
+            <label>Email:</label>
+            <input name="email" required>
+            <br>
+            <label>Gender (F/M/other):</label>
+            <input name="gender" required>
+            <br>
+            <label>New password (at least 8 characters) :</label>
+            <input type="password" name="password" required>
+            <br>
+            <label>Year of birth:</label>
+            <input name="yob" required>
+            <br>
+            <label>Text bio:</label>
+            <br>
+            <textarea name="bio" required></textarea>
+            <br>
+             <div class="button">
+                <button type="submit"><a>Sign up</a></button>
+            </div>
+        </form>
+    </div>
+            
+
+
+</body>
