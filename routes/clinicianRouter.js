@@ -21,7 +21,7 @@ clinicianRouter.get('/dashboard', utility.isLoggedIn, clinicianController.getAll
 clinicianRouter.get('/comments', utility.isLoggedIn, clinicianController.getAllComments)
 
 clinicianRouter.get('/test', (req, res) => {
-    res.render('', {layout: 'clinician.hbs', style:''})
+    res.render('signupnewpatient.hbs', {layout: 'clinician.hbs', style:'signupnewpatient.css'})
 })
 // Handle logout
 // clinicianRouter.post('/logout', (req, res) => {
