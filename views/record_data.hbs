@@ -25,9 +25,15 @@
             <div class="entered">{{data.bgl.val}}</div><span class="nmol">nmol/L</span>
             {{else}}
             <input name="bgl"></input><span class="nmol">nmol/L</span>
-            <br>
-            <a onclick="on1('bgl')">+ Add a comment</a>
             {{/if}}
+            <br>
+            {{#unless data.bgl.cmt}}
+            <a onclick="on1('bgl')">+ Add a comment</a>
+<<<<<<< HEAD
+            {{/if}}
+=======
+            {{/unless}}
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
             <br>
             <br>
             <br>
@@ -36,9 +42,15 @@
             <div class="entered">{{data.wght.val}}</div><span class="kg">kg</span>
             {{else}}
             <input name="wght"></input><span class="kg">kg</span>
-            <br>
-            <a onclick="on1('wght')">+ Add a comment</a>
             {{/if}}
+            <br>
+            {{#unless data.wght.cmt}}
+            <a onclick="on1('wght')">+ Add a comment</a>
+<<<<<<< HEAD
+            {{/if}}
+=======
+            {{/unless}}
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
             <br>
             <br>
             <br>
@@ -47,9 +59,15 @@
             <div class="entered">{{data.doses.val}}</div><span class="doses">doses</span>
             {{else}}
             <input name="doses"></input><span class="doses">doses</span>
-            <br>
-            <a onclick="on1('doses')">+ Add a comment</a>
             {{/if}}
+            <br>
+            {{#unless data.doses.cmt}}
+            <a onclick="on1('doses')">+ Add a comment</a>
+<<<<<<< HEAD
+            {{/if}}
+=======
+            {{/unless}}
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
             <br>
             <br>
             <br>
@@ -58,9 +76,15 @@
             <div class="entered">{{data.steps.val}}</div><span class="steps">steps</span>
             {{else}}
             <input name="steps"></input><span class="steps">steps</span>
-            <br>
-            <a onclick="on1('steps')">+ Add a comment</a>
             {{/if}}
+            <br>
+            {{#unless data.steps.cmt}}
+            <a onclick="on1('steps')">+ Add a comment</a>
+<<<<<<< HEAD
+            {{/if}}
+=======
+            {{/unless}}
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
             <div class="button1">
                 <button onclick="on2()" type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
             </div>

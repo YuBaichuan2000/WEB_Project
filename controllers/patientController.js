@@ -51,10 +51,15 @@ const insertData = async (req, res, next) => {
         // console.log(req.body)
         today = new Date();
         today.setHours(0,0,0,0);
+<<<<<<< HEAD
 
         console.log(JSON.stringify(req.body, null, 4))
 
         const patient = await Patient.findOne({first_name: "Pat"}).lean()
+=======
+        const patient = await Patient.findOne({first_name: "Pat"}).lean()
+        const entry = await Entry.findOne({_patient : patient._id, time: {$gt: today}}).lean()
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
 
         curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
 
@@ -62,12 +67,20 @@ const insertData = async (req, res, next) => {
         for (const i of ["bgl", "wght", "doses", "steps"]) {
             if (req.body[i] != "") {
                 update[`${i}.val`] = req.body[i]
+<<<<<<< HEAD
 
                 // add comment if entered
                 if (req.body[`${i}cmt`] != "") {
                     update[`${i}.cmt`] = req.body[`${i}cmt`]
                     update[`${i}.time`] = curtime
                 }
+=======
+            }
+            // add comment if entered
+            if (req.body[`${i}.cmt`] != "") {
+                update[`${i}.cmt`] = req.body[`${i}cmt`]
+                update[`${i}.time`] = curtime
+>>>>>>> 11c7c7efff06cb4064aecb0b0ce9ff10d7308b07
             }
         }
         // update overall time
