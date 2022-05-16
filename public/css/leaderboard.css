@@ -118,53 +118,163 @@ h1{
     font-family: 'Hurricane', cursive;
     font-size: 45px;
 }
-
-.top1-guy{
-    position: relative;
+.number1-pfp {
+    width: 50%;
     margin: auto;
-    top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.top1-guy .pfp img{
-    float: left;
+.pfp1{
     position: relative;
-    left: 885px;
+    left: 16px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
-
-.top1-guy .badge img{
+.number1-pfp span{
     position: relative;
-    left: 850px;
-    top: 105px;
+    left: -17px;
+    top: 55px;
+}
+.badge1{
     width: 33px;
     height: 44px;
 }
 
-.top1-guy .username {
+.username1 {
+    display: block;
     position: relative;
-    top: 115px;
+    top: 25px;
     margin: auto;
     width: 50%;
     text-align: center;
-    font-size: 32px;
+    font-size: 35px;
     font-family: 'Arial Rounded MT Bold';
     padding: 20px;
 }
 
-.top1-guy .score {
+.score1 {
     position: relative;
-    top: 125px;
+    top: 40px;
     margin: auto;
     width: 50%;
+    text-align: center;
+    font-size: 38px;
+    font-family: 'American Typewriter';
+}
+
+.others{
+    position: relative;
+    height: 90px;
+    top: 100px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: #DEEDFB;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.rank {
+    display: inline;
+    position: absolute;
+    top: 44%;
+    left: 9%;
+    font-family: 'Al Nile';
+    font-size: 60px;
+    color: #367DDB;
+}
+
+.others .pfp{
+    display: inline;
+    position: absolute;
+    top: 17%;
+    left: 18%;
+    width: 30%;
+}
+.pfp2{
+    display: inline;
+    position: relative;
+    left: 16px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.badge2{
+    display: inline;
+    width: 15px;
+    height: 20px;
+}
+.others .pfp span{
+    position: relative;
+}
+
+.username2 {
+    display: inline;
+    position: absolute;
+    left: 45%;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Arial Rounded MT Bold';
+}
+
+.score2 {
+    display: inline;
+    position: absolute;
+    right: 11%;
     text-align: center;
     font-size: 36px;
     font-family: 'American Typewriter';
 }
 
 
-.badge-info p{
+.badge-info {
     position: relative;
-    top: 800px;
+    top: 10%;
+    left: 8%;
+}
+
+.info-title p{
+    font-family: 'Century Gothic Pro';
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.badge-info span{
+    position: relative;
+    top: 7px;
+    padding: 16px;
+}
+.badge3{
+    width: 33px;
+    height: 44px;
+}
+
+.info-text p{
+    font-family: 'Century Gothic Pro';
+    font-size: 30px;
+    max-width: 80%;
+    margin-top: 4%;
+    line-height: 1.6;
+}
+
+.badge4{
+    width: 30px;
+    height: 40px;
+}
+
+.sentence{
+    position: relative;
+    top: 20%;
+    left: 8%;
+}
+
+.sentence p{
+    font-size: 26px;
+    font-family: 'Apple Chancery';
+    max-width: 80%;
+    line-height: 1.6;
 }

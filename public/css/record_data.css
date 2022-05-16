@@ -213,10 +213,11 @@ h1{
 }
 
 .sentence p{
-    font-size: 22px;
+    font-size: 26px;
     font-family: 'Apple Chancery';
     margin: auto;
     max-width: 80%;
+    line-height: 1.6;
 }
 
 footer h6{
