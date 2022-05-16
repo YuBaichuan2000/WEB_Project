@@ -1,0 +1,170 @@
+body {
+    color: black;
+    /*background: gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6em;
+    margin: 0;
+    background-image: url(../images/background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 2080px;
+    /* height: 5000px; */
+    background-size: cover;
+    overflow: scroll;
+    background-attachment: fixed;
+    margin: auto;
+}
+
+.top img{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+.container{
+    width: 100%;
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.ribbon{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.hamb_logo{
+    width: 60px;
+    cursor: pointer;
+    display:none;
+}
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    top: -75px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+nav ul li a:hover{
+    color: black;
+}
+.navbar nav{
+    height:0px;
+}
+.navbar ul{
+    padding-top: 0px;
+}
+
+div li{
+    font-size: 22px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #1D5EB7;
+    opacity: 0.82;
+    height: 80px;
+}
+
+ul {
+    display: block;
+    padding-left: 100px;
+    list-style-type: none;
+    padding-top: 30px;
+    font-size: 18px;
+    line-height: 2em;
+}
+.top img{
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.top-info{
+    margin-top: -40px;
+}
+
+.top-info h2{
+    font-size: 44px; 
+    margin-bottom: 120px; 
+    color: #397EDA;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+} 
+
+header a:hover {
+    color: white;
+}
+
+h1{
+    color: white;
+    font-family: 'Hurricane', cursive;
+    font-size: 45px;
+}
+
+.top1-guy{
+    position: relative;
+    margin: auto;
+    top: -30px;
+}
+
+.top1-guy .pfp img{
+    float: left;
+    position: relative;
+    left: 885px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.top1-guy .badge img{
+    position: relative;
+    left: 850px;
+    top: 105px;
+    width: 33px;
+    height: 44px;
+}
+
+.top1-guy .username {
+    position: relative;
+    top: 115px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Arial Rounded MT Bold';
+    padding: 20px;
+}
+
+.top1-guy .score {
+    position: relative;
+    top: 125px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 36px;
+    font-family: 'American Typewriter';
+}
+
+
+.badge-info p{
+    position: relative;
+    top: 800px;
+}
