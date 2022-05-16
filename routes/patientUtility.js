@@ -13,7 +13,7 @@ function isLoggedIn (req, res, next) {
             return next()
         }
         // Otherwise, proceed to next middleware function
-        res.redirect('/login')
+        res.redirect('/')
     }
 
 module.exports = {
