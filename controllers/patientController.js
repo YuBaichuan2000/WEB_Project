@@ -34,7 +34,12 @@ const getAllData = async (req, res, next) => {
 // show form for data entry
 const showForm = async (req, res, next) => {
     try {
-        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css'})
+        today = new Date();
+        today.setHours(0,0,0,0);
+        const patient = await Patient.findOne({first_name: "Pat"}).lean()
+        const entry = await Entry.findOne({_patient : patient._id, time: {$gt: today}}).lean()
+
+        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css', data: entry})
     } catch (err) {
         return next(err)
     }
@@ -44,30 +49,43 @@ const showForm = async (req, res, next) => {
 const insertData = async (req, res, next) => {
     try {
         // console.log(req.body)
+        today = new Date();
+        today.setHours(0,0,0,0);
+
+        console.log(JSON.stringify(req.body, null, 4))
+
+        const patient = await Patient.findOne({first_name: "Pat"}).lean()
+
         curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
 
-        var newentry = {}
+        var update = {}
         for (const i of ["bgl", "wght", "doses", "steps"]) {
-            // get each field if entered
             if (req.body[i] != "") {
-                newentry[i] = {
-                    val: req.body[i],
-                    time: curtime
-                }
-                // get comment if entered
+                update[`${i}.val`] = req.body[i]
+
+                // add comment if entered
                 if (req.body[`${i}cmt`] != "") {
-                    newentry[i].cmt = req.body[`${i}cmt`]
+                    update[`${i}.cmt`] = req.body[`${i}cmt`]
+                    update[`${i}.time`] = curtime
                 }
             }
         }
-
-        // add to pat the patient for now
-        newentry._patient = mongoose.Types.ObjectId("6257ddb12bd8af4ada4ccf86")
-        newentry.time = curtime
-        
-        const newEntry = new Entry(newentry)
-        await newEntry.save()
+        // update overall time
+        update.time = curtime
+        await Entry.updateOne(
+            {_patient : patient._id, time: {$gt: today}},
+            {$set: update},
+            {upsert: true})
         return
+    } catch (err) {
+        return next(err)
+    }
+}
+
+// get all history data for one patient
+const getLeaderboard = async (req, res, next) => {
+    try {
+        return res.render('leaderboard', {layout: 'patient.hbs', style: 'leaderboard.css'})
     } catch (err) {
         return next(err)
     }
@@ -76,5 +94,6 @@ const insertData = async (req, res, next) => {
 module.exports = { 
     getAllData,
     showForm,
-    insertData
+    insertData,
+    getLeaderboard
 } 

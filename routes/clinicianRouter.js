@@ -1,7 +1,6 @@
 const express = require('express')
 const passport = require('passport')
 const clinicianRouter = express.Router()
-const utility = require("./clinicianUtility.js");
 const clinicianController = require('../controllers/clinicianController')
 
 // Handle login
@@ -11,14 +10,14 @@ clinicianRouter.post('/login',
     })
 )
 
-clinicianRouter.get('/webc', utility.unLoggedIn, (req, res) => {
+clinicianRouter.get('/webc', (req, res) => {
     res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
 })
 
 // GET all patients' data and comments
-clinicianRouter.get('/dashboard', utility.isLoggedIn, clinicianController.getAllPatientData)
+clinicianRouter.get('/dashboard', clinicianController.getAllPatientData)
 
-clinicianRouter.get('/comments', utility.isLoggedIn, clinicianController.getAllComments)
+clinicianRouter.get('/comments', clinicianController.getAllComments)
 
 clinicianRouter.get('/test', (req, res) => {
     res.render('', {layout: 'clinician.hbs', style:''})

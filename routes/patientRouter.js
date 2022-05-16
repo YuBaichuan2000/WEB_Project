@@ -30,9 +30,8 @@ patientRouter.get('/history_data', utility.isLoggedIn, patientController.getAllD
 patientRouter.get('/record_data', utility.isLoggedIn, patientController.showForm)
 patientRouter.post('/record_data', patientController.insertData)
 
-patientRouter.get('/leaderboard', (req, res) => {
-    res.render('leaderboard')
-})
+patientRouter.get('/leaderboard', patientController.getLeaderboard)
+
 patientRouter.get('/messages', utility.isLoggedIn, (req, res) => {
     res.render('messages')
 })
