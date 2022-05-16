@@ -116,6 +116,54 @@ header a:hover{
     font-family: 'kefa';
 }
 
+#overlay #text{
+    line-height: 1.6;
+    font-size: 20px;
+    top: 35%;
+}
+#overlay2 a{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+  
+#text{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+#overlay a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    font-family: 'Open Sans';
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
 .enter-data{
     position: relative;
     top: 100px;

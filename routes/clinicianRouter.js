@@ -19,6 +19,12 @@ clinicianRouter.get('/dashboard', clinicianController.getAllPatientData)
 
 clinicianRouter.get('/comments', clinicianController.getAllComments)
 
+// sign up new patient
+clinicianRouter.get('/signup', (req, res, next) => {
+    res.render('signup', {layout: 'clinician.hbs', style:'signup.css'})
+})
+clinicianRouter.post('/signup', clinicianController.insertPatient)
+
 clinicianRouter.get('/test', (req, res) => {
     res.render('', {layout: 'clinician.hbs', style:''})
 })
