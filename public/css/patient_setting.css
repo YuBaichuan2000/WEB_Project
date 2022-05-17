@@ -1,0 +1,518 @@
+body{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6em;
+    background-image: url(../images/background.jpeg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 1080px;
+    background-size: cover;
+    overflow: scroll;
+    background-attachment: fixed;
+    margin: auto;
+    text-align: center;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    height: 62px;
+}
+
+header a{
+    text-decoration: none;
+    color: #578AD6;
+}
+
+header h1{
+    font-size: 40px;
+}
+
+header p{
+    font-size: 24px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+
+header a:hover{
+    color: #578AD6;
+}
+
+.top{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.top h1{
+    font-size: 65px;
+    margin-left: 5px;
+    margin-top: 40px;
+    color: #578AD6;
+    font-family: 'Hurricane', cursive;
+}
+
+.top-ribbon{
+    width: 50px;
+    height: 40px;
+    padding-left: 5%;
+}
+
+.top-notification{
+    width: 54px;
+    height: 67px;
+    display: block;
+    transform: translateY(-5px);
+    transform: translateX(200px);
+}
+
+.logout-nav-left{
+    vertical-align: middle;
+    list-style-type: none;
+    padding-left: 0%;
+}
+
+.logout-nav-right{
+    margin-left: 50%;
+    margin-right: 1%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    float: right;
+    vertical-align: middle;
+    list-style-type: none;
+    transform: translateX(200px);
+}
+
+
+.logout-nav-right li{
+    padding-right: 5%;
+    position: relative;
+    box-shadow: 4px 4px 10px #C8CDCF;
+    border-color: #707070;
+    border-style: solid;
+    border-radius: 28px;
+    border-width: 1px;
+    width: 134px;
+    height: 55px;
+    float: right;
+}
+
+.logout-nav-right a{
+    color: black;
+    font-size: 30px;
+}
+
+.patient_data_nav-bar{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    background-color: #DEEEFB;
+    align-items: center;
+    position: relative;
+    vertical-align: middle;
+    height: 98px;
+}
+.patient_data_nav-bar-1{
+
+    position: relative;
+    text-align: center;
+    padding: 0%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 98px;
+}
+
+
+.patient_data_nav-bar-left a{
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    text-decoration: none;
+    color: #2C71C3;
+}
+
+
+.patient_data_nav-bar-left a:hover{
+    color: black;
+}
+
+
+.patient_data_nav-bar-left{
+    display: block;
+    font-size: 15px;
+    margin: auto;
+    list-style-type: none;
+    margin-left: 10%;
+    width: 200px;
+}
+
+.patient_data_nav-bar-left h1{
+    margin-top: 15px;
+}
+
+
+.patient_data_nav-bar-right a{
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    text-decoration: none;
+    color: #2C71C3;
+}
+
+
+
+.patient_data_nav-bar-right{
+    display: block;
+    font-size: 15px;
+    height: 60px;
+    margin: auto;
+    list-style-type: none;
+    margin-right: 10%;
+    width: 200px;
+}
+
+.patient_data_nav-bar-right h1{
+    margin-top: 15px;
+}
+
+.patient_data_nav-bar-right a:hover{
+    color: white;
+}
+
+
+
+.patient_data_nav-bar-mid{
+    vertical-align: middle;
+    list-style-type: none;
+}
+
+.patient_data_nav-bar-mid h1{
+    font-family: 'Apple Braille';
+    vertical-align: middle;
+    margin-top: 35px;
+}
+
+.patient_data_nav-bar-mid a{
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Open Sans';
+    font-size: 25px;
+    text-decoration: none;
+    color: #2C71C3;
+}
+.name_header{
+    font-size: 40px;
+    font-family: Optima;
+}
+.save1 a{
+    font-size: 20px;
+    color: white;
+}
+.save2 a{
+    font-size: 20px;
+    color: white;
+}
+.save3 a{
+    font-size: 20px;
+    color: white;
+}
+.save4 a{
+    font-size: 20px;
+    color: white;
+}
+.save5 a{
+    font-size: 20px;
+    color: white;
+}
+/* left top */
+div.Blood_Glucose_Level_control{
+    position: relative;
+    width: 500px;;
+    margin-left: 70px;
+    margin-top: 150px;
+    display: inline-block;
+    left: -380px;
+}
+.BGL{
+    font-size: 30px;
+    font-family: Hoefler Text;
+}
+img.greenb1{
+    position: relative;
+    top: -70px;
+    left: -20px;
+}
+
+input.BGL_input_left{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: 20px;
+}
+input.BGL_input_right{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: 20px;
+}
+label.lable1{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    left: 20px;
+}
+p.nmol{
+    text-align: right;
+    font-size: 30px;
+    position: relative;
+    top: -70px;
+}
+button.save1{
+    width:115px;
+    height: 35px;
+    background-color: #2C71C3;
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+    border: 1.8px solid #707070;
+    top: -60px;
+    left: 200px;
+}
+/* right top */
+div.Weight_control{
+    position: relative;
+    width: 500px;;
+    margin-left: 70px;
+    margin-top: 150px;
+    display: inline-block;
+    left: -280px;
+}
+.Weight{
+    font-size: 30px;
+    font-family: Hoefler Text;
+    text-align: left;
+}
+img.greenb2{
+    position: relative;
+    top: -70px;
+    left: -100px;
+}
+
+input.W_input_left{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: -100px;
+    
+}
+input.W_input_right{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: -100px;
+}
+label.lable2{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    left: -100px;
+}
+p.kg{
+    text-align: right;
+    font-size: 30px;
+    position: relative;
+    left: -100px;
+    top: -70px;
+}
+button.save2{
+    width:115px;
+    height: 35px;
+    background-color: #2C71C3;
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+    border: 1.8px solid #707070;
+    top: -60px;
+    left: 130px;
+}
+/* left bottom */
+div.Doses_Insulin_control{
+    position: relative;
+    width: 500px;;
+    margin-left: 70px;
+    margin-top: 50px;
+    /* display: inline-block; */
+    left: 10px;
+}
+p.Doses_Insulin{
+    font-size: 30px;
+    font-family: Hoefler Text;
+    padding-right: 60px;
+}
+img.greenb3{
+    position: relative;
+    top: -70px;
+    left: -20px;
+}
+
+input.Doses_Insulin_input_left{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: 20px;
+}
+input.Doses_Insulin_input_right{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: 20px;
+}
+label.lable3{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    left: 20px;
+}
+p.doses{
+    text-align: right;
+    font-size: 30px;
+    position: relative;
+    top: -70px;
+    padding-right: 10px;
+}
+button.save3{
+    width:115px;
+    height: 35px;
+    background-color: #2C71C3;
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+    border: 1.8px solid #707070;
+    top: -60px;
+    left: 200px;
+}
+/* right bottom */
+div.Exercise_control{
+    position: absolute;
+    width: 500px;;
+    margin-left: 70px;
+    margin-top: 50px;
+    display: inline-block;
+    left: 675px;
+    top: 694px;
+}
+p.Exercise{
+    font-size: 30px;
+    font-family: Hoefler Text;
+    text-align: left;
+}
+img.greenb4{
+    position: relative;
+    top: -70px;
+    left: -100px;
+}
+
+input.Exercise_input_left{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: -100px;
+}
+input.Exercise_input_right{
+    width: 80px;
+    height:50px;
+    border-radius: 20px 20px 20px 20px;
+    border-width: 1px;
+    color: black;
+    position: relative;
+    left: -100px;
+}
+label.lable4{
+    font-size: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    left: -100px;
+}
+p.steps{
+    text-align: right;
+    font-size: 30px;
+    position: relative;
+    left: -90px;
+    top: -70px;
+}
+button.save4{
+    width:115px;
+    height: 35px;
+    background-color: #2C71C3;
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+    border: 1.8px solid #707070;
+    top: -60px;
+    left: 130px;
+}
+/* message box */
+div.message_box{
+    position: absolute;
+    display: inline-block;
+    left:1300px;
+    top:460px;
+}
+p.message{
+    font-size: 30px;
+    text-align: left;
+    font-family: Helvetica;
+}
+input.message{
+    width: 440px;
+    height: 403px;
+    box-shadow: 5px 10px 18px #00000020;
+    border-style: hidden;
+    border-radius: 20px 20px 20px 20px;
+}
+button.save5{
+    width:115px;
+    height: 35px;
+    background-color: #2C71C3;
+    position: relative;
+    border-radius: 20px 20px 20px 20px;
+    border: 1.8px solid #707070;
+    left: 145px;
+    top: -70px;
+
+}
+footer{
+    text-align: left;
+    padding-left: 100px;
+    font-size: 15px;
+}
