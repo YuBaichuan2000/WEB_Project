@@ -236,6 +236,7 @@ h1{
     position: relative;
     top: 10%;
     left: 8%;
+    width: max-content;
 }
 
 .info-title p{
@@ -257,7 +258,6 @@ h1{
 .info-text p{
     font-family: 'Century Gothic Pro';
     font-size: 30px;
-    max-width: 80%;
     margin-top: 4%;
     line-height: 1.6;
 }
@@ -268,6 +268,7 @@ h1{
 }
 
 .sentence{
+    width: max-content;
     position: relative;
     top: 20%;
     left: 8%;
@@ -276,6 +277,242 @@ h1{
 .sentence p{
     font-size: 26px;
     font-family: 'Apple Chancery';
-    max-width: 80%;
     line-height: 1.6;
+}
+
+@media only screen and (max-width: 375px) and (orientation: portrait){
+    body{
+        height: 1300px;
+    }
+    .container{
+        width: 100%;
+        padding-right: 0%;
+    }
+    .navbar{
+        height:0px;
+    }
+    nav ul{
+        width: 275px;
+        background:#4279C2;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        top: 0px;
+    }
+    nav ul li a {
+        font-size: 14px;
+        color: white;
+    }
+    .hamb_logo{
+        position: relative;
+        top:-35px;
+        right: 18px;
+        display: block;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .top h1 a{
+        font-size: 32px;
+    }
+    header {
+        width: 375px;
+    }
+    nav li{
+        font-size: 16px;
+    }
+    nav ul{
+        margin: 0px;
+    }
+    .nav_bar { 
+        position: absolute;
+        left: 10%;
+        font-size: 16px;
+    }
+    .nav_bar a{ 
+        font-size:16px;
+    }
+
+    ul{
+        padding-top: 8px;
+    }
+    
+    .top-info{
+        position: relative;
+        left: 10%;
+        margin: 0px;
+        padding-left: 0px;
+        width: 250px;
+    }
+    .top-info li{
+        width: 250px;
+    }
+    .top-info h2{
+        font-size: 34px;
+        margin-bottom: 40px;
+        width:300px;
+    }
+    
+    .pfp1{
+        left: 11px;
+        width: 106px;
+        height: 106px;
+    }
+
+    .badge1 {
+        width: 22px;
+        height: 29px;
+    }
+
+    .number1-pfp span{
+        left: -8px;
+        top: 42px;
+    } 
+
+    .username1{
+        top: 5px;
+        font-size: 26px;
+        width: 60%;
+    }
+
+    .score1{
+        font-size: 30px;
+        top: 5px;
+    }
+
+    .others{
+        top: 55px;
+        height: 59px;
+        width: 305px;
+    }
+    .others .pfp{
+        top: 13%;
+        left: 11%;
+    }
+
+    .rank{
+        left: 7%;
+        top: 36%;
+        font-size: 35px;
+    }
+
+    .pfp2{
+        width: 44px;
+        height: 44px;
+    }
+
+    .badge2{
+        width: 12px;
+        height: 16px;
+    }
+
+    .username2{
+        left: 38%;
+        font-size: 22px;
+    }
+
+    .score2{
+        right: 9%;
+        font-size: 22px;
+    }
+
+    .badge-info{
+        top: 5%;
+        width: 320px;
+    }
+
+    .badge-info span{
+        padding: 8px;
+        top: 5px;
+    }
+
+    .sentence{
+        top: 11%;
+        width: 320px;
+    }
+
+    .info-title p{
+        font-size: 22px;
+    }
+
+    .info-text p{
+        font-size: 16px;
+    }
+
+    .sentence p{
+        font-size: 11px;
+    }
+
+    .badge3{
+        width: 22px;
+        height: 29px;
+    }
+
+    .badge4{
+        width: 16px;
+        height: 21px;
+    }
+
+
+    
+}
+@media only screen and (max-width: 1024px) and (orientation: landscape){
+    body{
+        height: 1900px;
+    }
+
+    .top-info{
+        position: relative;
+        margin-bottom: 50px;
+    }
+    
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    .others .pfp{
+        position: absolute;
+        left: 17%;
+    }
+
+    .username2 {
+        position: absolute;
+        left: 40%;
+        font-size: 30px;
+    }
+
+    .score2 {
+        font-size: 32px;
+    }
+    
+    .badge-info{
+        width: 900px;
+    }
+
+    .sentence{
+        top: 18%;
+        width: 900px;
+    }
+
+    .info-title p{
+        font-size: 32px;
+    }
+
+    .info-text p{
+        font-size: 24px;
+    }
+
+    .sentence p{
+        font-size: 20px;
+    }
+
 }

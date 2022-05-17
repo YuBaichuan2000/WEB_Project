@@ -80,10 +80,41 @@ const insertData = async (req, res, next) => {
     }
 }
 
+// calculate engagement rate of a patient
+async function getEngrt(id) {
+    const entries = await Entry.find({_patient : id}).lean()
+    const start = new Date(mongoose.Types.ObjectId(id).getTimestamp().getTime()).setHours(0,0,0,0);
+    const today = new Date().setHours(0,0,0,0);
+    const numDays = (today - start) / (24 * 60 * 60 * 1000) + 1;
+    const rate = (entries.length / numDays).toFixed(2) * 100;
+    return rate;
+  }
+
 // get leaderboard
 const getLeaderboard = async (req, res, next) => {
     try {
-        return res.render('leaderboard', {layout: 'patient.hbs', style: 'leaderboard.css'})
+        var patient = await Patient.find({}).lean();
+        for (p of patient) {
+            // get engagement rate
+            const score = await getEngrt(p._id);
+            p.score = score
+            // add some helper items
+            p.isF = (p.gender == "F")
+            p.badge = (score >= 80)
+        }
+        patient = patient
+            .sort((a, b) => {
+                return b.score - a.score;
+            })
+            .slice(0, 5);
+        // console.log(JSON.stringify(patient, null, 4))
+        // add helper rank
+        var i = 1;
+        for (p of patient) {
+            p.rank = i;
+            i += 1;
+        }
+        return res.render('leaderboard', {layout: 'patient.hbs', style: 'leaderboard.css', first: patient[0], others: patient.slice(1, 5)});
     } catch (err) {
         return next(err)
     }
