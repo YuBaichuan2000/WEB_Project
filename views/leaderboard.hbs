@@ -10,59 +10,26 @@
         </li>  
 </ul>
 
-<!-- 第一名是这个div -->
 <div class="number1-pfp">
-    <img src="../images/pfp_female.jpeg" class="pfp1">
-    <span><img src="../images/golden_badge.png" class="badge1"></span>   
+    <img src="../images/pfp_{{#if first.isF}}female{{else}}male{{/if}}.jpeg" class="pfp1">
+    <span>{{#if first.badge}}<img src="../images/golden_badge.png" class="badge1">{{/if}}</span>
 </div>
-<div class="username1">Wonder Woman</div>    
-<div class="score1">98</div>
+<div class="username1">{{first.screen_name}}</div>    
+<div class="score1">{{first.score}}</div>
 
-<!-- 后面几名都是这个叫others的div，里面的所有class名称不建议改，因为这四个人css都是用的同一个 -->
+
+{{#each others}}
 <div class="others">
-    <div class="rank">2</div>
+    <div class="rank">{{this.rank}}</div>
     <div class="pfp">
-        <img src="../images/pfp_male.jpeg" class="pfp2">
-        <span><img src="../images/golden_badge.png" class="badge2"></span>
+        <img src="../images/pfp_{{#if this.isF}}female{{else}}male{{/if}}.jpeg" class="pfp2">
+        <span>{{#if this.badge}}<img src="../images/golden_badge.png" class="badge2">{{/if}}</span>
     </div>
-    <div class="username2">Big Joe</div>
-    <div class="score2">96</div>
+    <div class="username2">{{this.screen_name}}</div>
+    <div class="score2">{{this.score}}</div>
 </div>
 <br>
-
-<div class="others">
-    <div class="rank">3</div>
-    <div class="pfp">
-        <img src="../images/pfp_female.jpeg" class="pfp2">
-        <span><img src="../images/golden_badge.png" class="badge2"></span>
-    </div>
-    <div class="username2">AG</div>
-    <div class="score2">95</div>
-</div>
-<br>
-
-<div class="others">
-    <div class="rank">4</div>
-    <div class="pfp">
-        <img src="../images/pfp_male.jpeg" class="pfp2">
-        <span><img src="../images/golden_badge.png" class="badge2"></span>
-    </div>
-    <div class="username2">Ja Williams</div>
-    <div class="score2">94</div>
-</div>
-<br>
-
-<div class="others">
-    <div class="rank">5</div>
-    <div class="pfp">
-        <img src="../images/pfp_male.jpeg" class="pfp2">
-        <span><img src="../images/golden_badge.png" class="badge2"></span>
-    </div>
-    <div class="username2">Ddd1111</div>
-    <div class="score2">92</div>
-</div>
-<br>
-
+{{/each}}
 
 <div class="badge-info">
     <div class="info-title">

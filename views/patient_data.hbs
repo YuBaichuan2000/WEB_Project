@@ -1,0 +1,93 @@
+<section class="patient_data_nav-bar">
+    <ul class="patient_data_nav-bar-1">
+        <li class="patient_data_nav-bar-left"><h1><a href="/clinician/dashboard">View Data ></a></h1></li>
+        <li class="patient_data_nav-bar-mid"><h1><a href="/clinician/comments">Clinician Notes ></a></h1></li>
+        <li class="patient_data_nav-bar-right"><h1><a href="/clinician/comments">Options ></a></h1></li>
+    </ul>
+</section>
+
+<ul class="patient_data_info">
+    <li class="patient_data_info-1"><h1>{Patient}</h1></li>
+</ul>
+
+{{!-- 这一段是关于图表的, 先空着 --}}
+{{!-- <div class="container">
+    <h1> Chart js line cahrt with json data api</h1>
+    <div>
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
+ --}}
+
+
+
+<ul class="patient_data_title">
+    <li class="patient_data_title-1"><h1>History Data</h1></li>
+</ul>
+
+<HR class="patient-data-line">
+
+<ul class="patient-data-info-bar">
+    <li class="patient-data-info-bar-name"><p>Date</p></li>
+    <li class="patient-data-info-bar-bgl"><p>Blood Glucose</p><h2>nmol/L<h2></li>
+    <li class="patient-data-info-bar-wght"><p>Weight</p><h2>Kg</h2></li>
+    <li class="patient-data-info-bar-doses"><p>Dose Taken</p></li>
+    <li class="patient-data-info-bar-steps"><p>Steps</p></li>
+</ul>
+
+<HR class="patient-data-dashboard-line">
+
+
+{{!-- {{#each data}} --}}
+<table class="patient-data-patient-info">
+    <tr class="patient-data-patient-info-normal">
+        <td class="patient-data-patient-info-left">{{this._patient.first_name}} {{this._patient.last_name}}</td>
+        <td>{{this.bgl.val}}</td>
+        <td>{{this.wght.val}}</td>
+        <td>{{this.doses.val}}</td>
+        <td class="patient-data-patient-info-right">{{this.steps.val}}</td>
+    </tr>
+</table>
+{{!-- {{/each}} --}}
+
+
+
+{{!-- <script type="text/javascript src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+<script type="text/javascript src="views/custom.js"></script> --}}
+
+{{!-- const ctx = document.getElementById('canvas').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+}); --}}
