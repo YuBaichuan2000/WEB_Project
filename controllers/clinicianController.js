@@ -75,6 +75,30 @@ const insertPatient = async (req, res, next) => {
 
         const clinician = await Clinician.findOne({first_name: "Chris"}).lean()
 
+        if (await Patient.findOne({ email: req.body.email.toLowerCase() })) {
+            return res.render('signup', {
+                layout: 'clinician.hbs',
+                style:'signup.css',
+                email : 1,
+                input: req.body});
+        }
+        if (await Patient.findOne({ screen_name: req.body.screen_name })) {
+            return res.render('signup', {
+                layout: 'clinician.hbs',
+                style:'signup.css',
+                screen : 1,
+                input: req.body
+            });
+        }
+        if (req.body.gender != "F" && req.body.gender != "M") {
+            return res.render('signup', {
+                layout: 'clinician.hbs',
+                style:'signup.css',
+                gender : 1,
+                input: req.body
+            });
+        }
+
         var patient = req.body
         patient.clinician = clinician._id
 

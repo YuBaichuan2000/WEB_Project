@@ -13,33 +13,48 @@
     <div class="enter-data" id="form">
         <form method="POST">
             <label>Given name:</label>
-            <input name="first_name" required>
+            <input name="first_name" value="{{input.first_name}}" required>
             <br>
             <label>Family name:</label>
-            <input name="last_name" required>
+            <input name="last_name" value="{{input.last_name}}" required>
             <br>
             <label>Screen name:</label>
-            <input name="screen_name" required>
+            <input name="screen_name" value="{{input.screen_name}}" required>
             <br>
             <label>Email:</label>
-            <input name="email" required>
+            <input type="email" name="email" value="{{input.email}}" required>
             <br>
-            <label>Gender (F/M/other):</label>
-            <input name="gender" required>
+            <label>Gender (F/M):</label>
+            <input name="gender" value="{{input.gender}}" required>
             <br>
             <label>New password (at least 8 characters) :</label>
-            <input type="password" name="password" required>
+            <input type="password" name="password" value="{{input.password}}" required>
             <br>
             <label>Year of birth:</label>
-            <input name="yob" required>
+            <input type="number" name="yob" value="{{input.yob}}" min="1900" max="2022" required>
             <br>
             <label>Text bio:</label>
             <br>
-            <textarea name="bio" required></textarea>
+            <textarea name="bio" required>{{input.bio}}</textarea>
             <br>
-             <div class="button">
+            <div class="button">
                 <button type="submit"><a>Sign up</a></button>
             </div>
+
+            {{#if email}}
+            <script>
+                alert("This email address has already been registered")
+            </script>
+            {{else if screen}}
+            <script>
+                alert("The screen name has already been taken")
+            </script>
+            {{else if gender}}
+            <script>
+                alert("Please choose F or M for gender")
+            </script>
+            {{/if}}
+
         </form>
     </div>
             
