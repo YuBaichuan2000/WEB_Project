@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
     bio: {type: String, required: true},
     screen_name: {type: String, required: true},
     yob: {type: Number, required: true},
+    role: { type: String, default: "patient" },
     settings: {
         doses: {type: Boolean, default: true, required: true},
         doses_min: {type: Number, default: 2},

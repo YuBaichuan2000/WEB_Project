@@ -1,6 +1,7 @@
 const Clinician = require('../models/clinician')
 const Patient = require('../models/patient')
 const Entry = require('../models/entry')
+const bcrypt = require("bcrypt")
 
 // get all patient data for clinician
 const getAllPatientData = async (req, res, next) => {
@@ -72,9 +73,7 @@ const getAllComments = async (req, res, next) => {
 const insertPatient = async (req, res, next) => {
     try {
         // console.log(req.body)
-
         const clinician = await Clinician.findOne({first_name: "Chris"}).lean()
-
         if (await Patient.findOne({ email: req.body.email.toLowerCase() })) {
             return res.render('signup', {
                 layout: 'clinician.hbs',
@@ -98,17 +97,19 @@ const insertPatient = async (req, res, next) => {
                 input: req.body
             });
         }
-
         var patient = req.body
         patient.clinician = clinician._id
 
+        // add hashed passwords
+        patient.password = await bcrypt.hash(req.body.password, 10)
+
         const newPatient = new Patient(patient)
         await newPatient.save()
-
         return res.redirect("/clinician/dashboard")
     } catch (err) {
         return next(err)
     }
+
 }
 
 module.exports = { 

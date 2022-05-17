@@ -2,27 +2,15 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
+const passport = require('passport');
 const bodyParser = require('body-parser')
 const res = require('express/lib/response')
 const flash = require('express-flash')
 const session = require('express-session')
-
-
 // Set your app up as an express app
 const app = express()
-app.engine(
-    'hbs',
-    exphbs.engine({
-        defaultlayout:'main',
-        extname: 'hbs'
-    })
-)
-
-app.set('view engine', 'hbs')
-app.use(express.static(path.join(__dirname,'public')))
-app.use(bodyParser.urlencoded({extended:true}))
-
-
+app.use( bodyParser.urlencoded({ extended: true }) );
+require('./passport')(passport);
 app.use(flash())
 app.use(
     session({
@@ -34,8 +22,22 @@ app.use(
     })
 )
 // Initialise Passport.js
-const passport = require('./passport')
-app.use(passport.authenticate('session'))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+app.engine(
+    'hbs',
+    exphbs.engine({
+        defaultlayout:'main',
+        extname: 'hbs'
+    })
+)
+
+app.set('view engine', 'hbs')
+app.use(express.static(path.join(__dirname,'public')))
+
+
 
 // link to our router
 const clinicianRouter = require('./routes/clinicianRouter')

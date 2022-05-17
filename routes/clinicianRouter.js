@@ -4,9 +4,9 @@ const clinicianRouter = express.Router()
 const clinicianController = require('../controllers/clinicianController')
 
 // Handle login
-clinicianRouter.post('/login',
+clinicianRouter.post('/webc',
     passport.authenticate('clinician-strategy', {
-        successRedirect: '/clinician/dashboard', failureRedirect: '/', failureFlash: true
+        successRedirect: '/clinician/dashboard', failureRedirect: '/clinician/webc', failureFlash: true
     })
 )
 

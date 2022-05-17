@@ -21,17 +21,15 @@
         <p class="role_selector clinician selected"><a href="/clinician/webc" target="">Clinician</a></p><br><br><br><br>
     {{/if}}
     
-    {{#each flash}}
-        <p class="alert">{{this}}</p>
-    {{/each}}
+    {{#if warning}} <p>{{warning}}</p> {{/if}}
 
-    <form class="login_form" {{#if patient}} action="/patient/login" {{else}} action="/clinician/login" {{/if}} method="POST">
+    <form class="login_form" {{#if patient}} action="/patient/webp" {{else}} action="/clinician/webc" {{/if}} method="POST">
         <div class="username_password">
             <label for="Username">Username*</label><br>
-            <input type="text" id="Username" name="email"><br>
+            <input type="text" id="username" name="email"><br>
             <br>
             <label for="Password">Password*</label><br>
-            <input type="password" id="Password" name="password"><br>
+            <input type="password" id="password" name="password"><br>
         </div>
         <ul class="forgot_password">
             <li><a href="/forgot", target="_blank">Forget Password?</a></li>
