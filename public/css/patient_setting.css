@@ -252,6 +252,7 @@ img.greenb1{
     left: -20px;
 }
 
+
 input.BGL_input_left{
     width: 80px;
     height:50px;
@@ -260,6 +261,8 @@ input.BGL_input_left{
     color: black;
     position: relative;
     left: 20px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 input.BGL_input_right{
     width: 80px;
@@ -269,6 +272,8 @@ input.BGL_input_right{
     color: black;
     position: relative;
     left: 20px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 label.lable1{
     font-size: 30px;
@@ -321,6 +326,8 @@ input.W_input_left{
     color: black;
     position: relative;
     left: -100px;
+    font-size: 20px;
+    padding-left: 10px;
     
 }
 input.W_input_right{
@@ -331,6 +338,8 @@ input.W_input_right{
     color: black;
     position: relative;
     left: -100px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 label.lable2{
     font-size: 30px;
@@ -384,6 +393,8 @@ input.Doses_Insulin_input_left{
     color: black;
     position: relative;
     left: 20px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 input.Doses_Insulin_input_right{
     width: 80px;
@@ -393,6 +404,8 @@ input.Doses_Insulin_input_right{
     color: black;
     position: relative;
     left: 20px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 label.lable3{
     font-size: 30px;
@@ -447,6 +460,8 @@ input.Exercise_input_left{
     color: black;
     position: relative;
     left: -100px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 input.Exercise_input_right{
     width: 80px;
@@ -456,6 +471,8 @@ input.Exercise_input_right{
     color: black;
     position: relative;
     left: -100px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 label.lable4{
     font-size: 30px;
@@ -499,6 +516,8 @@ input.message{
     box-shadow: 5px 10px 18px #00000020;
     border-style: hidden;
     border-radius: 20px 20px 20px 20px;
+    padding-left: 50px;
+    font-size: 40px;
 }
 button.save5{
     width:115px;
