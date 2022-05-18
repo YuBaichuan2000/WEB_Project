@@ -38,9 +38,8 @@ header a{
 ul{
     list-style-type: none;
     padding-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 2em;
-    margin-bottom: -10px;
 }
 
 p{
@@ -76,13 +75,14 @@ a:hover{
 .container{
     display: flex;
     flex-direction: row;
-    gap: 75px;
+    gap: 150px;
+    margin-bottom: 80px;
 }
 
 .item-left{
     list-style: none;
     flex: 50%;
-    margin: 10px;
+    margin: 45px;
     margin-top: 0px;
 }
 
@@ -124,7 +124,7 @@ iframe{
 footer{
     position: absolute;
     /* bottom: 20; */
-    margin-left: 50px;
+    margin-left: 80px;
     font-size: 20px;
 }
 
@@ -141,16 +141,22 @@ footer{
 
 
 /* @media screen and (max-width: 375px){ */
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1024px){
     .container{
         flex-direction: column;
+        gap: 0px;
+        margin-bottom: 20px;
     }
     .top h1 a{
         font-size: 30px;
     }
     p{
+        max-width: 91%;
         font-size: 18px;
-        line-height: 2.5em;
+        line-height: 1.8;
+    }
+    .item-left{
+        margin: 10px;
     }
     iframe{
         width: 275px;
@@ -168,6 +174,10 @@ footer{
         position: absolute;
         left: 10%;
         font-size: 16px;
+    }
+
+    footer{
+        margin-left: 50px;
     }
 }
 
