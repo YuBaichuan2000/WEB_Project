@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const res = require('express/lib/response')
 const flash = require('express-flash')
 const session = require('express-session')
+const utility = require("./routes/patientUtility.js");
 // Set your app up as an express app
 const app = express()
 app.use( bodyParser.urlencoded({ extended: true }) );
@@ -49,8 +50,16 @@ app.use("/patient", patientRouter);
 app.use("/clinician", clinicianRouter);
 
 // main login page
-app.get('/', (req, res) => {
-    res.render('login', {style:"patient_login.css"})
+app.post('/',
+passport.authenticate('patient-strategy', {
+    successRedirect: '/patient/dashboard', failureRedirect: '/', failureFlash: true
+})
+)
+
+app.get('/', utility.unLoggedIn, (req, res) => {
+    console.log(req.session);
+    res.render('login',  {warning: req.session.flash, patient: true, style:"patient_login.css"})
+    
 })
 
 // // login page for web size

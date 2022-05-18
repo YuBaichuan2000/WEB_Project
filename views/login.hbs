@@ -6,13 +6,13 @@
 {{#each flash}}
     <p class="alert">{{this}}</p>
 {{/each}}
-<form action="/patient">
+<form action="/" method="POST">
     <div class="input_box">
-        <input type="text" placeholder="Enter Email address" required>
+        <input type="text" name="email" placeholder="Enter Email address" required>
         <div class="icon"><i class="fas fa-user"></i></div>
     </div>
     <div class="input_box">
-        <input type="password" placeholder="Enter Password" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
         <div class="icon"><i class="fas fa-lock"></i></div>
     </div>
     <div class="option_div">

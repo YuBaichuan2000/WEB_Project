@@ -69,6 +69,10 @@ const getAllComments = async (req, res, next) => {
     }
 }
 
+const getOnePatientData = async (req, res, next) => {
+
+}
+
 // add new patient to database
 const insertPatient = async (req, res, next) => {
     try {
@@ -138,6 +142,7 @@ const encrypt = async (req, res) => {
 module.exports = { 
     getAllPatientData,
     getAllComments,
+    getOnePatientData,
     insertPatient,
     encrypt
 } 

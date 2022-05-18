@@ -50,6 +50,5 @@ patientRouter.get('/test', (req, res) => {
 })
 
 
-
 // export the patientRouter
 module.exports = patientRouter
