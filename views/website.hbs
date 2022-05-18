@@ -4,12 +4,16 @@
         <h1><a href="/patient/dashboard">Diabetes@Home</a></h1>
     </header>
     {{#if loggedout}}
-        <nav class="logout">
-            <ul class="logout">
-                    <li><a href="/"><< Back to patient login</a></li>
-                    <li><a href="/clinician/webc" class="clinician"><< Back to clinician login</a></li>
-            </ul>
-        </nav>
+    <nav class="logout">
+        <ul class="logout">
+                <li><a href="/"><< Back to patient login</a></li>
+                <li><a href="/clinician/webc" class="clinician"><< Back to clinician login</a></li>
+        </ul>
+    </nav>
+    {{else}}
+    <div class='nav_bar'>
+        <a href="/patient/dashboard">Home</a > > About this website
+    </div>
     {{/if}}
     <main>
         <ul class="container">

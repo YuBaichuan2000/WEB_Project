@@ -22,7 +22,7 @@ const getDashboard = async (req, res, next) => {
             message = false
         }
 
-        console.log(JSON.stringify(user, null, 4))
+        // console.log(JSON.stringify(user, null, 4))
         res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', patient: user, msg: message})
     }
     catch (err) {
