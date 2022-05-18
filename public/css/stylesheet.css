@@ -35,6 +35,11 @@ header a{
     color: white;
 }
 
+header a :hover {
+    text-decoration: none;
+    color: white;
+}
+
 ul{
     list-style-type: none;
     padding-top: 10px;

@@ -21,7 +21,7 @@ module.exports = (passport) => {
           })
         } 
         else if (login.role === "clinician"){
-            Clinician.findOne(login._id, (err, user) => {
+            Clinician.findById(login._id, (err, user) => {
                 return done(err, user)
             })
         }
