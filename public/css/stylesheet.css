@@ -158,6 +158,9 @@ footer{
         font-size: 18px;
         line-height: 1.8;
     }
+    h2{
+        font-size: 30px;
+    }
     .item-left{
         margin: 10px;
         margin-top: 25px;
