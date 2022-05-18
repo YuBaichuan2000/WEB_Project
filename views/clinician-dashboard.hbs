@@ -23,7 +23,7 @@
     {{else}}
     <tr class="patient-info-normal">
     {{/if}}
-    <td class="patient-info-left" href="/clinician/{{this._patient._id}}">{{this._patient.first_name}} {{this._patient.last_name}}</td>
+    <td class="patient-info-left"><a href="/clinician/{{this._patient._id}}">{{this._patient.first_name}} {{this._patient.last_name}}</a></td>
     <td>{{this.bgl.val}}</td>
     <td>{{this.wght.val}}</td>
     <td>{{this.doses.val}}</td>
@@ -31,4 +31,6 @@
     </tr>
 </table>
 {{/each}}
+
+
 

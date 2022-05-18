@@ -301,9 +301,20 @@ header a:hover{
 }
 
 .patient-info tr{
+    /* position: relative; */
     margin: auto;
     font-size: 30px;
 }
+
+.patient-info td a{
+    color: black;
+    text-decoration: none;
+}
+
+.patient-info td a:hover{
+    color: #578AD6;
+}
+
 
 .patient-info td{
     position: relative;
