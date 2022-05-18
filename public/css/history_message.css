@@ -137,6 +137,9 @@ h1{
     font-family: 'Apple Braille';
     line-height: 1.6;
 }
+.comment-box img{
+    height: 88px;
+}
 .name{
     display: inline;
     position: relative;
