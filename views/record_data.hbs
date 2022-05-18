@@ -23,7 +23,7 @@
             {{#if set.bgl}}
                 <label>Enter your blood glucose level:</label>
                 {{#if data.bgl.val}}
-                <div class="entered">{{data.bgl.val}}</div><span class="nmol">nmol/L</span>
+                <div class="entered">{{data.bgl.val}}<span class="nmol1">nmol/L</span></div>
                 {{else}}
                 <input name="bgl"></input><span class="nmol">nmol/L</span>
                 <br>
@@ -36,7 +36,7 @@
             {{#if set.wght}}
                 <label>Enter your weight:</label>
                 {{#if data.wght.val}}
-                <div class="entered">{{data.wght.val}}</div><span class="kg">kg</span>
+                <div class="entered">{{data.wght.val}}<span class="kg1">kg</span></div>
                 {{else}}
                 <input name="wght"></input><span class="kg">kg</span>
                 <br>
@@ -49,7 +49,7 @@
             {{#if set.doses}}
                 <label>Enter your insulin doses:</label>
                 {{#if data.doses.val}}
-                <div class="entered">{{data.doses.val}}</div><span class="doses">doses</span>
+                <div class="entered">{{data.doses.val}}<span class="doses1">doses</span></div>
                 {{else}}
                 <input name="doses"></input><span class="doses">doses</span>
                 <br>
@@ -62,7 +62,7 @@
             {{#if set.exc}}
                 <label>Enter your step counts:</label>
                 {{#if data.steps.val}}
-                <div class="entered">{{data.steps.val}}</div><span class="steps">steps</span>
+                <div class="entered">{{data.steps.val}}<span class="steps1">steps</span></div>
                 {{else}}
                 <input name="steps"></input><span class="steps">steps</span>
                 <br>
