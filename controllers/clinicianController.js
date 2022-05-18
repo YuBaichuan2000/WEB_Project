@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt")
 // get all patient data for clinician
 const getAllPatientData = async (req, res, next) => {
     try {
-        const patients = await Patient.find().select("_id").lean()
+        const patients = await Patient.find({clinician: req.user._id}).select("_id").lean()
         // console.log(JSON.stringify(result, null, 4))
         const entries = await Entry.find({_patient : {$in: patients.map(a => a._id)}}).populate({path: '_patient', model: Patient}).lean()
         // console.log(JSON.stringify(entries, null, 4))
@@ -36,7 +36,7 @@ const getAllPatientData = async (req, res, next) => {
 // get all history comments for clinician
 const getAllComments = async (req, res, next) => {
     try {
-        const patients = await Patient.find().select("_id").lean()
+        const patients = await Patient.find({clinician: req.user._id}).select("_id").lean()
         // console.log(JSON.stringify(result, null, 4))
         const entries = await Entry.find({patient : {$in: patients.map(a => a._id)}}).populate({path: '_patient', model: Patient}).lean()
         // console.log(JSON.stringify(entries, null, 4))
@@ -73,7 +73,6 @@ const getAllComments = async (req, res, next) => {
 const insertPatient = async (req, res, next) => {
     try {
         // console.log(req.body)
-        const clinician = await Clinician.findOne({first_name: "Steven"}).lean()
         if (await Patient.findOne({ email: req.body.email.toLowerCase() })) {
             return res.render('signup', {
                 layout: 'clinician.hbs',
@@ -98,7 +97,7 @@ const insertPatient = async (req, res, next) => {
             });
         }
         var patient = req.body
-        patient.clinician = clinician._id
+        patient.clinician = req.user._id
 
         if (patient.message != "") {
             curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
@@ -123,7 +122,6 @@ const insertPatient = async (req, res, next) => {
 // use this function only if your password is plain text in your db!!!!
 const encrypt = async (req, res) => {
     try {
-      // 输入你们自己库里的需要加密密码的病人id
       const clinicianId = "6283a31c8a0376b49bb56216";
       const clinician = await Clinician.findOne({'_id':clinicianId});
       const salt = await bcrypt.genSalt(10);
@@ -141,5 +139,5 @@ module.exports = {
     getAllPatientData,
     getAllComments,
     insertPatient,
-    encrypt,
+    encrypt
 } 

@@ -4,12 +4,38 @@ const Patient = require('../models/patient')
 const Entry = require('../models/entry')
 const bcrypt = require('bcrypt')
 
+// display dashboard
+const getDashboard = async (req, res, next) => {
+    try {
+        const user = await Patient.findById(req.user._id).lean();
+
+        // determine if badge should be displayed
+        const score = await getEngrt(req.user._id);
+        user.badge = (score >= 80);
+
+        // get latest clinician message
+        if (user.message) {
+            message = user.message.sort(function(a, b) {
+                return b.time - a.time
+            })[0]
+        } else {
+            message = false
+        }
+
+        console.log(JSON.stringify(user, null, 4))
+        res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', patient: user, msg: message})
+    }
+    catch (err) {
+        return next(err)
+    }
+}
+
 // get all history data for one patient
 const getAllData = async (req, res, next) => {
     try {
-        const patient = await Patient.findOne({first_name: "Pat"}).lean()
+        const patient = await Patient.findById(req.user._id).lean()
         // console.log(JSON.stringify(patient, null, 4))
-        const entries = await Entry.find({_patient : patient._id}).populate('_patient').lean()
+        const entries = await Entry.find({_patient : req.user._id}).populate('_patient').lean()
         // console.log(JSON.stringify(entries, null, 4))
 
         // sort by time
@@ -37,10 +63,10 @@ const showForm = async (req, res, next) => {
     try {
         today = new Date();
         today.setHours(0,0,0,0);
-        const patient = await Patient.findOne({first_name: "Pat"}).lean()
-        const entry = await Entry.findOne({_patient : patient._id, time: {$gt: today}}).lean()
+        const patient = await Patient.findById(req.user._id).lean()
+        const entry = await Entry.findOne({_patient : req.user._id, time: {$gt: today}}).lean()
 
-        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css', data: entry})
+        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css', data: entry, set: patient.settings})
     } catch (err) {
         return next(err)
     }
@@ -52,8 +78,6 @@ const insertData = async (req, res, next) => {
         // console.log(req.body)
         today = new Date();
         today.setHours(0,0,0,0);
-
-        const patient = await Patient.findOne({first_name: "Pat"}).lean()
 
         curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
 
@@ -72,7 +96,7 @@ const insertData = async (req, res, next) => {
         // update overall time
         update.time = curtime
         await Entry.updateOne(
-            {_patient : patient._id, time: {$gt: today}},
+            {_patient : req.user._id, time: {$gt: today}},
             {$set: update},
             {upsert: true})
         return
@@ -123,7 +147,7 @@ const getLeaderboard = async (req, res, next) => {
 
 const getAllMessages = async (req, res, next) => {
     try {
-        const patient = await Patient.findOne({first_name: "Diana"}).populate('clinician').lean()
+        const patient = await Patient.findById(req.user._id).populate('clinician').lean()
         // console.log(JSON.stringify(patient, null, 4))
 
         // sort by time
@@ -147,6 +171,7 @@ const getAllMessages = async (req, res, next) => {
 }
 
 module.exports = { 
+    getDashboard,
     getAllData,
     showForm,
     insertData,

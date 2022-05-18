@@ -21,9 +21,7 @@ patientRouter.get('/webp', utility.unLoggedIn, (req, res) => {
     
 })
 // patient dashboard
-patientRouter.get('/dashboard', utility.isLoggedIn, (req, res, next) => {
-    res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', Username:'Pat'})
-})
+patientRouter.get('/dashboard', utility.isLoggedIn, patientController.getDashboard)
 
 // get patient's history data
 patientRouter.get('/history_data', utility.isLoggedIn, patientController.getAllData)
@@ -45,7 +43,7 @@ patientRouter.get('/website', (req, res) => {
     res.render('website',{style:'stylesheet.css', loggedout: false})
 })
 
-patientRouter.post("/encrypt", patientController.encrypt);
+// patientRouter.post("/encrypt", patientController.encrypt);
 
 patientRouter.get('/test', (req, res) => {
     res.render('leaderboard.hbs', {layout: 'patient.hbs', style:'leaderboard.css'})

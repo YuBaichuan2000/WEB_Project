@@ -1,6 +1,6 @@
 <ul class="top-info">
     <li><h2>Welcome Back!</h2></li>
-    <li><p>{{Username}}<img class="gold-badge" src="/images/golden_badge.png" alt="golden_badge"></p></li>
+    <li><p>{{patient.first_name}} {{patient.last_name}}{{#if patient.badge}}<img class="gold-badge" src="/images/golden_badge.png" alt="golden_badge">{{/if}}</p></li>
     <li class="blocks"></li>
 </ul>
 <div class="main">
@@ -27,6 +27,6 @@
     <!-- </div> -->
     <ul class="clinician-message">
         <li><p>Today's Clinician message</p></li>
-        <li><h5>Happy birthday Pat!!!</h5></li>
+        <li><h5>{{#if msg}}{{msg.msg}}{{else}}You can do this!!!{{/if}}</h5></li>
     </ul>
 </div>

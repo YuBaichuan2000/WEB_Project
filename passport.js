@@ -4,6 +4,7 @@ const LocalStrategy = require('passport-local').Strategy
 // Get users
 const Patient = require('./models/patient')
 const Clinician = require('./models/clinician')
+const bcrypt = require('bcrypt')
 
 module.exports = (passport) => {
     //Serialize information to be stored in session/cookie
@@ -15,7 +16,7 @@ module.exports = (passport) => {
     //back to what it was (expand from id to full user)
     passport.deserializeUser((login, done) => {
         if (login.role === "patient") {
-          Patient.findOne(login._id, (err, user) => {
+          Patient.findById(login._id, (err, user) => {
             return done(err, user)
           })
         } 

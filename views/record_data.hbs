@@ -20,46 +20,54 @@
 
     <div class="enter-data">
         <form action="/patient/record_data" method="POST">
-            <label>Enter your blood glucose level:</label>
-            {{#if data.bgl.val}}
-            <div class="entered">{{data.bgl.val}}</div><span class="nmol">nmol/L</span>
-            {{else}}
-            <input name="bgl"></input><span class="nmol">nmol/L</span>
-            <br>
-            <a onclick="on1('bgl')">+ Add a comment</a>
+            {{#if set.bgl}}
+                <label>Enter your blood glucose level:</label>
+                {{#if data.bgl.val}}
+                <div class="entered">{{data.bgl.val}}</div><span class="nmol">nmol/L</span>
+                {{else}}
+                <input name="bgl"></input><span class="nmol">nmol/L</span>
+                <br>
+                <a onclick="on1('bgl')">+ Add a comment</a>
+                {{/if}}
+                <br>
+                <br>
+                <br>
             {{/if}}
-            <br>
-            <br>
-            <br>
-            <label>Enter your weight:</label>
-            {{#if data.wght.val}}
-            <div class="entered">{{data.wght.val}}</div><span class="kg">kg</span>
-            {{else}}
-            <input name="wght"></input><span class="kg">kg</span>
-            <br>
-            <a onclick="on1('wght')">+ Add a comment</a>
+            {{#if set.wght}}
+                <label>Enter your weight:</label>
+                {{#if data.wght.val}}
+                <div class="entered">{{data.wght.val}}</div><span class="kg">kg</span>
+                {{else}}
+                <input name="wght"></input><span class="kg">kg</span>
+                <br>
+                <a onclick="on1('wght')">+ Add a comment</a>
+                {{/if}}
+                <br>
+                <br>
+                <br>
             {{/if}}
-            <br>
-            <br>
-            <br>
-            <label>Enter your insulin doses:</label>
-            {{#if data.doses.val}}
-            <div class="entered">{{data.doses.val}}</div><span class="doses">doses</span>
-            {{else}}
-            <input name="doses"></input><span class="doses">doses</span>
-            <br>
-            <a onclick="on1('doses')">+ Add a comment</a>
+            {{#if set.doses}}
+                <label>Enter your insulin doses:</label>
+                {{#if data.doses.val}}
+                <div class="entered">{{data.doses.val}}</div><span class="doses">doses</span>
+                {{else}}
+                <input name="doses"></input><span class="doses">doses</span>
+                <br>
+                <a onclick="on1('doses')">+ Add a comment</a>
+                {{/if}}
+                <br>
+                <br>
+                <br>
             {{/if}}
-            <br>
-            <br>
-            <br>
-            <label>Enter your step counts:</label>
-            {{#if data.steps.val}}
-            <div class="entered">{{data.steps.val}}</div><span class="steps">steps</span>
-            {{else}}
-            <input name="steps"></input><span class="steps">steps</span>
-            <br>
-            <a onclick="on1('steps')">+ Add a comment</a>
+            {{#if set.exc}}
+                <label>Enter your step counts:</label>
+                {{#if data.steps.val}}
+                <div class="entered">{{data.steps.val}}</div><span class="steps">steps</span>
+                {{else}}
+                <input name="steps"></input><span class="steps">steps</span>
+                <br>
+                <a onclick="on1('steps')">+ Add a comment</a>
+                {{/if}}
             {{/if}}
             <div class="button1">
                 <button onclick="on2()" type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
