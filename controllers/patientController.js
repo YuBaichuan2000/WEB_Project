@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Clinician = require('../models/clinician')
 const Patient = require('../models/patient')
 const Entry = require('../models/entry')
+const bcrypt = require('bcrypt')
 
 // get all history data for one patient
 const getAllData = async (req, res, next) => {

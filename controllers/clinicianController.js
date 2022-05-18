@@ -120,8 +120,26 @@ const insertPatient = async (req, res, next) => {
 
 }
 
+// use this function only if your password is plain text in your db!!!!
+const encrypt = async (req, res) => {
+    try {
+      // 输入你们自己库里的需要加密密码的病人id
+      const clinicianId = "6283a31c8a0376b49bb56216";
+      const clinician = await Clinician.findOne({'_id':clinicianId});
+      const salt = await bcrypt.genSalt(10);
+      console.log(clinician.password);
+      clinician.password = await bcrypt.hash(clinician.password, salt);
+      await clinician.save();
+      res.send("password encrypted");
+    } catch (err) {
+      console.log(err);
+      res.send("error happens when encrypt password");
+    }
+  };
+
 module.exports = { 
     getAllPatientData,
     getAllComments,
-    insertPatient
+    insertPatient,
+    encrypt,
 } 
