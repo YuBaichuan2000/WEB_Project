@@ -124,13 +124,16 @@ body{
 
 input[type=text] {
     /* width:25%; */
+    font-size: 22px;
+    padding-left: 15px;
     border: 2px solid black;
     border-radius: 20px;
     height: 40px;
     width: 500px;
   }
 input[type=password] {
-    /* width:25%; */
+    font-size: 22px;
+    padding-left: 15px;
     border: 2px solid black;
     border-radius: 20px;
     height: 40px;
