@@ -25,7 +25,7 @@ patientRouter.get('/dashboard', utility.isLoggedIn, (req, res, next) => {
     res.render('dashboard', {layout: 'patient.hbs', style:'patient_dashboard.css', Username:'Pat'})
 })
 
-// get all patient's histry data
+// get patient's history data
 patientRouter.get('/history_data', utility.isLoggedIn, patientController.getAllData)
 
 // display and post new data
@@ -34,9 +34,8 @@ patientRouter.post('/record_data', patientController.insertData)
 
 patientRouter.get('/leaderboard', patientController.getLeaderboard)
 
-patientRouter.get('/messages', utility.isLoggedIn, (req, res) => {
-    res.render('messages')
-})
+// get patient's history messages
+patientRouter.get('/messages', utility.isLoggedIn, patientController.getAllMessages)
 
 // about website and about diabetes for logged in users
 patientRouter.get('/diabetes', (req, res) => {
@@ -45,6 +44,8 @@ patientRouter.get('/diabetes', (req, res) => {
 patientRouter.get('/website', (req, res) => {
     res.render('website',{style:'stylesheet.css', loggedout: false})
 })
+
+patientRouter.post("/encrypt", patientController.encrypt);
 
 patientRouter.get('/test', (req, res) => {
     res.render('leaderboard.hbs', {layout: 'patient.hbs', style:'leaderboard.css'})

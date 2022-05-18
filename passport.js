@@ -15,12 +15,12 @@ module.exports = (passport) => {
     //back to what it was (expand from id to full user)
     passport.deserializeUser((login, done) => {
         if (login.role === "patient") {
-          Patient.findById(login._id, (err, user) => {
+          Patient.findOne(login._id, (err, user) => {
             return done(err, user)
           })
         } 
         else if (login.role === "clinician"){
-            Clinician.findById(login._id, (err, user) => {
+            Clinician.findOne(login._id, (err, user) => {
                 return done(err, user)
             })
         }
@@ -46,7 +46,7 @@ module.exports = (passport) => {
                         else if(!patient){
                             return done(null, false, req.flash('warning','No user found'));
                         }
-                        else if (!(password == patient.password)){
+                        else if (!await bcrypt.compare(password, patient.password)) {
                             return done(null, false, req.flash('warning','Wrong password'));
                         }
                         else{
@@ -74,7 +74,7 @@ module.exports = (passport) => {
                         else if(!clinician){
                             return done(null, false, req.flash('warning','No user found'));
                         }
-                        else if (!(password == clinician.password)){
+                        else if (!await bcrypt.compare(password, clinician.password)) {
                             return done(null, false, req.flash('warning','Wrong password'));
                         }
                         else{

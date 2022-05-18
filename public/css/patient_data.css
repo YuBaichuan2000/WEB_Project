@@ -7,7 +7,7 @@ body{
     background-image: url(../images/background.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
-    height: 1080px;
+    height: 5000px;
     background-size: cover;
     overflow: scroll;
     background-attachment: fixed;
@@ -367,23 +367,9 @@ header a:hover{
     border-radius: 0px 28px 28px 0px;
 }
 
-
-
-*,*:after,*:before{
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.container{
-    width: 85%;
-}
-
-.container h1{
-    text-align: center;
-    font-size: 45px;
-}
-#canvas{
-    width: 100%;
+.line-chart{
+    width: 38%;
+    height: 300px;
+    background-color: aliceblue;
+    margin-bottom: 20px;
 }

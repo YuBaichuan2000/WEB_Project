@@ -1,0 +1,32 @@
+<div id="canvas4" class="line-chart">
+
+</div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Date', 'Weight(Kg)'],
+            ['17/5',  89],
+            ['18/5',  87],
+            ['19/5',  83],
+            ['20/5',  93],
+            ['21/5',  84],
+            ['22/5',  96],
+            ['23/5',  93]
+        ]);
+
+        var options = {
+            title: 'Weight',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('canvas4'));
+
+        chart.draw(data, options);
+        }
+    </script>

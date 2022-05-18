@@ -28,6 +28,8 @@ clinicianRouter.post('/signup', clinicianController.insertPatient)
 clinicianRouter.get('/test', (req, res) => {
     res.render('signupnewpatient.hbs', {layout: 'clinician.hbs', style:'signupnewpatient.css'})
 })
+
+clinicianRouter.post("/encrypt", clinicianController.encrypt);
 // Handle logout
 // clinicianRouter.post('/logout', (req, res) => {
 //     req.logout()

@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Clinician = require('../models/clinician')
 const Patient = require('../models/patient')
 const Entry = require('../models/entry')
+const bcrypt = require('bcrypt')
 
 // get all history data for one patient
 const getAllData = async (req, res, next) => {
@@ -120,9 +121,35 @@ const getLeaderboard = async (req, res, next) => {
     }
 }
 
+const getAllMessages = async (req, res, next) => {
+    try {
+        const patient = await Patient.findOne({first_name: "Diana"}).populate('clinician').lean()
+        // console.log(JSON.stringify(patient, null, 4))
+
+        // sort by time
+        sorted = patient.message.sort(function(a, b) {
+            return b.time - a.time
+        })
+
+        // console.log(Intl.DateTimeFormat("en-AU").format(sorted[0].time))
+
+        // change time to more displayable format
+        for (m of sorted) {
+            m.date = Intl.DateTimeFormat("en-AU").format(m.time);
+            m.isF = patient.clinician.gender == "F";
+            m.cname = patient.clinician.first_name
+        }
+
+        return res.render('history_message', {layout: 'patient.hbs', style: 'history_message.css', message: sorted})
+    } catch (err) {
+        return next(err)
+    }
+}
+
 module.exports = { 
     getAllData,
     showForm,
     insertData,
-    getLeaderboard
+    getLeaderboard,
+    getAllMessages
 } 
