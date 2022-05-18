@@ -15,6 +15,10 @@ const schema = new mongoose.Schema({
         msg: {type: String, required: true},
         time: {type: Date, required: true}
     }],
+    note: [{
+        msg: {type: String, required: true},
+        time: {type: Date, required: true}
+    }],
     settings: {
         doses: {type: Boolean, default: true, required: true},
         doses_min: {type: Number, default: 2},

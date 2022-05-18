@@ -1,13 +1,13 @@
 <section class="patient_data_nav-bar">
     <ul class="patient_data_nav-bar-1">
-        <li class="patient_data_nav-bar-left"><h1><a href="/clinician/dashboard">View Data ></a></h1></li>
-        <li class="patient_data_nav-bar-mid"><h1><a href="/clinician/comments">Clinician Notes ></a></h1></li>
-        <li class="patient_data_nav-bar-right"><h1><a href="/clinician/comments">Options ></a></h1></li>
+        <li class="patient_data_nav-bar-left"><h1><a href="/clinician/{{data.0._patient._id}}">View Data ></a></h1></li>
+        <li class="patient_data_nav-bar-mid"><h1><a href="/clinician/notes/{{data.0._patient._id}}">Clinician Notes ></a></h1></li>
+        <li class="patient_data_nav-bar-right"><h1><a href="/clinician/settings/{{data.0._patient._id}}">Options ></a></h1></li>
     </ul>
 </section>
 
 <ul class="patient_data_info">
-    <li class="patient_data_info-1"><h1>{Patient}</h1></li>
+    <li class="patient_data_info-1"><h1>{{data.0._patient.first_name}} {{data.0._patient.last_name}}</h1></li>
 </ul>
 
 {{!-- 这一段是关于图表的, 先空着 --}}

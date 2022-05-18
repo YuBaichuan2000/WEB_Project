@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt")
 // get all patient data for clinician
 const getAllPatientData = async (req, res, next) => {
     try {
-        const patients = await Patient.find({clinician: req.user._id}).select("_id").lean()
+        const patients = await Patient.find({clinician: req.user.id}).select("_id").lean()
         // console.log(JSON.stringify(result, null, 4))
         const entries = await Entry.find({_patient : {$in: patients.map(a => a._id)}}).populate({path: '_patient', model: Patient}).lean()
         // console.log(JSON.stringify(entries, null, 4))
@@ -70,7 +70,15 @@ const getAllComments = async (req, res, next) => {
 }
 
 const getOnePatientData = async (req, res, next) => {
-
+    try {
+        const entries = await Entry.find({_patient : req.params.id}).populate({path: '_patient', model: Patient}).lean()
+        sorted = entries.sort(function(a, b) {
+            return b.time - a.time
+        })
+        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css'})
+    } catch (err) {
+        return next(err)
+    }
 }
 
 // add new patient to database
@@ -123,6 +131,62 @@ const insertPatient = async (req, res, next) => {
 
 }
 
+const getNotes = async (req, res, next) => {
+    try {
+        const patient = await Patient.findById(req.params.id).lean()
+        // console.log(JSON.stringify(patient, null, 4))
+
+        // sort by time
+        if (patient.note) {
+            sorted = patient.note.sort(function(a, b) {
+                return b.time - a.time
+            })
+        } else {
+            sorted = []
+        }
+
+        // console.log(JSON.stringify(sorted, null, 4))
+
+        // console.log(Intl.DateTimeFormat("en-AU").format(sorted[0].time))
+
+        // change time to more displayable format
+        for (n of sorted) {
+            n.date = Intl.DateTimeFormat("en-AU").format(n.time);
+        }
+
+        return res.render('clinician_notes', { layout: 'clinician.hbs', data: sorted, style:'clinician_notes.css', id: req.params.id})
+    } catch (err) {
+        return next(err)
+    }
+}
+
+const addNote = async (req, res, next) => {
+    try {
+        curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
+        const patient = await Patient.findById(req.params.id).lean()
+        // console.log(JSON.stringify(req.body, null, 4))
+
+        const note = {
+            msg: req.body.note,
+            time: curtime
+        }
+
+        if (patient.note) {
+            patient.note.push(note);
+        } else {
+            patient.note = [note];
+        }
+
+        await Patient.updateOne(
+            {_id : req.params.id},
+            {$set: {note: patient.note}})
+        
+        return res.redirect(`/clinician/notes/${req.params.id}`)
+    } catch (err) {
+        return next(err)
+    }
+}
+
 // use this function only if your password is plain text in your db!!!!
 const encrypt = async (req, res) => {
     try {
@@ -144,5 +208,7 @@ module.exports = {
     getAllComments,
     getOnePatientData,
     insertPatient,
+    getNotes,
+    addNote,
     encrypt
 } 

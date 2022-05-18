@@ -17,17 +17,17 @@
 <HR class="dashboard-line">
 
 {{#each data}}
-<table class="patient-info">
+<table class="patient-info" href="/clinician/{{this._patient._id}}">
     {{#if this.highlight}}
     <tr class="patient-info-highlight">
     {{else}}
     <tr class="patient-info-normal">
     {{/if}}
-        <td class="patient-info-left">{{this._patient.first_name}} {{this._patient.last_name}}</td>
-        <td>{{this.bgl.val}}</td>
-        <td>{{this.wght.val}}</td>
-        <td>{{this.doses.val}}</td>
-        <td class="patient-info-right">{{this.steps.val}}</td>
+    <td class="patient-info-left" href="/clinician/{{this._patient._id}}">{{this._patient.first_name}} {{this._patient.last_name}}</td>
+    <td>{{this.bgl.val}}</td>
+    <td>{{this.wght.val}}</td>
+    <td>{{this.doses.val}}</td>
+    <td class="patient-info-right">{{this.steps.val}}</td>
     </tr>
 </table>
 {{/each}}

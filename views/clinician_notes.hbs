@@ -1,7 +1,7 @@
 <body>
     <section class="patient_data_nav-bar">
         <ul class="patient_data_nav-bar-1">
-            <li class="patient_data_nav-bar-left"><h1><a href=" ">View Data ></a ></h1></li>
+            <li class="patient_data_nav-bar-left"><h1><a href="/clinician/{{data.0._patient._id}}">View Data ></a ></h1></li>
             <li class="patient_data_nav-bar-mid"><h1><a href="/clinician/comments">Clinician Notes ></a ></h1></li>
             <li class="patient_data_nav-bar-right"><h1><a href="/clinician/comments">Options ></a ></h1></li>
         </ul>
@@ -9,21 +9,18 @@
 
     <div class="note_box">
         <p class="note">New Note</p>
-        <form>
-            <input class="message">
+        <form method="POST">
+            <textarea class="message", name="note"></textarea>
+            <button class="send" type="submit"><a>Send</a></button>
         </form>
-        <button class="send" type="submit"><a>Send</a></button>
     </div>
 
     <hr class = "line" size="5" width="1420px" color="#194391">
 
+    {{#each data}}
     <div class="note_display">
-        {{!-- <form>
-            <input class="c_note">
-            <input class="date">
-        </form> --}}
-        <p class="c_note"></p>
-        <p class="date"></p>
-
+        <p class="c_note">{{this.msg}}</p>
+        <p class="date">{{this.date}}</p>
     </div>
+    {{/each}}
 </body>
