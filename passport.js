@@ -44,13 +44,13 @@ module.exports = (passport) => {
                             return done(err);
                         }
                         else if(!patient){
-                            return done(null, false, req.flash('warning','No user found'));
+                            return done(null, false, {message: "Wrong username/password"});
                         }
                         else if (!await bcrypt.compare(password, patient.password)) {
-                            return done(null, false, req.flash('warning','Wrong password'));
+                            return done(null, false, {message: "Wrong username/password"});
                         }
                         else{
-                            return done(null, patient, req.flash('warning', 'Login successful'));
+                            return done(null, patient, {message: "Login Successful"});
                         }
                 });
             })
@@ -72,13 +72,13 @@ module.exports = (passport) => {
                             return done(err);
                         }
                         else if(!clinician){
-                            return done(null, false, req.flash('warning','No user found'));
+                            return done(null, false, {message: "Wrong username/password"});
                         }
                         else if (!await bcrypt.compare(password, clinician.password)) {
-                            return done(null, false, req.flash('warning','Wrong password'));
+                            return done(null, false, {message: "Wrong username/password"});
                         }
                         else{
-                            return done(null, clinician, req.flash('warning', 'Login successful'));
+                            return done(null, clinician, {message: "Wrong username/password"});
                         }
                 });
             })
