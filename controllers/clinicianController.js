@@ -81,29 +81,37 @@ const getOnePatientData = async (req, res, next) => {
     }
 }
 
+const getSignup = async (req, res, next) => {
+    try {
+        return res.render("signup", {layout: "clinician.hbs", style:"signup.css"})
+    } catch (err) {
+        return next(err)
+    }
+}
+
 // add new patient to database
 const insertPatient = async (req, res, next) => {
     try {
         // console.log(req.body)
         if (await Patient.findOne({ email: req.body.email.toLowerCase() })) {
-            return res.render('signup', {
-                layout: 'clinician.hbs',
-                style:'signup.css',
+            return res.render("signup", {
+                layout: "clinician.hbs",
+                style:"signup.css",
                 email : 1,
                 input: req.body});
         }
         if (await Patient.findOne({ screen_name: req.body.screen_name })) {
-            return res.render('signup', {
-                layout: 'clinician.hbs',
-                style:'signup.css',
+            return res.render("signup", {
+                layout: "clinician.hbs",
+                style:"signup.css",
                 screen : 1,
                 input: req.body
             });
         }
         if (req.body.gender != "F" && req.body.gender != "M") {
-            return res.render('signup', {
-                layout: 'clinician.hbs',
-                style:'signup.css',
+            return res.render("signup", {
+                layout: "clinician.hbs",
+                style: "signup.css",
                 gender : 1,
                 input: req.body
             });
@@ -281,6 +289,7 @@ module.exports = {
     getAllPatientData,
     getAllComments,
     getOnePatientData,
+    getSignup,
     insertPatient,
     getNotes,
     addNote,
