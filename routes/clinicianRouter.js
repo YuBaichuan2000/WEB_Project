@@ -20,6 +20,11 @@ clinicianRouter.get('/dashboard', utility.isLoggedIn, clinicianController.getAll
 
 clinicianRouter.get('/comments', utility.isLoggedIn, clinicianController.getAllComments)
 
+// sign up new patient
+clinicianRouter.get("/signup", utility.isLoggedIn, clinicianController.getSignup)
+clinicianRouter.post('/signup', clinicianController.insertPatient)
+
+clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
 // get entries of one patient
 clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatientData)
 
@@ -27,21 +32,15 @@ clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatien
 clinicianRouter.get("/notes/:id", utility.isLoggedIn, clinicianController.getNotes)
 clinicianRouter.post("/notes/:id", clinicianController.addNote)
 
-clinicianRouter.get("/settings/:id", clinicianController.getSettings)
+clinicianRouter.get("/settings/:id", utility.isLoggedIn, clinicianController.getSettings)
 clinicianRouter.post("/settings/:id", clinicianController.saveSettings)
 
-// sign up new patient
-clinicianRouter.get('/signup', utility.isLoggedIn, (req, res, next) => {
-    res.render('signup', {layout: 'clinician.hbs', style:'signup.css'})
-})
-clinicianRouter.post('/signup', clinicianController.insertPatient)
-
-clinicianRouter.get('/test', (req, res) => {
-    res.render('signupnewpatient.hbs', {layout: 'clinician.hbs', style:'signupnewpatient.css'})
-})
+// clinicianRouter.get('/test', (req, res) => {
+//     res.render('signupnewpatient.hbs', {layout: 'clinician.hbs', style:'signupnewpatient.css'})
+// })
 
 // clinicianRouter.post("/encrypt", clinicianController.encrypt);
-// clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
+
 
 // export the clinicianRouter
 module.exports = clinicianRouter

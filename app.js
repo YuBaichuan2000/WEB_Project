@@ -57,8 +57,7 @@ passport.authenticate('patient-strategy', {
 )
 
 app.get('/', utility.unLoggedIn, (req, res) => {
-    console.log(req.session);
-    res.render('login',  {warning: req.session.flash, patient: true, style:"patient_login.css"})
+    res.render('login',  {warning: req.flash("error"), patient: true, style:"patient_login.css"})
     
 })
 

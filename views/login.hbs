@@ -3,9 +3,9 @@
     <img src="/images/patient_login_icon.png">
 </header>
 <br>
-{{#each flash}}
-    <p class="alert">{{this}}</p>
-{{/each}}
+
+{{#if warning}} <p>{{warning}}</p> {{/if}}
+
 <form action="/" method="POST">
     <div class="input_box">
         <input type="text" name="email" placeholder="Enter Email address" required>
