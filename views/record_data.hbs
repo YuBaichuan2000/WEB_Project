@@ -25,7 +25,7 @@
                 {{#if data.bgl.val}}
                 <div class="entered">{{data.bgl.val}}<span class="nmol1">nmol/L</span></div>
                 {{else}}
-                <input name="bgl"></input><span class="nmol">nmol/L</span>
+                <input type="number" name="bgl" min="0"></input><span class="nmol">nmol/L</span>
                 <br>
                 <a onclick="on1('bgl')">+ Add a comment</a>
                 {{/if}}
@@ -38,7 +38,7 @@
                 {{#if data.wght.val}}
                 <div class="entered">{{data.wght.val}}<span class="kg1">kg</span></div>
                 {{else}}
-                <input name="wght"></input><span class="kg">kg</span>
+                <input type="number" name="wght" min="0"></input><span class="kg">kg</span>
                 <br>
                 <a onclick="on1('wght')">+ Add a comment</a>
                 {{/if}}
@@ -51,7 +51,7 @@
                 {{#if data.doses.val}}
                 <div class="entered">{{data.doses.val}}<span class="doses1">doses</span></div>
                 {{else}}
-                <input name="doses"></input><span class="doses">doses</span>
+                <input type="number" name="doses" min="0" step="1"></input><span class="doses">doses</span>
                 <br>
                 <a onclick="on1('doses')">+ Add a comment</a>
                 {{/if}}
@@ -64,7 +64,7 @@
                 {{#if data.steps.val}}
                 <div class="entered">{{data.steps.val}}<span class="steps1">steps</span></div>
                 {{else}}
-                <input name="steps"></input><span class="steps">steps</span>
+                <input type="number" name="steps" min="0" step="1"></input><span class="steps">steps</span>
                 <br>
                 <a onclick="on1('steps')">+ Add a comment</a>
                 {{/if}}

@@ -3,13 +3,6 @@
         Sign up new patient
     </div>
 
-    <div id="overlay" onclick="off()">
-        <div id="text">
-            New patient has been successfully submitted!                
-        </div>
-        <a href="/clinician/dashboard">Back to dashboard ></a>
-    </div>
-
     <div class="enter-data" id="form">
         <form method="POST" action="/clinician/signup">
             <label>Given name:</label>
@@ -19,7 +12,7 @@
             <input name="last_name" value="{{input.last_name}}" required>
             <br>
             <label>Screen name:</label>
-            <input name="screen_name" value="{{input.screen_name}}" required>
+            <input name="screen_name" maxlength="10" value="{{input.screen_name}}" required>
             <br>
             <label>Email:</label>
             <input type="email" name="email" value="{{input.email}}" required>
