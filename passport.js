@@ -49,7 +49,9 @@ module.exports = (passport) => {
                         else if (!await bcrypt.compare(password, patient.password)) {
                             return done(null, false, {message: "Invalid username or password"});
                         }
-                        
+                        else{
+                            return done(null, patient, {message: "Login Successful"});
+                        }
                 });
             })
         })
@@ -75,7 +77,9 @@ module.exports = (passport) => {
                         else if (!await bcrypt.compare(password, clinician.password)) {
                             return done(null, false, {message: "Invalid username or password"});
                         }
-                        
+                        else{
+                            return done(null, clinician, {message: "Invalid username or password"});
+                        }
                 });
             })
         })
