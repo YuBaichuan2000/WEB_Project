@@ -17,7 +17,7 @@ const getDashboard = async (req, res, next) => {
         if (user.message) {
             message = user.message.sort(function(a, b) {
                 return b.time - a.time
-            })[0]
+            }).at(-1)
         } else {
             message = false
         }

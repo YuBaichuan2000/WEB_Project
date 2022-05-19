@@ -28,6 +28,7 @@ clinicianRouter.get("/notes/:id", utility.isLoggedIn, clinicianController.getNot
 clinicianRouter.post("/notes/:id", clinicianController.addNote)
 
 clinicianRouter.get("/settings/:id", clinicianController.getSettings)
+clinicianRouter.post("/settings/:id", clinicianController.saveSettings)
 
 // sign up new patient
 clinicianRouter.get('/signup', utility.isLoggedIn, (req, res, next) => {

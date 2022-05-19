@@ -189,10 +189,68 @@ const addNote = async (req, res, next) => {
 
 const getSettings = async (req, res, next) => {
     try {
-        // const patient = await Patient.findById(req.params.id).lean()
+        const patient = await Patient.findById(req.params.id).lean()
+
+        // get latest clinician message
+        if (patient.message) {
+            message = patient.message.sort(function(a, b) {
+                return b.time - a.time
+            }).at(-1)
+        } else {
+            message = false
+        }
+
+        return res.render('patient_setting', { layout: 'clinician.hbs', style:'patient_setting.css', id: req.params.id, pat: patient, message: message})
+    } catch (err) {
+        return next(err)
+    }
+}
+
+const saveSettings = async (req, res, next) => {
+    try {
+        curtime = new Date().toLocaleString("en-US", {timeZone: 'Australia/Melbourne'})
+        const patient = await Patient.findById(req.params.id).lean()
+        
+
+        for (i of ['bgl', 'wght', 'doses', 'exc']) {
+            if (req.body[i] == "on") {
+                req.body[i] = true;
+            } else {
+                req.body[i] = false;
+            }
+        }
+
+        // console.log(JSON.stringify(req.body, null, 4))
+
+        // get clinician's message
+        if (req.body.message) {
+            const message = {
+                msg: req.body.message,
+                time: curtime
+            }
+    
+            if (patient.message) {
+                patient.message.push(message);
+            } else {
+                patient.message = [message];
+            }
+        }
+
         // console.log(JSON.stringify(patient, null, 4))
 
-        return res.render('patient_setting', { layout: 'clinician.hbs', style:'patient_setting.css', id: req.params.id})
+        // update settings
+        await Patient.updateOne(
+            {_id : req.params.id},
+            {$set: {
+                settings: req.body,
+                message: patient.message}})
+        // if (message) {
+        //     await Patient.updateOne(
+        //         {_id : req.params.id},
+        //         {$set: {message: message}})
+        // }
+
+        return res.redirect(`/clinician/settings/${req.params.id}`)
     } catch (err) {
         return next(err)
     }
@@ -227,6 +285,7 @@ module.exports = {
     getNotes,
     addNote,
     getSettings,
+    saveSettings,
     encrypt,
     logout
 } 

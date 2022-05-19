@@ -8,69 +8,57 @@
     </section>
 
     <div class="name_header">
-        <p>John Doe’s Data Threshold</p>
+        <p>{{pat.first_name}} {{pat.last_name}}'s Data Threshold</p>
     </div>
 
     <hr class = "line" size="1" width="80%" color="black">
 
-    <div class="Blood_Glucose_Level_control">
-        <p class="BGL">Blood Glucose Level</p>
-        <label class="switch1">
-            <input type="checkbox" checked>
-            <span class="slider round"></span>
-        </label>
-        <form>
-            <input class="BGL_input_left"><label class="lable1">~</label><input class="BGL_input_right">
-        </form>
-        <p class="nmol">nmol/L</p>
-        <button class="save1" type="submit"><a>Save</a></button>
+    <form method="POST">
+        <div class="Blood_Glucose_Level_control">
+            <p class="BGL">Blood Glucose Level</p>
+            <label class="switch1">
+                <input type="checkbox" name="bgl" {{#if pat.settings.bgl}}checked{{/if}}>
+                <span class="slider round"></span>
+            </label>
+            <input class="BGL_input_left" name="bgl_min" value="{{pat.settings.bgl_min}}"><label class="lable1">~</label><input class="BGL_input_right" name="bgl_max" value="{{pat.settings.bgl_max}}">
+            <p class="nmol">nmol/L</p>
 
-    </div>
-    <div class="Weight_control">
-        <p class="Weight">Weight</p>
-        <label class="switch2">
-            <input type="checkbox" checked>
-            <span class="slider round"></span>
-        </label>
-        <form>
-            <input class="W_input_left"><label class="lable2">~</label><input class="W_input_right">
-        </form>
-        <p class="kg">kg</p>
-        <button class="save2" type="submit"><a>Save</a></button>
+        </div>
+        <div class="Weight_control">
+            <p class="Weight">Weight</p>
+            <label class="switch2">
+                <input type="checkbox" name="wght" {{#if pat.settings.wght}}checked{{/if}}>
+                <span class="slider round"></span>
+            </label>
+            <input class="W_input_left" name="wght_min" value="{{pat.settings.wght_min}}"><label class="lable2">~</label><input class="W_input_right" name="wght_max" value="{{pat.settings.wght_max}}">
+            <p class="kg">kg</p>
 
-    </div>
-    <div class="Doses_Insulin_control">
-        <p class="Doses_Insulin">Doses of Insulin</p>
-        <label class="switch3">
-            <input type="checkbox" checked>
-            <span class="slider round"></span>
-        </label>
-        <form>
-            <input class="Doses_Insulin_input_left"><label class="lable3">~</label><input class="Doses_Insulin_input_right">
-        </form>
-        <p class="doses">doses</p>
-        <button class="save3" type="submit"><a>Save</a></button>
+        </div>
+        <div class="Doses_Insulin_control">
+            <p class="Doses_Insulin">Doses of Insulin</p>
+            <label class="switch3">
+                <input type="checkbox" name="doses" {{#if pat.settings.doses}}checked{{/if}}>
+                <span class="slider round"></span>
+            </label>
+            <input class="Doses_Insulin_input_left" name="doses_min" value="{{pat.settings.doses_min}}"><label class="lable3">~</label><input class="Doses_Insulin_input_right" name="doses_max" value="{{pat.settings.doses_max}}">
+            <p class="doses">doses</p>
 
-    </div>
-    <div class="Exercise_control">
-        <p class="Exercise">Exercise</p>
-        <label class="switch4">
-            <input type="checkbox" checked>
-            <span class="slider round"></span>
-        </label>
-        <form>
-            <input class="Exercise_input_left"><label class="lable4">~</label><input class="Exercise_input_right">
-        </form>
-        <p class="steps">steps</p>
-        <button class="save4" type="submit"><a>Save</a></button>
+        </div>
+        <div class="Exercise_control">
+            <p class="Exercise">Exercise</p>
+            <label class="switch4">
+                <input type="checkbox" name="exc" {{#if pat.settings.exc}}checked{{/if}}>
+                <span class="slider round"></span>
+            </label>
+            <input class="Exercise_input_left" name="exc_min" value="{{pat.settings.exc_min}}"><label class="lable4">~</label><input class="Exercise_input_right" name="exc_max" value="{{pat.settings.exc_max}}">
+            <p class="steps">steps</p>
 
-    </div>
-    <div class="message_box">
-        <p class="message">Message</p>
-        <form>
-            <input class="message">
-        </form>
-        <button class="save5" type="submit"><a>Save</a></button>
+        </div>
+        <div class="message_box">
+            <p class="message">Message</p>
+            <input class="message" name="message" {{#if message}}value="{{message.msg}}"{{/if}}>
+            <button class="save5" type="submit"><a>Save</a></button>
+    </form>
     </div>
     <footer>
         Copyright 2022 | Privacy
