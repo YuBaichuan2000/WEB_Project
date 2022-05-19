@@ -21,7 +21,11 @@
         <p class="role_selector clinician selected"><a href="/clinician/webc" target="">Clinician</a></p><br><br><br><br>
     {{/if}}
     
-    {{#if warning}} <p>{{warning}}</p> {{/if}}
+    {{#if warning}} 
+        <script>
+            alert("Wrong username or password!")
+        </script>
+    {{/if}}
 
     <form class="login_form" {{#if patient}} action="/patient/webp" {{else}} action="/clinician/webc" {{/if}} method="POST">
         <div class="username_password">

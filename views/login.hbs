@@ -4,7 +4,12 @@
 </header>
 <br>
 
-{{#if warning}} <p>{{warning}}</p> {{/if}}
+{{#if warning}} 
+    <script>
+        alert("Wrong username or password!")
+    </script>
+{{/if}}
+
 
 <form action="/" method="POST">
     <div class="input_box">
