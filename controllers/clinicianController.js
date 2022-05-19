@@ -53,7 +53,14 @@ const getAllComments = async (req, res, next) => {
             for (const j of ["bgl", "wght", "doses", "steps"]) {
                 if (j in entries[i]) {
                     if ("cmt" in entries[i][j]) {
-                        result.push({"first_name": entries[i]._patient.first_name, "last_name": entries[i]._patient.last_name, "cmt": entries[i][j].cmt, "time": entries[i][j].time})
+                        // console.log(JSON.stringify(result, null, 4))
+                        result.push({
+                            first_name: entries[i]._patient.first_name,
+                            last_name: entries[i]._patient.last_name,
+                            cmt: entries[i][j].cmt,
+                            time: entries[i][j].time,
+                            id: entries[i]._patient._id
+                        })
                     }
                 }
             }
