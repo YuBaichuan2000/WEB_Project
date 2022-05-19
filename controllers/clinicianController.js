@@ -214,6 +214,11 @@ const encrypt = async (req, res) => {
     }
   };
 
+const logout = (req, res) => {
+    req.logout();
+    res.redirect("/");
+};
+
 module.exports = { 
     getAllPatientData,
     getAllComments,
@@ -222,5 +227,6 @@ module.exports = {
     getNotes,
     addNote,
     getSettings,
-    encrypt
+    encrypt,
+    logout
 } 

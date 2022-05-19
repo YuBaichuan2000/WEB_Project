@@ -2,6 +2,7 @@ const express = require('express')
 const passport = require('passport')
 const clinicianRouter = express.Router()
 const clinicianController = require('../controllers/clinicianController')
+const utility = require("./clinicianUtility.js");
 
 // Handle login
 clinicianRouter.post('/webc',
@@ -10,26 +11,26 @@ clinicianRouter.post('/webc',
     })
 )
 
-clinicianRouter.get('/webc', (req, res) => {
+clinicianRouter.get('/webc', utility.unLoggedIn, (req, res) => {
     res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
 })
 
 // GET all patients' data and comments
-clinicianRouter.get('/dashboard', clinicianController.getAllPatientData)
+clinicianRouter.get('/dashboard', utility.isLoggedIn, clinicianController.getAllPatientData)
 
-clinicianRouter.get('/comments', clinicianController.getAllComments)
+clinicianRouter.get('/comments', utility.isLoggedIn, clinicianController.getAllComments)
 
 // get entries of one patient
-clinicianRouter.get("/:id", clinicianController.getOnePatientData)
+clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatientData)
 
 // enter clinical notes for one patient
-clinicianRouter.get("/notes/:id", clinicianController.getNotes)
+clinicianRouter.get("/notes/:id", utility.isLoggedIn, clinicianController.getNotes)
 clinicianRouter.post("/notes/:id", clinicianController.addNote)
 
 clinicianRouter.get("/settings/:id", clinicianController.getSettings)
 
 // sign up new patient
-clinicianRouter.get('/signup', (req, res, next) => {
+clinicianRouter.get('/signup', utility.isLoggedIn, (req, res, next) => {
     res.render('signup', {layout: 'clinician.hbs', style:'signup.css'})
 })
 clinicianRouter.post('/signup', clinicianController.insertPatient)
@@ -38,12 +39,8 @@ clinicianRouter.get('/test', (req, res) => {
     res.render('signupnewpatient.hbs', {layout: 'clinician.hbs', style:'signupnewpatient.css'})
 })
 
-clinicianRouter.post("/encrypt", clinicianController.encrypt);
-// Handle logout
-// clinicianRouter.post('/logout', (req, res) => {
-//     req.logout()
-//     res.redirect('/')
-// })
+// clinicianRouter.post("/encrypt", clinicianController.encrypt);
+clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
 
 // export the clinicianRouter
 module.exports = clinicianRouter
