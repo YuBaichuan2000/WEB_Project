@@ -222,7 +222,7 @@ nav ul li a:hover{
     height: 150px;
     padding-left: 20px;
     padding-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 0px 0px 9px 9px;
     margin: auto;
 }
@@ -442,9 +442,9 @@ nav ul li a:hover{
         align-content: center;
         width: 550px;
         height: 50px;
-        padding-top: 10px;
+        padding-top: 22px;
         padding-left: 20px;
-        padding-bottom: 5px;
+        padding-bottom: 0px;
         color: white;
         font-size: 30px;
         border-radius: 9px 9px 0px 0px;
@@ -452,12 +452,13 @@ nav ul li a:hover{
 
     .clinician-message h5{
         box-shadow: 4px 4px 10px #C8CDCF;
-        width: 550px;
-        height: 340px;
-        padding-left: 20px;
-        padding-top: 10px;
+        width: 530px;
+        height: 310px;
+        padding-left: 40px;
+        padding-top: 30px;
         font-size: 30px;
         border-radius: 0px 0px 9px 9px;
         margin: auto;
+        font-size: 30px;
     }
 }
