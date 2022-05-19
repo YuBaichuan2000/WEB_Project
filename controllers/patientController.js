@@ -173,6 +173,32 @@ const getAllMessages = async (req, res, next) => {
         return next(err)
     }
 }
+const updatePassword = async (req, res) => {
+    try {
+      const patient = await Patient.findById(req.user._id);
+      if (!(await bcrypt.compare(req.body.old, patient.password))) {
+        return res.render("change_password", {
+            layout: 'patient.hbs', style: 'change_password.css', warning: "Incorrect Current Password!",
+        });
+      }
+      if (req.body.old == req.body.new) {
+        return res.render("change_password", {
+            layout: 'patient.hbs', style: 'change_password.css', warning: "New password is the same as old one!",
+        });
+      }
+      if (!(req.body.new == req.body.confirm_new)) {
+        return res.render("change_password", {
+            layout: 'patient.hbs', style: 'change_password.css', warning: "Please Enter Same Password Twice to Confirm!",
+        });
+      }
+      patient.password = await bcrypt.hash(req.body.confirm_new, 10);
+      await patient.save();
+      res.render("change_password", { layout: 'patient.hbs', style: 'change_password.css', warning: "Successfully change your password!" });
+    } catch (err) {
+      console.log(err);
+      res.send("error happens when update password");
+    }
+  };
 
 const logout = (req, res) => {
     req.logout();
@@ -186,5 +212,6 @@ module.exports = {
     insertData,
     getLeaderboard,
     getAllMessages,
+    updatePassword,
     logout,
 } 

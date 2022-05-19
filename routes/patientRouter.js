@@ -18,6 +18,10 @@ patientRouter.post('/webp',
 patientRouter.get('/webp', utility.unLoggedIn, (req, res) => {
     res.render('desktoplogin',  {warning: req.flash('error'), patient: true, style:"desktoplogin.css"})  
 })
+patientRouter.get("/updatePassword", utility.isLoggedIn, (req, res) => {
+    res.render('change_password',{layout: 'patient.hbs', style: 'change_password.css'})  
+})
+patientRouter.post("/updatePassword", utility.isLoggedIn, patientController.updatePassword);
 // patient dashboard
 patientRouter.get('/dashboard', utility.isLoggedIn, patientController.getDashboard)
 
