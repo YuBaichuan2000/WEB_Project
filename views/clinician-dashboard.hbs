@@ -22,15 +22,42 @@
     <tr class="patient-info-highlight">
     {{else}}
     <tr class="patient-info-normal">
+    {{!-- <tr class="patient-info-highlight"> --}}
     {{/if}}
     <td class="patient-info-left"><a href="/clinician/{{this._patient._id}}">{{this._patient.first_name}} {{this._patient.last_name}}</a></td>
+
+    {{#if this.higher}}
+    <td>{{this.bgl.val}}<div class="to_top"></div></td>
+    {{#if this.lower}}
+    <td>{{this.bgl.val}}<div class="to_bottom"></div></td>
+    {{else}}
+    <td >{{this.bgl.val}}</td>
+    {{/if}}
+
+
+    {{#if this.higher}}
+    <td>{{this.wght.val}}<div class="to_top"></div></td>
+    {{else}}
     <td>{{this.bgl.val}}</td>
-    <td>{{this.wght.val}}</td>
-    <td>{{this.doses.val}}</td>
-    <td class="patient-info-right">{{this.steps.val}}</td>
+    {{!-- <td>{{this.wght.val}}<div class="to_top"></div></td> --}}
+    {{/if}}
+
+    {{#if this.higher}}
+    <td>{{this.doses.val}}<div class="to_top"></div></td>
+    {{else}}
+    <td>{{this.bgl.val}}</td>
+    {{!-- <td>{{this.doses.val}}<div class="to_top"></div></td> --}}
+    {{/if}}
+
+    {{#if this.higher}}
+    <td class="patient-info-right">{{this.steps.val}}<div class="to_top"></div></td>
+    {{else}}
+    <td>{{this.bgl.val}}</td>
+    {{!-- <td class="patient-info-right">{{this.steps.val}}<div class="to_top"></div></td> --}}
+    {{/if}}
+
     </tr>
 </table>
 {{/each}}
-
 
 

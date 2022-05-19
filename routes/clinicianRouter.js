@@ -24,6 +24,7 @@ clinicianRouter.get('/comments', utility.isLoggedIn, clinicianController.getAllC
 clinicianRouter.get("/signup", utility.isLoggedIn, clinicianController.getSignup)
 clinicianRouter.post('/signup', clinicianController.insertPatient)
 
+clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
 // get entries of one patient
 clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatientData)
 
@@ -39,7 +40,7 @@ clinicianRouter.post("/settings/:id", clinicianController.saveSettings)
 // })
 
 // clinicianRouter.post("/encrypt", clinicianController.encrypt);
-// clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
+
 
 // export the clinicianRouter
 module.exports = clinicianRouter

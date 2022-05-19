@@ -44,10 +44,10 @@ module.exports = (passport) => {
                             return done(err);
                         }
                         else if(!patient){
-                            return done(null, false, {message: "Wrong username/password"});
+                            return done(null, false, {message: "Wrong username or password"});
                         }
                         else if (!await bcrypt.compare(password, patient.password)) {
-                            return done(null, false, {message: "Wrong username/password"});
+                            return done(null, false, {message: "Wrong username or password"});
                         }
                         else{
                             return done(null, patient, {message: "Login Successful"});
