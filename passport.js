@@ -13,14 +13,14 @@ module.exports = (passport) => {
     })
     //When a request comes in, deserialize/expand the serialized information
     //back to what it was (expand from id to full user)
-    passport.deserializeUser((login, done) => {
-        if (login.role === "patient") {
-          Patient.findById(login._id, (err, user) => {
+    passport.deserializeUser((user, done) => {
+        if (user.role === "patient") {
+          Patient.findById(user._id, (err, user) => {
             return done(err, user)
           })
         } 
-        else if (login.role === "clinician"){
-            Clinician.findById(login._id, (err, user) => {
+        else if (user.role === "clinician"){
+            Clinician.findById(user._id, (err, user) => {
                 return done(err, user)
             })
         }

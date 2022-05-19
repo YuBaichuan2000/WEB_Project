@@ -41,7 +41,7 @@ clinicianRouter.get('/test', (req, res) => {
 })
 
 // clinicianRouter.post("/encrypt", clinicianController.encrypt);
-clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
+// clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
 
 // export the clinicianRouter
 module.exports = clinicianRouter

@@ -75,7 +75,7 @@ const getOnePatientData = async (req, res, next) => {
         sorted = entries.sort(function(a, b) {
             return b.time - a.time
         })
-        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css'})
+        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id})
     } catch (err) {
         return next(err)
     }
