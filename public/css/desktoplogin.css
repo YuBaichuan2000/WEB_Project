@@ -119,7 +119,7 @@ body{
     font-size: 30px;
     position:relative;
     left: 1020px;
-    top: 150px;
+    top: 170px;
 }
 
 input[type=text] {
@@ -161,4 +161,18 @@ input[type=submit] {
     position:absolute; 
     right: 430px;
     width: 170px;
+}
+
+.warning{
+    background-color: rgba(234, 1, 1, 0.633);
+    padding-left: 15px;
+    padding-top: 15px;
+    color: white;
+    width: 505px;
+    height: 50px;
+    position: absolute;
+    left: 53.5%;
+    text-align: left;
+    top: 35%;
+    font-size: 24px;
 }
