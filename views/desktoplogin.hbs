@@ -32,7 +32,7 @@
             <input type="password" id="password" name="password"><br>
         </div>
         <ul class="forgot_password">
-            <li><a href="/forgot", target="_blank">Forget Password?</a></li>
+            <li><a onclick="myFunction()">Forget Password?</a></li>
         </ul>
         <br>
         <input type="submit" value="Login">
@@ -43,13 +43,14 @@
     </form> --}}
 
 </body>
-<footer>
-    <h5 style="position: relative; left: 100px">Copyright 2022 | Privacy</h5>
-</footer>
+
 </html>
 
 <script>
     if (window.innerWidth <= 1024) {
         window.location.replace("/");
+    }
+    function myFunction() {
+        alert("Please contact your doctor to reset password.");
     }
 </script>
