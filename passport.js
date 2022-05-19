@@ -1,6 +1,5 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-// const bcrypt = require("bcrypt");
 // Get users
 const Patient = require('./models/patient')
 const Clinician = require('./models/clinician')

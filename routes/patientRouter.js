@@ -44,6 +44,7 @@ patientRouter.get('/website', (req, res) => {
 })
 
 // patientRouter.post("/encrypt", patientController.encrypt);
+patientRouter.get("/logout", utility.isLoggedIn, patientController.logout);
 
 patientRouter.get('/test', (req, res) => {
     res.render('leaderboard.hbs', {layout: 'patient.hbs', style:'leaderboard.css'})

@@ -170,11 +170,17 @@ const getAllMessages = async (req, res, next) => {
     }
 }
 
+const logout = (req, res) => {
+    req.logout();
+    res.redirect("/");
+  };
+
 module.exports = { 
     getDashboard,
     getAllData,
     showForm,
     insertData,
     getLeaderboard,
-    getAllMessages
+    getAllMessages,
+    logout,
 } 
