@@ -12,7 +12,7 @@ clinicianRouter.post('/webc',
 )
 
 clinicianRouter.get('/webc', utility.unLoggedIn, (req, res) => {
-    res.render('desktoplogin', {patient: false, style:"desktoplogin.css"})
+    res.render('desktoplogin', {warning: req.flash('error'), patient: false, style:"desktoplogin.css"})
 })
 
 // GET all patients' data and comments
