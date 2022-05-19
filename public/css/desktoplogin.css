@@ -18,17 +18,17 @@ body{
 }
 .line1{
     position: absolute;
-    left: 800px;
+    left: 840px;
     top: 120px;
 }
 .line2{
     position: absolute;
-    left: 800px;
+    left: 840px;
     top: 200px;
 }
 /* About This Website */
 .login_nav_bar1{
-    width: 96%;
+    width: 100%;
     list-style-type: none;
     font-family: rockwell;
 }
@@ -83,12 +83,12 @@ body{
 
 .clinician{
     text-align: center;
-    left: 1230px;
+    left: 1290px;
     width: 250px;
 }
 .patient{
     text-align: left;
-    left: 980px;
+    left: 1040px;
     width: 500px;
 }
 
@@ -118,7 +118,7 @@ body{
 .login_form{
     font-size: 30px;
     position:relative;
-    left: 970px;
+    left: 1020px;
     top: 150px;
 }
 
@@ -160,11 +160,5 @@ input[type=submit] {
     font-size: 20px;
     position:absolute; 
     right: 430px;
-    width: 150px;
-}
-/* footer */
-footer{
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
+    width: 170px;
 }

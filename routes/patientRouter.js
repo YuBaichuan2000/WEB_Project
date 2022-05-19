@@ -16,9 +16,7 @@ patientRouter.post('/webp',
 
 // login page for web size
 patientRouter.get('/webp', utility.unLoggedIn, (req, res) => {
-    console.log(req.session);
-    res.render('desktoplogin',  {warning: req.session.flash, patient: true, style:"desktoplogin.css"})
-    
+    res.render('desktoplogin',  {warning: req.flash('error'), patient: true, style:"desktoplogin.css"})  
 })
 // patient dashboard
 patientRouter.get('/dashboard', utility.isLoggedIn, patientController.getDashboard)

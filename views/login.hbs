@@ -21,7 +21,7 @@
         <span>Remember me</span>
         </div>
         <div class="forget_div">
-        <a href="forgot">Forgot password?</a>
+        <a onclick="myFunction()">Forgot password?</a>
         </div>
     </div>
     <div class="input_box button">
@@ -37,5 +37,8 @@
 <script>
     if (window.innerWidth > 1024) {
         window.location.replace("/patient/webp");
+    }
+    function myFunction() {
+        alert("Please contact your doctor to reset password.");
     }
 </script>
