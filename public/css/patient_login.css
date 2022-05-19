@@ -134,16 +134,16 @@ h5 a{
 
 .warning{
     background-color: rgba(234, 1, 1, 0.633);
-    padding-left: 15px;
-    padding-top: 6px;
+    padding-left: 43px;
+    padding-top: 8px;
     color: white;
-    width: 234px;
-    height: 33px;
+    width: 328px;
+    height: 36px;
     position: absolute;
-    left: 19.5%;
+    left: 31.9%;
     text-align: left;
-    top: 54%;
-    font-size: 14px;
+    top: 36%;
+    font-size: 16px;
 }
 @media only screen and (max-width: 375px) and (orientation: portrait){
     header h1{
@@ -205,6 +205,19 @@ h5 a{
     h5 a{
         font-size: 16px;
     }
+    .warning{
+        background-color: rgba(234, 1, 1, 0.633);
+        padding-left: 15px;
+        padding-top: 6px;
+        color: white;
+        width: 234px;
+        height: 33px;
+        position: absolute;
+        left: 19.5%;
+        text-align: left;
+        top: 54%;
+        font-size: 14px;
+    }
 }
 
 @media only screen and (max-width: 1024px) and (orientation: landscape) {
@@ -215,5 +228,4 @@ h5 a{
     h5 a{
         font-size: 16px;
     }
-
 }
