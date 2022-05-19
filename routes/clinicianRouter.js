@@ -26,6 +26,8 @@ clinicianRouter.get("/:id", clinicianController.getOnePatientData)
 clinicianRouter.get("/notes/:id", clinicianController.getNotes)
 clinicianRouter.post("/notes/:id", clinicianController.addNote)
 
+clinicianRouter.get("/settings/:id", clinicianController.getSettings)
+
 // sign up new patient
 clinicianRouter.get('/signup', (req, res, next) => {
     res.render('signup', {layout: 'clinician.hbs', style:'signup.css'})

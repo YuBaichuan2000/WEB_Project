@@ -187,6 +187,17 @@ const addNote = async (req, res, next) => {
     }
 }
 
+const getSettings = async (req, res, next) => {
+    try {
+        // const patient = await Patient.findById(req.params.id).lean()
+        // console.log(JSON.stringify(patient, null, 4))
+
+        return res.render('patient_setting', { layout: 'clinician.hbs', style:'patient_setting.css', id: req.params.id})
+    } catch (err) {
+        return next(err)
+    }
+}
+
 // use this function only if your password is plain text in your db!!!!
 const encrypt = async (req, res) => {
     try {
@@ -210,5 +221,6 @@ module.exports = {
     insertPatient,
     getNotes,
     addNote,
+    getSettings,
     encrypt
 } 
