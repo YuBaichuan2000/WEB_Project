@@ -135,15 +135,15 @@ h5 a{
 .warning{
     background-color: rgba(234, 1, 1, 0.633);
     padding-left: 15px;
-    padding-top: 15px;
+    padding-top: 6px;
     color: white;
-    width: 505px;
-    height: 50px;
+    width: 234px;
+    height: 33px;
     position: absolute;
-    left: 53.5%;
+    left: 19.5%;
     text-align: left;
-    top: 35%;
-    font-size: 24px;
+    top: 54%;
+    font-size: 14px;
 }
 @media only screen and (max-width: 375px) and (orientation: portrait){
     header h1{
