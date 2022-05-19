@@ -16,7 +16,9 @@ body {
     background-attachment: fixed;
     margin: auto;
 }
-
+ul.reset-nav-right{
+    display: none;
+}
 .top img{
     margin-left: 30px;
     margin-right: 10px;

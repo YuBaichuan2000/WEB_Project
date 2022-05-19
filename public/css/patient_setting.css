@@ -14,6 +14,9 @@ body{
     margin: auto;
     text-align: center;
 }
+ul.reset-nav-right{
+    display: none;
+}
 
 
 header{
