@@ -161,8 +161,11 @@ iframe{
         margin-top: 25px;
     }
     iframe{
-        width: 275px;
-        height: 150px;
+        position: relative;
+        left: 190px;
+        width: 550px;
+        height: 300px;
+        margin-top: 50px;
     }
     .clinician {
         display: none;
@@ -181,3 +184,11 @@ iframe{
     }
 }
 
+@media screen and (max-width: 375px){
+    iframe{
+        width: 275px;
+        height: 150px;
+        left: 0;
+        margin-top: 35px;
+    }
+}
