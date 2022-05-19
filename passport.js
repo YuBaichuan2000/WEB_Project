@@ -78,7 +78,7 @@ module.exports = (passport) => {
                             return done(null, false, {message: "Invalid username or password"});
                         }
                         else{
-                            return done(null, clinician, {message: "Invalid username or password"});
+                            return done(null, clinician, {message: "Login Successful"});
                         }
                 });
             })
