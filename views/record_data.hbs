@@ -11,12 +11,14 @@
         </li>  
     </ul>
 
+    {{#if success}}
     <div id="overlay2" onclick="off2()">
         <div id="text">
             Your record has been successfully submitted!                
         </div>
         <a href="/patient/history_data">View history data ></a>
     </div>
+    {{/if}}
 
     <div class="enter-data">
         <form action="/patient/record_data" method="POST">
@@ -70,7 +72,7 @@
                 {{/if}}
             {{/if}}
             <div class="button1">
-                <button onclick="on2()" type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
+                <button type="submit"><a><img src="../images/submit_icon.png">Submit</a></button>
             </div>
 
             <div id="overlaybgl" class="overlay1">

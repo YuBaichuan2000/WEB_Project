@@ -51,9 +51,9 @@ app.use("/clinician", clinicianRouter);
 
 // main login page
 app.post('/',
-passport.authenticate('patient-strategy', {
-    successRedirect: '/patient/dashboard', failureRedirect: '/', failureFlash: true
-})
+    passport.authenticate('patient-strategy', {
+        successRedirect: '/patient/dashboard', failureRedirect: '/', failureFlash: true
+    })
 )
 
 app.get('/', utility.unLoggedIn, (req, res) => {

@@ -99,7 +99,11 @@ const insertData = async (req, res, next) => {
             {_patient : req.user._id, time: {$gt: today}},
             {$set: update},
             {upsert: true})
-        return
+
+        const patient = await Patient.findById(req.user._id).lean()
+        const entry = await Entry.findOne({_patient : req.user._id, time: {$gt: today}}).lean()
+
+        return res.render('record_data', {layout: 'patient.hbs', style:'record_data.css', data: entry, set: patient.settings, success: true})
     } catch (err) {
         return next(err)
     }
