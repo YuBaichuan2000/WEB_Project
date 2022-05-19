@@ -12,14 +12,20 @@ const getAllPatientData = async (req, res, next) => {
         // console.log(JSON.stringify(entries, null, 4))
 
         for (var i = 0; i < entries.length; ++i) {
-            entries[i].highlight = false
+            var highlight = false
             for (const j of ["bgl", "wght", "doses", "steps"]) {
                 if (j in entries[i]) {
-                    if (entries[i][j].val < entries[i]._patient.settings[`${j}_min`] || entries[i][j].val > entries[i]._patient.settings[`${j}_max`]) {
-                        entries[i].highlight = true
+                    if (entries[i][j].val < entries[i]._patient.settings[`${j}_min`]) {
+                        entries[i][j].low = true
+                        highlight = true
+                    }
+                    if (entries[i][j].val > entries[i]._patient.settings[`${j}_min`]) {
+                        entries[i][j].high = true
+                        highlight = true
                     }
                 }
             }
+            entries[i].highlight = highlight
         }
 
         sorted = entries.sort(function(a, b) {
