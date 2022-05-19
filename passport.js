@@ -44,14 +44,12 @@ module.exports = (passport) => {
                             return done(err);
                         }
                         else if(!patient){
-                            return done(null, false, {message: "Wrong username or password"});
+                            return done(null, false, {message: "Invalid username or password"});
                         }
                         else if (!await bcrypt.compare(password, patient.password)) {
-                            return done(null, false, {message: "Wrong username or password"});
+                            return done(null, false, {message: "Invalid username or password"});
                         }
-                        else{
-                            return done(null, patient, {message: "Login Successful"});
-                        }
+                        
                 });
             })
         })
@@ -72,14 +70,12 @@ module.exports = (passport) => {
                             return done(err);
                         }
                         else if(!clinician){
-                            return done(null, false, {message: "Wrong username/password"});
+                            return done(null, false, {message: "Invalid username or password"});
                         }
                         else if (!await bcrypt.compare(password, clinician.password)) {
-                            return done(null, false, {message: "Wrong username/password"});
+                            return done(null, false, {message: "Invalid username or password"});
                         }
-                        else{
-                            return done(null, clinician, {message: "Wrong username/password"});
-                        }
+                        
                 });
             })
         })
