@@ -515,7 +515,7 @@ p.message{
 }
 input.message{
     width: 440px;
-    height: 403px;
+    height: 200px;
     box-shadow: 5px 10px 18px #00000020;
     border-style: hidden;
     border-radius: 20px 20px 20px 20px;
@@ -523,13 +523,14 @@ input.message{
     font-size: 40px;
 }
 button.save5{
+    position: absolute;
     width:115px;
     height: 35px;
     background-color: #2C71C3;
     border-radius: 20px 20px 20px 20px;
     border: 1.8px solid #707070;
-    left: 145px;
-    top: -70px;
+    left: 350px;
+    top: 230px;
 
 }
 footer{
