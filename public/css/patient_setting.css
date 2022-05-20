@@ -290,6 +290,7 @@ p.nmol{
     font-size: 30px;
     position: relative;
     top: -70px;
+    z-index: -1;
 }
 button.save1{
     width:115px;
@@ -357,6 +358,7 @@ p.kg{
     position: relative;
     left: -100px;
     top: -70px;
+    z-index: -1;
 }
 button.save2{
     width:115px;
@@ -423,6 +425,7 @@ p.doses{
     position: relative;
     top: -70px;
     padding-right: 10px;
+    z-index: -1;
 }
 button.save3{
     width:115px;
@@ -490,6 +493,7 @@ p.steps{
     position: relative;
     left: -90px;
     top: -70px;
+    z-index: -1;
 }
 button.save4{
     width:115px;
