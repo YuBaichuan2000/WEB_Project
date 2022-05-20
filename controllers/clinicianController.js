@@ -84,11 +84,37 @@ const getAllComments = async (req, res, next) => {
 
 const getOnePatientData = async (req, res, next) => {
     try {
+        const now = new Date()
+        const last_week = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
+        // console.log(last_week)
+
         const entries = await Entry.find({_patient : req.params.id}).populate({path: '_patient', model: Patient}).lean()
+
         sorted = entries.sort(function(a, b) {
             return b.time - a.time
         })
-        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id})
+        
+        var chart = {
+            bgl: [['Date', 'Blood Glucose(nmol/L)']],
+            wght: [['Date', 'Weight(Kg)']],
+            doses: [['Date', 'Doses Taken']],
+            steps: [['Date', 'Steps']],
+        }
+        for (var i of sorted) {
+            if (i.time > last_week) {
+                var cur_day = Intl.DateTimeFormat("en-AU").format(i.time).slice(0,5)
+                for (j of ["bgl", "wght", "doses", "steps"]) {
+                    if (i[j]) {
+                        if (i[j].val) {
+                            chart[j].push([cur_day, i[j].val])
+                        }
+                    }
+                }
+            }
+        }
+        console.log(JSON.stringify(chart, null, 4))
+
+        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id, chart: chart})
     } catch (err) {
         return next(err)
     }
