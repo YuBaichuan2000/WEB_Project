@@ -13,16 +13,18 @@ const getAllPatientData = async (req, res, next) => {
 
         for (var i = 0; i < entries.length; ++i) {
             var highlight = false
-            for (const j of ["bgl", "wght", "doses", "exc"]) {
+            for (const j of ["bgl", "wght", "doses", "steps"]) {
                 if (j in entries[i]) {
-                    if (entries[i][j].val < entries[i]._patient.settings[`${j}_min`]) {
-                        entries[i][j].low = true
-                        highlight = true
-                    }
-                    if (entries[i][j].val > entries[i]._patient.settings[`${j}_min`]) {
-                        entries[i][j].high = true
-                        highlight = true
-                    }
+                    if (entries[i]._patient.settings[j]) {
+                        if (entries[i][j].val < entries[i]._patient.settings[`${j}_min`]) {
+                            entries[i][j].low = true
+                            highlight = true
+                        }
+                        if (entries[i][j].val > entries[i]._patient.settings[`${j}_max`]) {
+                            entries[i][j].high = true
+                            highlight = true
+                        }
+                    }   
                 }
             }
             entries[i].highlight = highlight
