@@ -119,7 +119,10 @@ const getOnePatientData = async (req, res, next) => {
                 }
             }
         }
-        console.log(JSON.stringify(lineChart, null, 4))
+        
+        for (var i = 0; i < sorted.length; ++i) {
+            sorted[i].time = Intl.DateTimeFormat("en-AU").format(sorted[i].time)
+        }
 
         return res.render('patient_data.hbs', {datas: JSON.stringify(lineChart), layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id, lineChart: lineChart})
     } catch (err) {
