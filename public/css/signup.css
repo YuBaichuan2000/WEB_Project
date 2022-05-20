@@ -15,6 +15,28 @@ body{
     text-align: center;
 }
 
+.reset-nav-right{
+    position: absolute;
+    margin-top: 17px;
+    list-style-type: none;
+
+}
+.reset-nav-right li{
+    box-shadow: 4px 4px 10px #C8CDCF;
+    border-color: #707070;
+    border-style: solid;
+    border-radius: 28px;
+    border-width: 1px;
+    height: 40px;
+    padding-top: 15px;
+}
+
+a.reset-text{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
 header{
     display: flex;
     align-items: center;
