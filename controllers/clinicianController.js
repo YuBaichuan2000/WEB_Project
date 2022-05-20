@@ -36,6 +36,7 @@ const getAllPatientData = async (req, res, next) => {
         // console.log(JSON.stringify(sorted, null, 4))
 
         return res.render('clinician-dashboard', { layout: 'clinician.hbs', data: sorted, style:'clinician-dashboard.css'})
+        
     } catch (err) {
         return next(err)
     }
@@ -96,7 +97,7 @@ const getOnePatientData = async (req, res, next) => {
             return b.time - a.time
         })
         
-        var chart = {
+        var lineChart = {
             bgl: [['Date', 'Blood Glucose(nmol/L)']],
             wght: [['Date', 'Weight(Kg)']],
             doses: [['Date', 'Doses Taken']],
@@ -108,15 +109,19 @@ const getOnePatientData = async (req, res, next) => {
                 for (j of ["bgl", "wght", "doses", "steps"]) {
                     if (i[j]) {
                         if (i[j].val) {
-                            chart[j].push([cur_day, i[j].val])
+                            // var value = i[j].val
+                            // if (i[j].val.$numberDecimal) {
+                            //     value = i[j].val.$numberDecimal
+                            // }
+                            lineChart[j].push([cur_day, Number(i[j].val.toString())])
                         }
                     }
                 }
             }
         }
-        console.log(JSON.stringify(chart, null, 4))
+        console.log(JSON.stringify(lineChart, null, 4))
 
-        return res.render('patient_data', { layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id, chart: chart})
+        return res.render('patient_data.hbs', {datas: JSON.stringify(lineChart), layout: 'clinician.hbs', data: sorted, style:'patient_data.css', id: req.params.id, lineChart: lineChart})
     } catch (err) {
         return next(err)
     }

@@ -8,16 +8,7 @@
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Date', 'Steps'],
-            ['17/5',  1683],
-            ['18/5',  1524],
-            ['19/5',  1324],
-            ['20/5',  1321],
-            ['21/5',  174],
-            ['22/5',  155],
-            ['23/5',  355]
-        ]);
+        var data = google.visualization.arrayToDataTable({{{datas}}}.steps);
 
         var options = {
             title: 'Exercise',

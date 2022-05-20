@@ -8,16 +8,7 @@
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Date', 'Doses Taken'],
-            ['17/5',  2],
-            ['18/5',  2],
-            ['19/5',  2],
-            ['20/5',  2],
-            ['21/5',  2],
-            ['22/5',  2],
-            ['23/5',  1]
-        ]);
+        var data = google.visualization.arrayToDataTable({{{datas}}}.doses);
 
         var options = {
             title: 'Doses of insulin taken',

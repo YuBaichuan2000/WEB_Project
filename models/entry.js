@@ -3,12 +3,12 @@ const Patient = require('../models/patient')
 
 const schema = new mongoose.Schema({
     bgl: {
-        val: mongoose.Types.Decimal128,
+        val: Number,
         cmt: String,
         time: Date,
     },
     wght: {
-        val: mongoose.Types.Decimal128,
+        val: Number,
         cmt: String,
         time: Date,
     },
