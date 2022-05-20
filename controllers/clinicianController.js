@@ -109,17 +109,13 @@ const getOnePatientData = async (req, res, next) => {
                 for (j of ["bgl", "wght", "doses", "steps"]) {
                     if (i[j]) {
                         if (i[j].val) {
-                            // var value = i[j].val
-                            // if (i[j].val.$numberDecimal) {
-                            //     value = i[j].val.$numberDecimal
-                            // }
                             lineChart[j].push([cur_day, Number(i[j].val.toString())])
                         }
                     }
                 }
             }
         }
-        
+
         for (var i = 0; i < sorted.length; ++i) {
             sorted[i].time = Intl.DateTimeFormat("en-AU").format(sorted[i].time)
         }
@@ -269,7 +265,7 @@ const saveSettings = async (req, res, next) => {
         const patient = await Patient.findById(req.params.id).lean()
         
 
-        for (i of ['bgl', 'wght', 'doses', 'exc']) {
+        for (i of ['bgl', 'wght', 'doses', 'steps']) {
             if (req.body[i] == "on") {
                 req.body[i] = true;
             } else {
