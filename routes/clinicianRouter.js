@@ -31,8 +31,7 @@ clinicianRouter.post('/signup', clinicianController.insertPatient)
 
 clinicianRouter.get("/logout", utility.isLoggedIn, clinicianController.logout);
 // get entries of one patient
-clinicianRouter.get("/:id", clinicianController.getOnePatientData)
-// clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatientData)
+clinicianRouter.get("/:id", utility.isLoggedIn, clinicianController.getOnePatientData)
 
 // enter clinical notes for one patient
 clinicianRouter.get("/notes/:id", utility.isLoggedIn, clinicianController.getNotes)
