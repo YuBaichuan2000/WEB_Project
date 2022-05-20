@@ -15,6 +15,11 @@ clinicianRouter.get('/webc', utility.unLoggedIn, (req, res) => {
     res.render('desktoplogin', {warning: req.flash('error'), patient: false, style:"desktoplogin.css"})
 })
 
+clinicianRouter.get("/updatePassword", utility.isLoggedIn, (req, res) => {
+    res.render('change_password_c',{layout: 'clinician.hbs', style: 'change_password_c.css'})  
+})
+clinicianRouter.post("/updatePassword", utility.isLoggedIn, clinicianController.updatePassword);
+
 // GET all patients' data and comments
 clinicianRouter.get('/dashboard', utility.isLoggedIn, clinicianController.getAllPatientData)
 

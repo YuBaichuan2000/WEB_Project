@@ -292,6 +292,32 @@ const encrypt = async (req, res) => {
       res.send("error happens when encrypt password");
     }
   };
+  const updatePassword = async (req, res) => {
+    try {
+      const clinician = await Clinician.findById(req.user._id);
+      if (!(await bcrypt.compare(req.body.old, clinician.password))) {
+        return res.render("change_password_c", {
+            layout: 'clinician.hbs', style: 'change_password_c.css', warning: "Incorrect Current Password!",
+        });
+      }
+      if (req.body.old == req.body.new) {
+        return res.render("change_password_c", {
+            layout: 'clinician.hbs', style: 'change_password_c.css', warning: "New password is the same as old one!",
+        });
+      }
+      if (!(req.body.new == req.body.confirm_new)) {
+        return res.render("change_password_c", {
+            layout: 'clinician.hbs', style: 'change_password_c.css', warning: "Please Enter Same Password Twice to Confirm!",
+        });
+      }
+      clinician.password = await bcrypt.hash(req.body.confirm_new, 10);
+      await clinician.save();
+      res.render("change_password_c", { layout: 'clinician.hbs', style: 'change_password_c.css', warning: "Successfully change your password!" });
+    } catch (err) {
+      console.log(err);
+      res.send("error happens when update password");
+    }
+  };
 
 const logout = (req, res) => {
     req.logout();
@@ -309,5 +335,6 @@ module.exports = {
     getSettings,
     saveSettings,
     encrypt,
+    updatePassword,
     logout
 } 
